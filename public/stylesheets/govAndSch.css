@@ -1,0 +1,90 @@
+body,article{
+    height: 100%;
+    overflow: hidden;
+}
+#navBar li:nth-child(5) a{
+    color: #000000;
+    background: #FFFFFF;
+}
+.active{
+    color: white;
+    background: #00B38A;
+}
+#content_govAndSch{
+    background:#F4F8FB;
+    text-align: center;
+    margin-left: 160px;
+    overflow: scroll;
+    margin-top: 60px;
+}
+#searchGovAndSch {
+    padding-top:30px;
+    height: 60px;
+    text-align: center;
+}
+#searchGovAndSch input:nth-child(1){
+    border: 2px solid #00BCD5;
+    width: 480px;
+    height: 30px;
+    padding: 4px 10px;
+    font-size: 16px;
+}
+#searchGovAndSch input:nth-child(2){
+    color: white;
+    border-radius: 6px;
+    background: #00BCD5;
+}
+#filterHeader{
+    margin: 0 auto;
+    width: 1000px;
+    border: 1px solid #FAFAFA;
+}
+#filterHeader li{
+    border-bottom: 1px solid #FFFFFF;
+}
+#filterFoot {
+    width: 1000px;
+    margin: 30px auto 0;
+}
+#filterFoot label{
+    font-weight: normal;
+}
+#filterFoot select{
+    font-size: 16px;
+}
+.filterItem {
+    background: #FAFAFA;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    padding-left: 30px;
+    text-align: left;
+}
+.filterItem span{
+    padding: 4px 6px;
+}
+.filterItem span:hover,#district span:hover{
+    color: white;
+    background: #00B38A;
+    cursor: pointer;
+}
+#district{
+    background: #FFFFFF;
+    font-size: 16px;
+    padding-left: 46px;
+    text-align: left;
+    display: none;
+}
+#district span{
+    padding: 4px 6px;
+}
+#filter-content{
+    width: 1100px;
+    margin: 16px auto;
+}
+#filter-content th,#filter-content td{
+    text-align: center;
+}
+.delete:hover,.view:hover{
+    cursor: pointer;
+}

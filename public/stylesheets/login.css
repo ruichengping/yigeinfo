@@ -1,0 +1,14 @@
+header{
+    background: #000000;
+    font-size: 28px;
+    color: white;
+    padding: 18px 60px;
+}
+#right-content{
+    width: 300px;
+    float: right;
+}
+span{
+    color: #FF0000;
+    display: none;
+}

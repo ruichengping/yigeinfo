@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>职位详情</title>
+    <link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
+    <link rel="stylesheet" href="/stylesheets/jobDetail.css">
+</head>
+<body>
+    <div id="content" class="clear">
+        <div id="leftContent">
+            <div class="jobName">
+                <p companyId=<%= jobData.companyId%>><%= jobData.companyName%>招聘</p>
+                <h1 jobId=<%= jobData.jobId%>><%= jobData.jobName%></h1>
+            </div>
+            <div class="requestLabel">
+                <span salaryId=<%= jobData.salaryId%>><%= jobData.salary%></span>
+                <span districtId=<%= jobData.districtId%>><%= jobData.cityName+jobData.districtName%></span>
+                <span jobExperienceId=<%= jobData.jobExperienceId%>><%= jobData.jobExperience%></span>
+                <span educationId=<%= jobData.educationId%>><%= jobData.education+"及以上"%></span>
+                <span jobNatureId=<%= jobData.jobNatureId%>><%= jobData.jobNatureName%></span>
+            </div>
+            <div class="jobAllure">
+                <p>职位诱惑：<%= jobData.jobTemptation%></p>
+            </div>
+            <div class="jobTime">
+                <p><%= jobData.time%>&nbsp;发布于易格网</p>
+            </div>
+            <hr/>
+            <div class="jobDetail">
+                <h3>职位描述</h3>
+                <%for(var i=0;i<jobData.jobDescription.length;i++){%>
+                <p><%= jobData.jobDescription[i]%></p>
+                <%}%>
+            </div>
+            <div class="jobHr">
+                <h3>职位发布者</h3>
+                <div class="jobHrContent">
+                    <img src="http://www.lgstatic.com/thumbnail_120x120/i/image/M00/5A/50/CgqKkVfeDB-AbEwUAAAtyc3UK40982.jpg" width="60" height="60"/>
+                    <div class="jobHrContentItem">
+                        <span hrId=<%= jobData.hrId%>><%= jobData.hrName%></span>
+                        <br/>
+                        <span>招聘经理</span>
+                    </div>
+                    <div class="jobHrContentItem">
+                        <span><%= jobData.handlingRate%></span>
+                        <br/>
+                        <span>简历及时处理率</span>
+                    </div>
+                    <div class="jobHrContentItem">
+                        <span><%= jobData.handlingDays%>天</span>
+                        <br/>
+                        <span>简历处理用时</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cvCount">
+                <p>该职位今日已投递次数：<%=jobData.countToday%>次</p>
+                <p>该职位截止总共投递次数：<%=jobData.count%>次</p>
+            </div>
+            <div class="interviewEva">
+                <div class="interViewLine">
+                    <span>面试评价</span>
+                </div>
+                <ul class="interViewContent">
+                    <%for(var i=0;i<jobData.evaluationInfo.length;i++){%>
+                    <li class="interViewContentItem">
+                        <div class="interViewGrade">
+                            <ul class="stars">
+                                <li>
+                                    <span>描述相符</span>
+                                    <%for(var j=0;j<jobData.evaluationInfo[i].descriptionLevel            ;j++){%>
+                                        <i class="star star-<%=jobData.evaluationInfo[i].descriptionLevel%>"></i>
+                                    <%}%>
+                                    <%for(var j=0;j<5-jobData.evaluationInfo[i].descriptionLevel;j++){%>
+                                    <i class="star"></i>
+                                    <%}%>
+                                </li>
+                                <li>
+                                    <span>面试官</span>
+                                    <%for(var j=0;j<jobData.evaluationInfo[i].interviewerLevel;j++){%>
+                                    <i class="star star-<%=jobData.evaluationInfo[i].interviewerLevel%>"></i>
+                                    <%}%>
+                                    <%for(var j=0;j<5-jobData.evaluationInfo[i].interviewerLevel;j++){%>
+                                    <i class="star"></i>
+                                    <%}%>
+                                </li>
+                                <li>
+                                    <span>公司环境</span>
+                                    <%for(var j=0;j<jobData.evaluationInfo[i].environmentLevel;j++){%>
+                                    <i class="star star-<%=jobData.evaluationInfo[i].environmentLevel%>"></i>
+                                    <%}%>
+                                    <%for(var j=0;j<5-jobData.evaluationInfo[i].environmentLevel;j++){%>
+                                    <i class="star"></i>
+                                    <%}%>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="feellabel">
+                            <%var array=jobData.evaluationInfo[i].evaluationLabel.split(",");%>
+                            <%for(var a=0;a<array.length;a++){%>
+                                <span><%=array[a]%></span>
+                            <%}%>
+                        </div>
+                        <p class="feelDetail"><%=jobData.evaluationInfo[i].evaluationContent%></p>
+                        <p class="feelTime"><%=jobData.evaluationInfo[i].date%></p>
+                        <img alt="评价人头像" src="http://www.lgstatic.com/thumbnail_100x100/images/jd_portrait.png"/>
+                        <% if(i==jobData.evaluationInfo.length-1){%>
+                        <%}else{%>
+                        <hr  style="height: 1px;background:#dce4e6;border: 0">
+                        <%}%>
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+        <div id="rightContent">
+            <dl>
+                <dt>
+                    <a href="#"><img src="<%=jobData.logoImage%>"  width="80" height="80"/></a>
+                    <a href="#"><%= jobData.companyName%></a>
+                </dt>
+                <dd>
+                    <ul>
+                        <li>
+                            <span>领域</span>
+                            <span>
+                            <%for(var i=0;i<jobData.industryField.length;i++){%>
+                            <%if(i==jobData.industryField.length-1){%>
+                                <%=jobData.industryField[i]%>
+                            <%}else{%>
+                            <%=jobData.industryField[i]%>,
+                            <%}%>
+                            <%}%>
+                            </span>
+                        </li>
+                        <li><span>规模</span><span><%= jobData.employeeNum%></span></li>
+                        <li><span>主页</span><sapn><%= jobData.homepage%></sapn></li>
+                    </ul>
+                </dd>
+                <dd>
+                    <h4>发展阶段</h4>
+                    <span>目前阶段</span><%= jobData.currentLevel%>
+                </dd>
+                <dd>
+                    <h4>工作地址</h4>
+                    <p>杭州西湖区文三路553号浙江中小企业大厦10楼</p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</body>
+</html>

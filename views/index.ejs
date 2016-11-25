@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
+    <link rel='stylesheet' href='/stylesheets/index.css' >
+  </head>
+  <style>
+    #content_index{
+      background: #F4F8FB;
+    }
+  </style>
+  <body>
+    <%- include publicPages/header.ejs%>
+    <article>
+      <%-include publicPages/nav.ejs %>
+      <div id="content_index">首页</div>
+    </article>
+  </body>
+<script src="/javascripts/jquery-3.1.1.min.js"></script>
+<script src="/javascripts/nav.js"></script>
+<script>
+  $(function () {
+    $("nav ul li:eq(0) a").addClass("contentPage").on("mouseover",function () {
+      $(this).css("color","#000");
+    });
+    $("#content_index").height($(window).height()-81);
+  });
+</script>
+</html>
