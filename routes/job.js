@@ -23,6 +23,7 @@ router.get("/", function (req, res, next) {
         next();
     });
 }, function (req, res, next) {
+    jobData=[];
     jobDetailModel.getAllJobDeatil(function (result) {
         for (var i = 0; i < result.length; i++) {
             step.Step(function () {
@@ -45,24 +46,24 @@ router.get("/", function (req, res, next) {
             }, function (info,entire) {
                 jobData.push(
                     new JobSimpleModel.JobSimpleInfo(
-                        result[entire[0]].logoImage,
+                        entire[1].logoImage,
                         result[entire[0]].jobId,
                         result[entire[0]].jobName,
                         commonTool.showDate(result[entire[0]].time),
                         result[entire[0]].companyId,
-                        entire[1]    .name,
-                        commonData.getSalaryNameById(jobDetail[j].money),
-                        commonData.getJobExperienceById(jobDetail[j].jobExperience),
-                        commonData.getEducationBackgroundById(jobDetail[j].educationBackground),
-                        commonData.getIndustryFieldByArray(commonTool.toArray(jobCompany[j].industryField)),
-                        commonData.getFinancingStageById(jobCompany[j].currentLevel),
-                        jobDetail[j].jobTemptation,
-                        commonData.getJobNatureById(jobDetail[j].jobNature),
-                        jobCompany[j].cityId,
-                        cityName[j],
-                        jobCompany[j].districtId,
-                        districtName[j])
-                );
+                        entire[1].name,
+                        commonData.getSalaryNameById(result[entire[0]].money),
+                        commonData.getJobExperienceById(result[entire[0]].jobExperience),
+                        commonData.getEducationBackgroundById(result[entire[0]].educationBackground),
+                        commonData.getIndustryFieldByArray(commonTool.toArray(entire[1].industryField)),
+                        commonData.getFinancingStageById(entire[1].currentLevel),
+                        result[entire[0]].jobTemptation,
+                        commonData.getJobNatureById(result[entire[0]].jobNature),
+                        entire[1].cityId,
+                        entire[2],
+                        entire[1].districtId,
+                        entire[3]
+                ));
                 if (jobData.length == result.length) {
                     next();
                 }
@@ -97,7 +98,6 @@ router.post("/searchJob",function (req,res) {
         this.result=result;
     }
     getSearchJobInfo.getSearchJobInfo(SearchJobModel,function (result) {
-        console.log(result);
         if(result.length>0){
             res.send(new ResResult(
                 true,

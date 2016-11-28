@@ -38,6 +38,9 @@ function getSearchJobInfo(searchJobModel, callback) {
                 } else {
                     var handleCount=[];
                     var jobDetail = [];
+                    if(result.length==0){
+                        callback(result);
+                    }
                     for (var j = 0; j < result.length; j++) {
                         var index=j;
                         filterByCompany(index,result,jobDetail,searchJobModel,handleCount,callback);
@@ -47,11 +50,6 @@ function getSearchJobInfo(searchJobModel, callback) {
         }
     });
 }
-// var searchModel=new dataModel.SearchJobModel("",2,38,0,0,0,0,0,0);
-//  // console.log(new dataModel.SearchJobModel("",2,38,0,0,0,0,0,0));
-// getSearchJobInfo(searchModel,function (jobs) {
-//    console.log(jobs);
-// });
 
 function filterByCompany(index,jobs,filterJobArray,searchJobModel,handleCount,callback) {
     otherInfo.getCompanyInfo(jobs[index].companyId, function (companyResult) {

@@ -17,6 +17,10 @@ var commonData=require("../myModule/commonData/commonData");
 var otherInfo=require("../myModule/mysqlConn/getOtherInfo");
 //获取常用工具模块
 var commonTool=require("../myModule/CommonTools/commonTool");
+//获取搜索简历模型
+var searchModel=require("../myModule/DataModel/searchCvDataModel");
+//获取搜索简历模块
+var searchCvData=require("../myModule/mysqlConn/getSearchCvData");
 var cityDatas=null;
 var cvDataInfo=[];
 router.get("/",function (req,res,next){
@@ -32,8 +36,13 @@ router.get("/",function (req,res,next){
                this.step(i);
            },function (info,entire) {
                var flag=this;
-               otherInfo.getCityName(result[entire[0]].residence,function (cityName) {
+               otherInfo.getCityName(result[entire[0]].cityId,function (cityName) {
                    flag.step(cityName);
+               });
+           },function (info,entire) {
+               var flag=this;
+               otherInfo.getDistrictName(result[entire[0]].districtId,function (districtName) {
+                  flag.step(districtName);
                });
            },function (info,entire) {
                cvDataInfo.push(new dataModel.cvDataSimpleModel(
@@ -42,7 +51,7 @@ router.get("/",function (req,res,next){
                    result[entire[0]].name,
                    commonTool.getAgeByBirth(result[entire[0]].birthday),
                    result[entire[0]].sex,
-                   entire[1],
+                   entire[1]+"/"+entire[2],
                    commonData.getEducationBackgroundById(result[entire[0]].educationLevel),
                    commonData.getJobExperienceById(result[entire[0]].jobExperience),
                    commonData.getisTestById(result[entire[0]].isTest),
@@ -61,6 +70,32 @@ router.get("/",function (req,res,next){
     res.render("cvData",{
         "cityDatas":cityDatas,
         "cvDataInfo":cvDataInfo
+    });
+});
+router.post("/searchCvData.json",function (req,res) {
+    var SearchCvDataModel=new searchModel.SearchCvDataModel(
+        req.body.searchText,
+        req.body.cityId,
+        req.body.districtId,
+        req.body.jobExperience,
+        req.body.educationLevel,
+        req.body.isTest,
+        req.body.jobIntension
+    );
+    searchCvData.getSearchCvData(SearchCvDataModel,function (result) {
+        if(result.length==0){
+            res.send({
+                success:false,
+                msg:"没有您想要的数据!",
+                result:result
+            });
+        }else{
+            res.send({
+                success:true,
+                msg:"",
+                result:result
+            })
+        }
     });
 });
 module.exports=router;

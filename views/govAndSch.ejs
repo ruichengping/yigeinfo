@@ -84,16 +84,16 @@
 <script>
     $(function () {
 //设置内容区域的高度
-$("#content_govAndSch").height($(window).height()-60);
-$(window).on("resize",function () {
-   $("#content_govAndSch").height($(window).height()-60);
-});
+        $("#content_govAndSch").height($(window).height() - 60);
+        $(window).on("resize", function () {
+            $("#content_govAndSch").height($(window).height() - 60);
+        });
 //是筛选条件可以被选中
         $("#filter span").each(function () {
-            var $self=$(this);
+            var $self = $(this);
             $self.on("click", function () {
                 if ($(this).siblings("strong").html() == "地点：") {
-                    $(this).siblings("i").html($(this).html()).attr("cityid",$(this).attr("cityid"));
+                    $(this).siblings("i").html($(this).html()).attr("cityid", $(this).attr("cityid"));
                 }
                 $(this).addClass("active").siblings("span").removeClass("active");
             });
@@ -102,6 +102,9 @@ $(window).on("resize",function () {
         $("#cities span").on("click", function () {
             if ($(this).html() == "不限") {
                 $("#district").hide();
+                $("#district span").each(function () {
+                    $(this).removeClass("active");
+                });
             } else {
                 $("#district").show();
                 $.ajax({
@@ -112,17 +115,14 @@ $(window).on("resize",function () {
                     },
                     success: function (data) {
                         var count = 0
-                        var str = "<strong>行政区：</strong><span districtid='0' class='active'>不限</pan>";
+                        var str = "<strong>行政区：</strong><span districtid='0' class='active'>不限</span>";
                         $("#district").html(str);
                         $.each(data, function (index, content) {
-                            count++;
-                            if (count > 14) {
-                                $("#district").append("<br/>");
-                                count = 0;
-                            }
-                            $("<span districtid='"+content.districtId+"'>" + content.districtName + "</span>").on("click", function () {
-                                $(this).addClass("active").siblings().removeClass("active");
-                            }).appendTo($("#district"));
+                            str += "<span districtid='" + content.districtId + "'>" + content.districtName + "</span>"
+                        });
+                        $("#district").html(str);
+                        $("#district span").on("click", function () {
+                            $(this).addClass("active").siblings().removeClass("active");
                         });
                     }
                 });
@@ -130,44 +130,44 @@ $(window).on("resize",function () {
         });
 //搜索按钮
         $("#JSearch").on("click", function () {
-            var searchData={
-                "searchText":$("#searchText").val(),
-                "cityId":$("#cities i").attr("cityid"),
-                "selectType":$(".kindType span").filter(".active").attr("typeValue")
+            var searchData = {
+                "searchText": $("#searchText").val(),
+                "cityId": $("#cities i").attr("cityid"),
+                "selectType": $(".kindType span").filter(".active").attr("typeValue")
             }
-            if(searchData.cityId=="-1"){
-                searchData.districtId="0";
-            }else{
-                searchData.districtId=$("#district span").filter(".active").attr("districtid");
+            if (searchData.cityId == "0") {
+                searchData.districtId = "0";
+            } else {
+                searchData.districtId = $("#district span").filter(".active").attr("districtid");
             }
             $.ajax({
-                type:"POST",
-                url:"/govAndSch/getSearchGovAndSch.json",
-                data:searchData
+                type: "POST",
+                url: "/govAndSch/getSearchGovAndSch.json",
+                data: searchData
             }).done(function (data) {
                 $("#filter-content tbody").html("");
-                if(data.success){
-                    var array=data.result;
-                    var str=[];
-                    for(var i=0;i<array.length;i++){
+                $("#filter-content").next().html("");
+                if (data.success) {
+                    var array = data.result;
+                    var str = [];
+                    for (var i = 0; i < array.length; i++) {
                         str.push("<tr>");
-                        str.push("<td>"+array[i].id+"</td>");
-                        str.push("<td>"+array[i].name+"</td>");
-                        str.push("<td>"+array[i].type+"</td>");
-                        str.push("<td>"+array[i].address+"</td>");
-                        str.push("<td>"+array[i].telephone+"</td>");
-                        str.push("<td>"+array[i].reTrends+"</td>");
-                        str.push("<td>"+array[i].noTrends+"</td>");
+                        str.push("<td>" + array[i].id + "</td>");
+                        str.push("<td>" + array[i].name + "</td>");
+                        str.push("<td>" + array[i].type + "</td>");
+                        str.push("<td>" + array[i].address + "</td>");
+                        str.push("<td>" + array[i].telephone + "</td>");
+                        str.push("<td>" + array[i].reTrends + "</td>");
+                        str.push("<td>" + array[i].noTrends + "</td>");
                         str.push("<td>" +
-                                "<span class='delete'>删除</span>" +
-                                "<span class='view'>查看</span>" +
-                                "</td>");
+                            "<span class='delete'>删除</span>|" +
+                            "<span class='view'>查看</span>" +
+                            "</td>");
                         str.push("</tr>");
                     }
                     $("#filter-content tbody").html(str.join(""));
-                }else{
-//                    alert(data.msg);
-                    $("#filter-content").after("<p>"+data.msg+"</p>");
+                } else {
+                    $("#filter-content").after("<p>" + data.msg + "</p>");
                 }
             });
         });

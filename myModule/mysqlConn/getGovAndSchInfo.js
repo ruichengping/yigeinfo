@@ -73,7 +73,7 @@ function searchThirdParty(searchText,cityId,districtId,type,callback) {
                 if(obj.length==0){
                     str="SELECT * FROM governmentAndSchool";
                 }else{
-                    str.push("SELECT * FROM governmentandschool WHERE 1=1");
+                    str.push("SELECT * FROM governmentAndSchool WHERE 1=1");
                     for(attr in obj){
                         str.push(attr+"='"+obj[attr]+"'");
                     }

@@ -32,7 +32,6 @@ $("#searchBtn").on("click",function () {
         url:"/job/searchJob",
         data:postData
     }).done(function (data) {
-        console.log(data);
         if(data.success){
             var array=data.result;
             var htmlStr="";
@@ -61,7 +60,7 @@ $("#searchBtn").on("click",function () {
                         +"</a>"
                         +"</li>"
             }
-            $("#jobFromFilter ul").html(htmlStr);
+            $("#jobFromFilter").html("<ul>"+htmlStr+"</ul>");
         }else{
             $("#jobFromFilter").html("<p style='text-align: center'>"+data.msg+"</p>");
         }

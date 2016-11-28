@@ -34,7 +34,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="filterItem">
+                    <div class="filterItem" id="jobExperience">
                         <strong>工作经验：</strong>
                         <span class="active" level="0">不限</span>
                         <span level="1">应届毕业生</span>
@@ -45,9 +45,9 @@
                     </div>
                 </li>
                 <li>
-                    <div class="filterItem">
+                    <div class="filterItem" id="educationLevel">
                         <strong>最高学历：</strong>
-                        <span class="active">不限</span>
+                        <span class="active" level="0">不限</span>
                         <span level="1"></span>
                         <span level="2">大专</span>
                         <span level="3">本科</span>
@@ -57,7 +57,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="filterItem">
+                    <div class="filterItem" id="isTest">
                         <strong>有无测评：</strong>
                         <span class="active" level="0">不限</span>
                         <span level="1">有</span>
@@ -65,7 +65,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="filterItem">
+                    <div class="filterItem" id="jobIntension">
                         <strong>求职职位：</strong>
                         <span class="active" level="0">不限</span>
                         <span level="1">技术</span>
@@ -121,6 +121,7 @@
 </article>
 </body>
 <script src="/javascripts/jquery-3.1.1.min.js"></script>
+<script src="/javascripts/cvData/cvData.js"></script>
 <script>
     $(function () {
         //设置内容区域的高度
@@ -138,7 +139,6 @@
             });
         });
         $("#cities span").on("click",function () {
-            console.log($(this).html());
             if($(this).html()=="不限"){
                 $("#district").hide();
             }else{
@@ -154,13 +154,7 @@
                         var str="<strong>行政区：</strong><span districtId='0' class='active'>不限</span>";
                         $("#district").html(str);
                         $.each(data,function (index,content) {
-                            count++;
-                            if(count>14){
-                                $("#district").append("<br/>");
-                                count=0;
-                            }
                             str+="<span districtId='"+content.districtId+"'>"+content.districtName+"</span>";
-
                         });
                         $("#district").html(str);
                         $("#district span").on("click",function () {

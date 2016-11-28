@@ -93,7 +93,7 @@
                     <strong>月薪：</strong>
                     <select id="salaryLevel">
                         <%for(var i=0;i<salary.length;i++){%>
-                        <option value=<%=salary[i].salaryId%>><%=salary[i].salaryName%></option>
+                        <option value=<%=salary[i].id%>><%=salary[i].name%></option>
                         <%}%>
                     </select>
                 </label>
@@ -181,11 +181,6 @@
                         var str="<strong>行政区：</strong><span districtId='0' class='active'>不限</span>";
                         $("#district").html(str);
                         $.each(data,function (index,content) {
-                            count++;
-                            if(count>14){
-                                $("#district").append("<br/>");
-                                count=0;
-                            }
                             str+="<span districtId='"+content.districtId+"'>"+content.districtName+"</span>";
                         });
                         $("#district").html(str);

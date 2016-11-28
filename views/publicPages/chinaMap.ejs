@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/plugin/map/SyntaxHighlighter.css">
+
+<div class="items">
+    <a href="javascript:;" class="fold"></a>
+    <div class="itemCon">
+        <div id="ChinaMap" style="margin: 0 auto;"></div>
+    </div>
+</div>
+<script src="/javascripts/jquery-3.1.1.min.js"></script>
+<script src="/plugin/map/map.js"></script>
+<script src="/plugin/map/chinaMapConfig.js"></script>
+<script src="/plugin/map/raphael-min.js"></script>
+<script src="/plugin/map/SyntaxHighlighter.js"></script>
+<script>
+    $('#ChinaMap').SVGMap({
+        mapName: 'china',
+        mapWidth:678,
+        mapHeight:552,
+    });
+</script>

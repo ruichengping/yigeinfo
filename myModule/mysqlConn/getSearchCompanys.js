@@ -35,11 +35,14 @@ function getSearchCompany(searchCompanyModel,callback) {
         if(err){
             console.log("POOL ==> " + err);
         }else{
-           conn.query("SELECT * FROM companyinfo where "+array.join(" AND "),function (err,searchResult) {
+           conn.query("SELECT * FROM companyInfo WHERE "+array.join(" AND "),function (err,searchResult) {
               if(err){
                   throw err;
               }else{
                   var indexCount=[];
+                  if(searchResult.length==0){
+                      callback(searchResult);
+                  }
                   for(var i=0;i<searchResult.length;i++){
                       stepControler.Step(function () {
                           this.step(i);

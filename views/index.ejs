@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>首页</title>
     <link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
-    <link rel='stylesheet' href='/stylesheets/index.css' >
-  </head>
-  <style>
-    #content_index{
-      background: #F4F8FB;
+    <link rel='stylesheet' href='/stylesheets/index.css'>
+</head>
+<style>
+    #content_index {
+        background: #F4F8FB;
     }
-  </style>
-  <body>
-    <%- include publicPages/header.ejs%>
-    <article>
-      <%-include publicPages/nav.ejs %>
-      <div id="content_index">首页</div>
-    </article>
-  </body>
-<script src="/javascripts/jquery-3.1.1.min.js"></script>
-<script src="/javascripts/nav.js"></script>
+</style>
+<body>
+<%- include publicPages/header.ejs %>
+<article>
+    <%- include publicPages/nav.ejs %>
+    <div id="content_index">
+        <ul id="newInfo" class="clearfix">
+            <li class="newUserNum">
+                <div>
+                    <img src="/images/jobSeeker.png" width="20" height="50"/>
+                </div>
+            </li>
+            <li class="newCompanyNum">
+                <div></div>
+            </li>
+            <li class="newCvData">
+                <div></div>
+            </li>
+            <li class="newThirdParty">
+                <div>
+            </li>
+        </ul>
+        <%- include publicPages/chinaMap.ejs%>
+    </div>
+</article>
+</body>
 <script>
-  $(function () {
-    $("nav ul li:eq(0) a").addClass("contentPage").on("mouseover",function () {
-      $(this).css("color","#000");
+    $(function () {
+        $//设置内容区域的高度
+        $("#content_index").height($(window).height() - 60);
+        $(window).on("resize", function () {
+            $("#content_index").height($(window).height() - 60);
+        });
     });
-    $("#content_index").height($(window).height()-81);
-  });
 </script>
 </html>

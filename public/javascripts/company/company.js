@@ -44,7 +44,7 @@ $("#searchBtn").on("click",function () {
                         +"</div>"
                         +"</li>";
             }
-            $("#companyFromFilter ul").html(str);
+            $("#companyFromFilter").html("<ul>"+str+"</ul>");
        }else{
            $("#companyFromFilter").html("<p style='text-align: center;'>"+data.msg+"</p>");
        }

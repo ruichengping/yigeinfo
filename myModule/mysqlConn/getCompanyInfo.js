@@ -8,7 +8,7 @@ function getAllCompanyInfo(callback) {
         if(err){
             console.log("POOL ==> " + err);
         }else{
-            conn.query("SELECT * FROM companyinfo",function (err,result) {
+            conn.query("SELECT * FROM companyInfo",function (err,result) {
                 if(err){
                     throw err;
                 }else{
