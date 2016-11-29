@@ -19,6 +19,11 @@
         </div>
         <button class="btn btn-secondary radius" id="addFile">添加图片</button>
         <button class="btn btn-success radius" id="uploadFile">上传图片</button>
+        <div>
+            <%for(var i=0;i<urlData.length;i++){%>
+            <img src="<%=urlData[i].url%>" width="80px" height="120px"/>
+            <%}%>
+        </div>
     </div>
 </article>
 </body>
