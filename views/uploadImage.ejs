@@ -3,6 +3,7 @@
 <head>
     <title>上传图片</title>
     <link rel="stylesheet" href="/stylesheets/uploadImage.css">
+    <link rel="stylesheet" href="/stylesheets/fresco/fresco.css">
 </head>
 <style>
     #content_company{
@@ -14,63 +15,28 @@
 <article>
     <%-include publicPages/nav.ejs %>
     <div id="content_uploadImage">
-        <div id="uploadArea">
-
-        </div>
+        <ul id="uploadArea">
+            <li class="tips">
+                <img src="/images/addFileInfo.png" alt="tipImage" width="120px" height="120px"/>
+                <br>
+                <span>拖动图片到此处</span>
+            </li>
+        </ul>
         <button class="btn btn-secondary radius" id="addFile">添加图片</button>
         <button class="btn btn-success radius" id="uploadFile">上传图片</button>
-        <div>
+        <ul class="img_Content">
             <%for(var i=0;i<urlData.length;i++){%>
-            <img src="<%=urlData[i].url%>" width="80px" height="120px"/>
+            <li class="img_ContentItem">
+                <a href="<%=urlData[i].url%>" class='fresco'
+                   data-fresco-group='example'><img src="<%=urlData[i].url%>" height="120px"/></a>
+                <div class="copy">复制</div>
+            </li>
             <%}%>
-        </div>
+        </ul>
     </div>
 </article>
 </body>
 </html>
+<script src="/plugin/fresco/fresco.js"></script>
 <script src="/javascripts/plupload.full.min.js"></script>
-<script>
-    //设置内容区域的高度
-    $("#content_uploadImage").height($(window).height()-60);
-    $(window).on("resize",function () {
-        $("#content_uploadImage").height($(window).height()-60);
-    });
-    $("#fileSelector").on("change",function (e) {
-       var files= e.target.files||e.dataTransfer.files;
-       console.log(files);
-        if(window.FileReader){
-            var reader=new FileReader();
-            reader.onload=function (e) {
-                $("#imageView").append("<img src='"+e.target.result+"' width='60px' height='60px'/>")
-            }
-            reader.readAsDataURL(files[0]);
-        }
-    });
-    bindUpload("addFile","/uploadImage/ajaxImage","uploadArea");
-    function bindUpload(id,url,dragArea) {
-        var base_config={
-            runtimes: 'html5,flash,silverlight,html4',//上传插件初始化选用那种方式的优先级顺序，如果第一个初始化失败就走第二个，以此类推
-            url:url,//上传图片的地址
-            max_file_size:'10mb',//上传文件的最大的长度
-            chunk_size:'5mb',//当上传文件大于服务器接收文件大小限制的时候，可以分多次请求发给服务器
-            filters:[
-                {title: "Image files", extensions: "jpg,png,jpeg,gif"}
-            ],
-            rename:false,//是否重命名
-            drop_element:dragArea
-        }
-        var config=$.extend(true,{},base_config,{
-            browse_button:id,
-            init:{
-                FilesAdded:function (uploader,files) {
-                    uploader.start();
-                },
-                FileUploaded:function (uploader,files,result) {
-
-                }
-            }
-        });
-        window._uploader=new plupload.Uploader(config);
-        window._uploader.init();
-    }
-</script>
+<script src="/javascripts/uploadImage/uploadImage.js"></script>

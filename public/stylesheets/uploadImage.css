@@ -21,6 +21,51 @@ body,article{
     height: 300px;
     border: 1px dashed #777777;
 }
-#addFile{
+#uploadArea span{
+    font-size: 30px;
+    color: #cccccc;
+}
+#uploadArea li{
+    position: relative;
+    width: 100px;
+    float: left;
+    margin-left: 10px;
+}
+.deleteImg{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    display: none;
+    background:#DD514C ;
+    width: 100%;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+.tips{
     display: table-cell;
+    width: 100% !important;
+    height: 100%;
+    margin-top: 70px;
+    text-align: center;
+}
+.img_Content li{
+    float: left;
+    margin-left: 4px;
+    position: relative;
+    margin-top: 12px;
+}
+.copy{
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #E1FFFF;
+    color: #333;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: pointer;
 }
