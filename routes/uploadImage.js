@@ -26,12 +26,9 @@ router.post("/ajaxImage",function (req,res) {
         //文件信息在req.file或者req.files中显示。
         var urlArray=[];
         for(var i=0;i<req.files.length;i++){
-            console.log(req.files[i]);
-           var url=req.files[i].path.split("/");
-           url.shift();
-           urlArray.push(url.join("/"));
+           var url="uploadImages/"+req.files[i].filename;
+           urlArray.push(url);
         }
-        console.log(urlArray);
         insertUrl.insertResourcesUrl(urlArray,function (result) {
            if(result.affectedRows==req.files.length){
                res.send({
