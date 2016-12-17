@@ -5,7 +5,7 @@ var express=require("express");
 var muilter=require("../myModule/CommonTools/multerUtil");
 var insertUrl=require("../myModule/mysqlConn/resourcesUrl");
 var router=express.Router();
-var upload=muilter.array('file',10);
+var upload=muilter.array('file');
 var urlData=[];
 router.get("/",function (req,res,next) {
    insertUrl.getAllResourcesUrl(function (result) {

@@ -1,14 +1,14 @@
 /**
  * Created by rcp1 on 2016/10/1.
  */
-var express=require("express");
-var router=express.Router();
+const express=require("express");
+const router=express.Router();
 //获取城市数据模块
-var cityData=require("../myModule/mysqlConn/getOtherInfo");
+const cityData=require("../myModule/mysqlConn/getOtherInfo");
 //获取第三信息模块
-var getGovAndSchInfo=require("../myModule/mysqlConn/getGovAndSchInfo");
+const getGovAndSchInfo=require("../myModule/mysqlConn/getGovAndSchInfo");
 //获取第三方简易信息模型
-var dataSimppleModel=require("../myModule/DataModel/thirdPartySimpleModel");
+const dataSimppleModel=require("../myModule/DataModel/thirdPartySimpleModel");
 var cityDatas=null;
 var allGovAndSchInfo=null;
 

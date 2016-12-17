@@ -4,7 +4,10 @@
 $("#searchBtn").on("click",function () {
    var searchText=$("#searchText").val();
    var city=$("#cities i").attr("cityId");
-   var district=$("#district span").filter(".active").attr("districtId");
+    var district=0;
+   if(city!=0){
+      district=$("#district span").filter(".active").attr("districtId");
+   }
    var jobExperience=$("#jobExperience span").filter(".active").attr("level");
    var educationLevel=$("#educationLevel span").filter(".active").attr("level");
    var isTest=$("#isTest span").filter(".active").attr("level");

@@ -60,6 +60,7 @@ function getSearchCompany(searchCompanyModel,callback) {
                           indexCount.push(entire[0]);
                           searchResult[entire[0]].cityName=entire[1];
                           searchResult[entire[0]].districtName=entire[2];
+                          searchResult[entire[0]].currentLevel=commonData.getFinancingStageById(searchResult[entire[0]].currentLevel);
                           searchResult[entire[0]].industryField=commonData.getIndustryFieldByArray(commonTool.toArray(searchResult[entire[0]].industryField)).join(",");
                           if(indexCount.length==searchResult.length){
                               callback(searchResult);
@@ -72,8 +73,4 @@ function getSearchCompany(searchCompanyModel,callback) {
         }
     });
 }
-// var searchCompany=new model.SearchCompanyModel("",3,34,0,1);
-// getSearchCompany(searchCompany,function (result) {
-//    console.log(result);
-// });
 module.exports.getSearchCompany=getSearchCompany;

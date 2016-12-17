@@ -50,7 +50,7 @@ function searchThirdParty(searchText,cityId,districtId,type,callback) {
         "districtId":districtId,
         "type":type
     }
-    if(obj.cityId==-1){
+    if(obj.cityId==0){
         delete obj.cityId;
     }
     if(obj.districtId=="0"){
@@ -65,7 +65,7 @@ function searchThirdParty(searchText,cityId,districtId,type,callback) {
         }else{
             var str=[];
             if(searchText!=""){
-                str.push("SELECT * FROM governmentandschool WHERE name like '%"+searchText+"%'");
+                str.push("SELECT * FROM governmentAndSchool WHERE name like '%"+searchText+"%'");
                 for(attr in obj){
                     str.push(attr+"='"+obj[attr]+"'");
                 }

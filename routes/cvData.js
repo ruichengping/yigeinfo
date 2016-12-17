@@ -1,26 +1,26 @@
 /**
  * Created by rcp1 on 2016/10/1.
  */
-var express=require("express");
-var router=express.Router();
+const express=require("express");
+const router=express.Router();
 //获取城市数据模块
-var cityData=require("../myModule/mysqlConn/getOtherInfo");
+const cityData=require("../myModule/mysqlConn/getOtherInfo");
 //获取简历信息模块
-var cvDataConnect=require("../myModule/mysqlConn/getCvDataInfo");
+const cvDataConnect=require("../myModule/mysqlConn/getCvDataInfo");
 //获取同步控制模块
-var stepControler=require("../myModule/CommonTools/Step");
+const stepControler=require("../myModule/CommonTools/Step");
 //获取简历基本信息模型
-var dataModel=require("../myModule/DataModel/cvDataSimpleModel");
+const dataModel=require("../myModule/DataModel/cvDataSimpleModel");
 //获取常用数据模块
-var commonData=require("../myModule/commonData/commonData");
+const commonData=require("../myModule/commonData/commonData");
 //获取获取其他信息模块
-var otherInfo=require("../myModule/mysqlConn/getOtherInfo");
+const otherInfo=require("../myModule/mysqlConn/getOtherInfo");
 //获取常用工具模块
-var commonTool=require("../myModule/CommonTools/commonTool");
+const commonTool=require("../myModule/CommonTools/commonTool");
 //获取搜索简历模型
-var searchModel=require("../myModule/DataModel/searchCvDataModel");
+const searchModel=require("../myModule/DataModel/searchCvDataModel");
 //获取搜索简历模块
-var searchCvData=require("../myModule/mysqlConn/getSearchCvData");
+const searchCvData=require("../myModule/mysqlConn/getSearchCvData");
 var cityDatas=null;
 var cvDataInfo=[];
 router.get("/",function (req,res,next){
