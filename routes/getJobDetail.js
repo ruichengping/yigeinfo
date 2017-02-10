@@ -1,14 +1,15 @@
 /**
  * Created by user on 16/10/13.
  */
-var express=require("express");
-var url=require("url");
-var path=require("path");
-var router=express.Router();
-var jobDetail=require("../myModule/mysqlConn/getJobDetail");
-var otherInfo=require("../myModule/mysqlConn/getOtherInfo");
-var commonTool=require("../myModule/CommonTools/commonTool");
-var step=require("../myModule/CommonTools/Step");
+const express=require("express");
+const url=require("url");
+const path=require("path");
+const router=express.Router();
+const jobDetail=require("../myModule/mysqlConn/getJobDetail");
+const otherInfo=require("../myModule/mysqlConn/getOtherInfo");
+const commonTool=require("../myModule/CommonTools/commonTool");
+const step=require("../myModule/CommonTools/Step");
+const commonData=require("../myModule/commonData/commonData");
 var id;
 var jobData={};
 router.get("/:id"+".html",function (req,res) {
@@ -41,18 +42,10 @@ router.get("/:id"+".html",function (req,res) {
             otherInfo.getCompanyName(jobData.companyId,function (name) {
                jobData.companyName=name;
             });
-            otherInfo.getJobNature(jobData.jobNatureId,function (jobNature) {
-               jobData.jobNatureName=jobNature;
-            });
-            otherInfo.getSalary(jobData.salaryId,function (salary) {
-               jobData.salary=salary;
-            });
-            otherInfo.getEducation(jobData.educationId,function (education) {
-               jobData.education=education;
-            });
-            otherInfo.getJobExperience(jobData.jobExperienceId,function (jobExperience) {
-               jobData.jobExperience=jobExperience;
-            });
+            jobData.jobNatureName=commonData.getJobNatureById(jobData.jobNatureId);
+            jobData.salary=commonData.getSalaryNameById(jobData.salaryId);
+            jobData.education=commonData.getEducationBackgroundById(jobData.educationId);
+            jobData.jobExperience=commonData.getJobExperienceById(jobData.jobExperienceId);
             otherInfo.getCityName(jobData.cityId,function (cityName) {
                jobData.cityName=cityName;
             });
@@ -71,16 +64,10 @@ router.get("/:id"+".html",function (req,res) {
                var company=result;
                jobData.homepage=company.homePage;
                jobData.logoImage=company.logoImage;
-               otherInfo.getEmployeeNum(company.employeeNum,function (number) {
-                  jobData.employeeNum=number;
-               });
-               otherInfo.getIndustryField(company.industryField,function (industryField) {
-                  jobData.industryField=industryField;
-               });
-               otherInfo.getFinancingScale(company.currentLevel,function (level) {
-                  jobData.currentLevel=level;
-                  that.step();
-               });
+               jobData.employeeNum=commonData.getEmployeeNumById(company.employeeNum);
+               jobData.industryField=commonData.getIndustryFieldByArray(company.industryField);
+               jobData.currentLevel=commonData.getFinancingStageById(company.currentLevel);
+               that.step();
             });
          });
       });
@@ -89,6 +76,5 @@ router.get("/:id"+".html",function (req,res) {
          "jobData":jobData
       });
    });
-
 });
 module.exports=router;
