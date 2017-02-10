@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>政府/学校</title>
-    <link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/govAndSch.css">
 </head>
 <style>
@@ -27,8 +25,8 @@
                 <li>
                     <div id="cities" class="filterItem">
                         <strong>地点：</strong>
-                        <i cityid="-1">不限</i>
-                        <span class="active" cityid="-1">不限</span>
+                        <i cityid="0">不限</i>
+                        <span class="active" cityid="0">不限</span>
                         <%for(var i=0;i<cityDatas.length;i++){%>
                         <span cityid=<%=cityDatas[i].cityId%>><%=cityDatas[i].cityName%></span>
                         <%}%>

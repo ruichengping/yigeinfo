@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>简历</title>
-    <link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/cvData.css"/>
 </head>
 <body>
@@ -22,7 +20,7 @@
                 <li>
                     <div id="cities" class="filterItem">
                         <strong>工作地点：</strong>
-                        <i cityId="0">北京</i>>
+                        <i cityId="0">不限</i>>
                         <span class="active">不限</span>
                         <% for(var i = 0;i < cityDatas.length;i++){ %>
                         <span cityId=<%= cityDatas[i].cityId %>><%= cityDatas[i].cityName %></span>

@@ -1,22 +1,22 @@
 /**
  * Created by rcp1 on 2016/10/1.
  */
-var express=require("express");
-var router=express.Router();
+const express=require("express");
+const router=express.Router();
 //获取城市数据模块
-var cityData=require("../myModule/mysqlConn/getOtherInfo");
+const cityData=require("../myModule/mysqlConn/getOtherInfo");
 //获取公司信息模块
-var companyInfo=require("../myModule/mysqlConn/getCompanyInfo");
+const companyInfo=require("../myModule/mysqlConn/getCompanyInfo");
 //获取常用数据模块
-var commonData=require("../myModule/commonData/commonData");
+const commonData=require("../myModule/commonData/commonData");
 //获取常用工具模块
-var commonTool=require("../myModule/CommonTools/commonTool");
+const commonTool=require("../myModule/CommonTools/commonTool");
 //获取其他信息模块
-var otherInfo=require("../myModule/mysqlConn/getOtherInfo");
+const otherInfo=require("../myModule/mysqlConn/getOtherInfo");
 //同步控制工具
-var stepController=require("../myModule/CommonTools/Step");
+const stepController=require("../myModule/CommonTools/Step");
 //获取搜索公司信息模块
-var searchCompanyInfo=require("../myModule/mysqlConn/getSearchCompanys");
+const searchCompanyInfo=require("../myModule/mysqlConn/getSearchCompanys");
 var cityDatas;
 var companys;
 router.get("/",function (req,res,next) {

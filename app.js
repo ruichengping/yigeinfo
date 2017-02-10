@@ -16,6 +16,7 @@ var loginout=require('./routes/loginout');
 var cityData=require('./routes/getCitys');
 var jobDetail=require("./routes/getJobDetail");
 var companyDetail=require("./routes/getCompanyDetail");
+var uploadImage=require("./routes/uploadImage");
 
 var app = express();
 
@@ -52,6 +53,7 @@ app.use('/loginout',loginout);
 app.use('/getCities',cityData);
 app.use("/getJobDetail",jobDetail);
 app.use("/getCompanyDetail",companyDetail);
+app.use("/uploadImage",uploadImage);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

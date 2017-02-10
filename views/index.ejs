@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>首页</title>
-    <link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
     <link rel='stylesheet' href='/stylesheets/index.css'>
 </head>
 <style>
@@ -17,24 +16,44 @@
     <div id="content_index">
         <ul id="newInfo" class="clearfix">
             <li class="newUserNum">
-                <div>
-                    <img src="/images/jobSeeker.png" width="20" height="50"/>
+                <div class="imageLabel">
+                    <img src="/images/newJobSeeker.png" alt="新增求职者"/>
                 </div>
+                <p class="newTitle">新增求职者</p>
+                <p class="newNum">36</p>
             </li>
             <li class="newCompanyNum">
-                <div></div>
+                <div class="imageLabel">
+                    <img src="/images/newCompany.png" alt="新增招聘方"/>
+                </div>
+                <p class="newTitle">新增招聘方</p>
+                <p class="newNum">86</p>
             </li>
             <li class="newCvData">
-                <div></div>
+                <div class="imageLabel">
+                    <img src="/images/newCvData.png" alt="新增简历数"/>
+                </div>
+                <p class="newTitle">新增简历数</p>
+                <p class="newNum">36</p>
             </li>
             <li class="newThirdParty">
-                <div>
+                <div class="imageLabel">
+                    <img src="/images/newThirdParty.png" alt="新增第三方"/>
+                </div>
+                <p class="newTitle">新增第三方</p>
+                <p class="newNum">46</p>
             </li>
         </ul>
+        <h3 id="totalNum">4652000</h3>
         <%- include publicPages/chinaMap.ejs%>
+        <!--新增数量走势图-->
+        <div id="numTredChart"></div>
+        <!--转化率-->
+        <div id="interviewRate"></div>
     </div>
 </article>
 </body>
+<script src="/javascripts/echarts.js"></script>
 <script>
     $(function () {
         $//设置内容区域的高度
@@ -42,6 +61,93 @@
         $(window).on("resize", function () {
             $("#content_index").height($(window).height() - 60);
         });
+//新增数量走势图
+        var numTredChart=echarts.init(document.getElementById("numTredChart"));
+        var option_numTredChart = {
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['求职者','招聘方','简历','第三方']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ['周一','周二','周三','周四','周五','周六','周日']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'求职者',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'招聘方',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name:'简历',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name:'第三方',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[320, 332, 301, 334, 390, 330, 320]
+                },
+
+            ]
+        };
+        numTredChart.setOption(option_numTredChart);
+//转化率
+        var interviewRate=echarts.init(document.getElementById("interviewRate"));
+        var option_interviewRate={
+            tooltip : {
+                formatter: "{a} <br/>{b} : {c}%"
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    detail: {formatter:'{value}%'},
+                    data: [{value: 50}]
+                }
+            ]
+        };
+        interviewRate.setOption(option_interviewRate);
     });
 </script>
 </html>
