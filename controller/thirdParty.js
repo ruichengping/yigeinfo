@@ -24,7 +24,8 @@ router.get("/",function (req,res,next) {
         next();
     });
 },function (req,res) {
-    res.render("govAndSch",{
+    res.render("thirdParty/thirdParty",{
+        "activePage":"thirdParty",
         "cityDatas":cityDatas,
         "allGovAndSchInfo":allGovAndSchInfo
     });

@@ -1,0 +1,48 @@
+.icon-home{
+    display: inline-block;
+    background: url("/images/nav_icon/icon-home.png");
+    background-size:14px 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+a:hover .icon-home,.active .icon-home{
+    background-image: url("/images/nav_icon/icon-home-active.png");
+}
+.icon-job{
+    display: inline-block;
+    background: url("/images/nav_icon/icon-job.png");
+    background-size:12px 12px;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.icon-resume{
+    display: inline-block;
+    background: url("/images/nav_icon/icon-resume.png");
+    background-size:14px 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.icon-company{
+    display: inline-block;
+    background: url("/images/nav_icon/icon-company.png");
+    background-size:14px 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.icon-thirdparty{
+    display: inline-block;
+    background: url("/images/nav_icon/icon-thirdparty.png");
+    background-size:14px 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 6px;
+}

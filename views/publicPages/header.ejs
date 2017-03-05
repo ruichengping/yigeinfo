@@ -1,32 +1,9 @@
-<link rel="stylesheet" href="/stylesheets/H-ui.reset.css">
-<link rel="stylesheet" href="/stylesheets/H-ui.min.css">
-<style>
-    header{
-        background: #333333;
-        color:#FFFFFF;
-        height: 60px;
-        width: 100%;
-        line-height: 60px;
-        padding-left: 30px;
-        font-size: 26px;
-        font-family: "微软雅黑 Light";
-        position: absolute;
-        top:0;
-        left: 0;
-    }
-    #loginOut{
-        position: absolute;
-        top:10px;
-        right: 30px;
-    }
-</style>
-<header>
-    <span>易格管理端</span>
-    <input id="loginOut" class="btn btn-danger size-L radius f-18" type="button" value="登出"/>
+<header class="main-header">
+    <div class="header-left">
+        易格管理端
+    </div>
+    <div class="header-right">
+        <button id="loginOut" class="btn btn-danger size-L radius f-18" type="button">登出</button>
+    </div>
 </header>
-<script src="/javascripts/jquery-3.1.1.min.js"></script>
-<script>
-    $("#loginOut").on("click",function () {
-        location.href="/loginout";
-    });
-</script>
+

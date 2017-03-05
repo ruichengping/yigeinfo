@@ -67,7 +67,8 @@ router.get("/",function (req,res,next){
    });
 
 },function (req,res,next) {
-    res.render("cvData",{
+    res.render("resume/resume",{
+        "activePage":"resumes",
         "cityDatas":cityDatas,
         "cvDataInfo":cvDataInfo
     });

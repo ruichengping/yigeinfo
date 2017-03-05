@@ -7,20 +7,9 @@
 .clearfix{
     zoom: 1;
 }
-body,article{
-    height: 100%;
-    overflow: hidden;
-}
 #navBar li:nth-child(1) a{
     color: #000000;
     background: #FFFFFF;
-}
-#content_index{
-    background:#F4F8FB;
-    text-align: center;
-    margin-left: 160px;
-    overflow: scroll;
-    margin-top: 60px;
 }
 #newInfo{
     margin-top: 60px;

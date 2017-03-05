@@ -1,21 +1,5 @@
-body,article{
-    height: 100%;
-    overflow: hidden;
-}
-#navBar li:nth-child(5) a{
-    color: #000000;
-    background: #FFFFFF;
-}
-.active{
-    color: white;
-    background: #00B38A;
-}
-#content_govAndSch{
+#content_thirdParty{
     background:#F4F8FB;
-    text-align: center;
-    margin-left: 160px;
-    overflow: scroll;
-    margin-top: 60px;
 }
 #searchGovAndSch {
     padding-top:30px;

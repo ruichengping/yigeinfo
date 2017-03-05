@@ -2,65 +2,27 @@
 <html>
 <head>
     <title>首页</title>
+    <%- include ../publicPages/css_content.ejs %>
     <link rel='stylesheet' href='/stylesheets/index.css'>
 </head>
-<style>
-    #content_index {
-        background: #F4F8FB;
-    }
-</style>
 <body>
-<%- include publicPages/header.ejs %>
-<article>
-    <%- include publicPages/nav.ejs %>
-    <div id="content_index">
-        <ul id="newInfo" class="clearfix">
-            <li class="newUserNum">
-                <div class="imageLabel">
-                    <img src="/images/newJobSeeker.png" alt="新增求职者"/>
-                </div>
-                <p class="newTitle">新增求职者</p>
-                <p class="newNum">36</p>
-            </li>
-            <li class="newCompanyNum">
-                <div class="imageLabel">
-                    <img src="/images/newCompany.png" alt="新增招聘方"/>
-                </div>
-                <p class="newTitle">新增招聘方</p>
-                <p class="newNum">86</p>
-            </li>
-            <li class="newCvData">
-                <div class="imageLabel">
-                    <img src="/images/newCvData.png" alt="新增简历数"/>
-                </div>
-                <p class="newTitle">新增简历数</p>
-                <p class="newNum">36</p>
-            </li>
-            <li class="newThirdParty">
-                <div class="imageLabel">
-                    <img src="/images/newThirdParty.png" alt="新增第三方"/>
-                </div>
-                <p class="newTitle">新增第三方</p>
-                <p class="newNum">46</p>
-            </li>
-        </ul>
-        <h3 id="totalNum">4652000</h3>
-        <%- include publicPages/chinaMap.ejs%>
-        <!--新增数量走势图-->
-        <div id="numTredChart"></div>
-        <!--转化率-->
-        <div id="interviewRate"></div>
+<!--头部区域-->
+<%- include ../publicPages/header.ejs %>
+<!--主体区域-->
+<div id="main-body">
+    <!--导航栏-->
+    <%- include ../publicPages/nav.ejs %>
+    <!--文本区域-->
+    <div id="content-wrapper">
+
     </div>
-</article>
+</div>
 </body>
+<!--JS-->
+<%- include ../publicPages/script_content.ejs %>
 <script src="/javascripts/echarts.js"></script>
 <script>
     $(function () {
-        $//设置内容区域的高度
-        $("#content_index").height($(window).height() - 60);
-        $(window).on("resize", function () {
-            $("#content_index").height($(window).height() - 60);
-        });
 //新增数量走势图
         var numTredChart=echarts.init(document.getElementById("numTredChart"));
         var option_numTredChart = {

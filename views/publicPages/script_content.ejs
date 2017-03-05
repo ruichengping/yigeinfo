@@ -1,0 +1,18 @@
+<script src="/javascripts/jquery-3.1.1.min.js"></script>
+<script>
+    $("#loginOut").on("click",function () {
+        location.href="/loginout";
+    });
+    var activePage=$(".activePage").val();
+    if(activePage=="home"){
+        $(".nav-link:eq(0)").addClass("active");
+    }else if(activePage=="jobs"){
+        $(".nav-link:eq(1)").addClass("active");
+    }else if(activePage=="resumes"){
+        $(".nav-link:eq(2)").addClass("active");
+    }else if(activePage=="company"){
+        $(".nav-link:eq(3)").addClass("active");
+    }else if(activePage=="thirdParty"){
+        $(".nav-link:eq(4)").addClass("active");
+    }
+</script>

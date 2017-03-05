@@ -5,18 +5,32 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session=require('express-session');
+//日志模块
+var log4js = require('log4js');
+log4js.configure({
+    appenders: [
+        { type: 'console' }, //控制台输出
+        {
+            type: 'file', //文件输出
+            filename: 'logs/access.log',
+            maxLogSize: 1024,
+            backups:3,
+            category: 'normal'
+        }
+    ]
+});
+var index = require('./controller/index');
+var login = require('./controller/login');
+var jobs=require("./controller/jobs");
+var company=require("./controller/company");
+var resume=require("./controller/resume");
+var thirdParty=require("./controller/thirdParty");
+var loginout=require('./controller/loginout');
+var cityData=require('./controller/getCitys');
+var jobDetail=require("./controller/getJobDetail");
+var companyDetail=require("./controller/getCompanyDetail");
+var uploadImage=require("./controller/uploadImage");
 
-var index = require('./routes/index');
-var login = require('./routes/login');
-var job=require("./routes/job");
-var company=require("./routes/company");
-var cvData=require("./routes/cvData");
-var govAndSch=require("./routes/govAndSch");
-var loginout=require('./routes/loginout');
-var cityData=require('./routes/getCitys');
-var jobDetail=require("./routes/getJobDetail");
-var companyDetail=require("./routes/getCompanyDetail");
-var uploadImage=require("./routes/uploadImage");
 
 var app = express();
 
@@ -35,6 +49,10 @@ app.use(session({
   resave:false,
   saveUninitialized:true
 }));
+//日志
+var logger = log4js.getLogger('normal');
+logger.setLevel('INFO');
+app.use(log4js.connectLogger(logger, {level:log4js.levels.INFO}));
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -45,10 +63,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/login', login);
-app.use('/job',job);
+app.use('/jobs',jobs);
 app.use('/company',company);
-app.use('/cvData',cvData);
-app.use('/govAndSch',govAndSch);
+app.use('/resume',resume);
+app.use('/thirdParty',thirdParty);
 app.use('/loginout',loginout);
 app.use('/getCities',cityData);
 app.use("/getJobDetail",jobDetail);

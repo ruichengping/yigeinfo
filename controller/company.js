@@ -56,7 +56,8 @@ router.get("/",function (req,res,next) {
         });
     }
 },function (req,res) {
-    res.render("company",{
+    res.render("company/company",{
+        "activePage":"company",
         "cityDatas":cityDatas,
         "companys":companys
     });

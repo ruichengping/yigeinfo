@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>职位</title>
-    <link rel='stylesheet' href='/stylesheets/job.css' >
+    <title>职位库</title>
+    <%- include ../publicPages/css_content.ejs%>
+    <link rel='stylesheet' href='/stylesheets/job/jobs.css' >
 </head>
 <body>
-<%- include publicPages/header.ejs%>
-<article>
-    <%-include publicPages/nav.ejs %>
-    <div id="content_job">
+<!--头部区域-->
+<%- include ../publicPages/header.ejs %>
+<!--主体区域-->
+<div id="main-body">
+    <!--导航栏-->
+    <%- include ../publicPages/nav.ejs %>
+    <!--文本区域-->
+    <div id="content-wrapper">
+        <div id="content_job">
         <!--搜索框-->
         <div id="searchJob">
             <input type="text" placeholder="Java工程师" id="searchText"/>
@@ -100,60 +106,57 @@
                     <select id="jobNature">
                         <%for(var i=0;i<jobNature.length;i++){%>
                             <option value=<%=jobNature[i].id%>><%=jobNature[i].name%></option>
-                        <%}%>
-                    </select>
-                </label>
+                            <%}%>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <!--筛选出的内容-->
+            <div id="jobFromFilter">
+                <ul>
+                    <%for(var i=0;i<jobData.length;i++){%>
+                    <li class="jobItem">
+                        <div class="itemTop">
+                            <input type="hidden" class="jobId" value="<%=jobData[i].jobId%>"/>
+                            <input type="hidden" class="cityId" value="<%jobData[i].cityId%>"/>
+                            <input type="hidden" class="districtId" value="<%=jobData[i].districtId%>"/>
+                            <a class="jobName" href="/getjobDetail/<%=jobData[i].jobId%>.html"target="_blank"><%=jobData[i].jobName%>[<%=jobData[i].cityName%>/<%=jobData[i].districtName%>]</a>
+                            <span class="date"><%=jobData[i].createTime%></span>
+                            <input type="hidden" class="companyId" value="<%=jobData[i].companyId%>"/>
+                            <a class="companyName" href="#"><%=jobData[i].companyName%></a>
+                        </div>
+                        <div class="itemMiddle">
+                            <span class="salary"><%=jobData[i].salary%></span>
+                            <span class="learnBackground"><%=jobData[i].jobExperience%>/<%=jobData[i].educationBackground%></span>
+                            <span class="trade">
+                                <% for(var j = 0;j < jobData[i].industryField.length;j++){ %>
+                                <% if(j < jobData[i].industryField.length - 1){ %>
+                                <%= jobData[i].industryField[j] %>,
+                                <% }else {%>
+                                <%= jobData[i].industryField[j] %>
+                                <% }} %>
+                                /
+                                <%=jobData[i].currentLevel%></span>
+                        </div>
+                        <div class="itemBottom">
+                            <span class="drumbeate">"<%= jobData[i].jobTemptation %>"</span>
+                            <span class="jobNature"><%= jobData[i].jobNature %></span>
+                        </div>
+                        <a class="companyLogo" href="#">
+                            <img  src="<%=jobData[i].logoImage%>" width="60px" height="60px" />
+                        </a>
+                    </li>
+                    <%}%>
+                </ul>
             </div>
         </div>
-        <!--筛选出的内容-->
-        <div id="jobFromFilter">
-            <ul>
-                <%for(var i=0;i<jobData.length;i++){%>
-                <li class="jobItem">
-                    <div class="itemTop">
-                        <input type="hidden" class="jobId" value="<%=jobData[i].jobId%>"/>
-                        <input type="hidden" class="cityId" value="<%jobData[i].cityId%>"/>
-                        <input type="hidden" class="districtId" value="<%=jobData[i].districtId%>"/>
-                        <a class="jobName" href="/getjobDetail/<%=jobData[i].jobId%>.html"target="_blank"><%=jobData[i].jobName%>[<%=jobData[i].cityName%>/<%=jobData[i].districtName%>]</a>
-                        <span class="date"><%=jobData[i].createTime%></span>
-                        <input type="hidden" class="companyId" value="<%=jobData[i].companyId%>"/>
-                        <a class="companyName" href="#"><%=jobData[i].companyName%></a>
-                    </div>
-                    <div class="itemMiddle">
-                        <span class="salary"><%=jobData[i].salary%></span>
-                        <span class="learnBackground"><%=jobData[i].jobExperience%>/<%=jobData[i].educationBackground%></span>
-                        <span class="trade">
-                            <% for(var j = 0;j < jobData[i].industryField.length;j++){ %>
-                            <% if(j < jobData[i].industryField.length - 1){ %>
-                            <%= jobData[i].industryField[j] %>,
-                            <% }else {%>
-                            <%= jobData[i].industryField[j] %>
-                            <% }} %>
-                            /
-                            <%=jobData[i].currentLevel%></span>
-                    </div>
-                    <div class="itemBottom">
-                        <span class="drumbeate">"<%= jobData[i].jobTemptation %>"</span>
-                        <span class="jobNature"><%= jobData[i].jobNature %></span>
-                    </div>
-                    <a class="companyLogo" href="#">
-                        <img  src="<%=jobData[i].logoImage%>" width="60px" height="60px" />
-                    </a>
-                </li>
-                <%}%>
-            </ul>
-        </div>
     </div>
-</article>
+</div>
 </body>
-<script src="/javascripts/jquery-3.1.1.min.js"></script>
+<!--JS-->
+<%- include ../publicPages/script_content.ejs %>
 <script>
     $(function () {
-//        设置内容区域的高度
-        $("#content_job").height($(window).height()-60);
-        $(window).on("resize",function () {
-            $("#content_job").height($(window).height()-60);
-        });
         $("#filter span").each(function () {
             $(this).on("click",function () {
                 if($(this).parent().children("strong").html()=="工作地点："){

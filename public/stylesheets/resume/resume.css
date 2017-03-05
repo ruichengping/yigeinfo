@@ -1,38 +1,19 @@
-body,article{
-    height: 100%;
-    overflow: hidden;
-}
-li{
-    padding: 0;
-}
-#navBar li:nth-child(4) a{
-    color: #000000;
-    background: #FFFFFF;
-}
-.active{
-    color: white;
-    background: #00B38A;
-}
-#content_company{
+#content_cvData{
     background:#F4F8FB;
-    text-align: center;
-    margin-left: 160px;
-    overflow: scroll;
-    margin-top: 60px;
 }
-#searchCompany{
+#searchCvData{
     padding-top:60px;
     height: 120px;
     text-align: center;
 }
-#searchCompany input[type=text]{
+#searchCvData input[type=text]{
     border: 2px solid #00BCD5;
     width: 480px;
     height: 30px;
     padding: 4px 10px;
     font-size: 16px;
 }
-#searchCompany input[type=button]{
+#searchCvData input[type=button]{
     color: white;
     border-radius: 6px;
     background: #00BCD5;
@@ -84,11 +65,11 @@ li{
 #filterFoot label{
     font-weight: normal;
 }
-#companyFromFilter{
+#jobFromFilter{
     width: 1000px;
     margin: 0 auto;
 }
-.companyItem{
+.cvDataItem{
     position: relative;
     background: #FFFFFF;
     border: 1px solid #ededed;
@@ -98,67 +79,73 @@ li{
     font-size: 14px;
     color: #555555;
 }
-.companyLogo{
+.photo{
     position: absolute;
-    top:6px;
-    left: 6px;
+    top:4px;
+    left:8px;
     width: 120px;
     height: 120px;
+    border-radius: 60px;
     border: 1px solid #EDEDED;
 }
-.topItem,.middleItem,.bottomItem{
-    margin-left: 132px;
-    text-align: right;
+.name{
+    position: absolute;
+    top:0px;
+    left:138px;
+    font-size: 18px;
+}
+.salary{
+    position: absolute;
+    top:16px;
+    left:138px;
+    color:#fd5f39;
+    font-size: 18px;
 }
 .topItem{
     position: relative;
-    padding-right: 20px;
+    text-align: right;
+    padding: 0 16px 0 0;
 }
-.topItem a{
-    position: absolute;
-    top:0;
-    left:0;
-    font-size: 22px;
-    color: #333;
+.middleItem{
+    position: relative;
+    text-align: right;
+    padding: 18px 16px 18px 0;
+    font-size: 16px;
 }
-.topItem a:hover{
-    text-decoration: none;
-    color:#00b38a;
+.bottomItem{
+    margin-left: 138px;
+    text-align: right;
+    background: #fafafa;
+    color: #666;
+    line-height: 38px;
+    padding-right: 16px;
+    font-size: 16px;
 }
-.topItem span{
-    font-size: 14px;
-    margin-left: 8px;
-}
-.logo-company1{
-    background: url("/images/companylogo1.png") no-repeat;
-    background-size: 18px 18px;
-    padding-left: 20px;
-}
-.logo-company2{
+.logo-city{
     background: url("/images/companylogo2.png") no-repeat;
     background-size: 18px 18px;
     padding-left: 20px;
 }
-.logo-company3{
-    background: url("/images/companylogo3.png") no-repeat;
+.logo-jobExperienceLogo{
+    background: url("/images/jobExperienceLogo.png") no-repeat;
     background-size: 18px 18px;
     padding-left: 20px;
 }
-.middleItem{
-    padding: 18px 20px;
+.logo-education{
+    background: url("/images/educationLogo.png") no-repeat;
+    background-size: 18px 18px;
+    padding-left: 20px;
 }
-.middleItem strong{
-    font-size: 16px;
-    color: #00b38a;
-    margin-left: 12px;
+.logo-abilityTest{
+    background: url("/images/abilityTestLogo.png") no-repeat;
+    background-size: 18px 18px;
+    padding-left: 20px;
 }
-.middleItem span{
-    color: #555;
-    margin-right: 6px;
+.left-10{
+    margin-left: 10px;
 }
-.bottomItem{
-    background: #fafafa;
-    color: #666;
-    line-height: 38px;
-    padding-right: 10px;
+.sex{
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
 }
