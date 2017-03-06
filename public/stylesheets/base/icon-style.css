@@ -19,6 +19,9 @@ a:hover .icon-home,.active .icon-home{
     vertical-align: middle;
     margin-right: 6px;
 }
+a:hover .icon-job,.active .icon-job{
+    background-image: url("/images/nav_icon/icon-job-active.png");
+}
 .icon-resume{
     display: inline-block;
     background: url("/images/nav_icon/icon-resume.png");
@@ -27,6 +30,9 @@ a:hover .icon-home,.active .icon-home{
     height: 14px;
     vertical-align: middle;
     margin-right: 6px;
+}
+a:hover .icon-resume,.active .icon-resume{
+    background-image: url("/images/nav_icon/icon-resume-active.png");
 }
 .icon-company{
     display: inline-block;
@@ -37,6 +43,9 @@ a:hover .icon-home,.active .icon-home{
     vertical-align: middle;
     margin-right: 6px;
 }
+a:hover .icon-company,.active .icon-company{
+    background-image: url("/images/nav_icon/icon-company-active.png");
+}
 .icon-thirdparty{
     display: inline-block;
     background: url("/images/nav_icon/icon-thirdparty.png");
@@ -45,4 +54,7 @@ a:hover .icon-home,.active .icon-home{
     height: 14px;
     vertical-align: middle;
     margin-right: 6px;
+}
+a:hover .icon-thirdparty,.active .icon-thirdparty{
+    background-image: url("/images/nav_icon/icon-thirdparty-active.png");
 }
