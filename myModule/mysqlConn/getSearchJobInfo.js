@@ -32,7 +32,7 @@ function getSearchJobInfo(searchJobModel, callback) {
         if (err) {
             console.log("POOL ==> " + err);
         } else {
-            conn.query("SELECT * FROM jobs where " + str.join(" AND "), function (err, result) {
+            conn.query("SELECT * FROM job where " + str.join(" AND "), function (err, result) {
                 if (err) {
                     throw err;
                 } else {

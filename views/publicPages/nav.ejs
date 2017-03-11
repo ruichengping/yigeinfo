@@ -1,10 +1,24 @@
 <input type="hidden" class="activePage" value="<%=activePage%>"/>
 <nav id="nav-wrapper">
-    <ul class="nav-link-list">
-        <li><a class="nav-link" href="/"><i class="icon-home"></i>首页</a></li>
-        <li><a class="nav-link" href="/jobs"><i class="icon-job"></i>职位库</a></li>
-        <li><a class="nav-link" href="/resume"><i class="icon-resume"></i>简历库</a> </li>
-        <li><a class="nav-link" href="/company"><i class="icon-company"></i>企业管理</a></li>
-        <li><a class="nav-link" href="/thirdParty"><i class="icon-thirdparty"></i>政府/学校</a></li>
+    <ul class="layui-nav layui-nav-tree" lay-filter="demo">
+        <li class="layui-nav-item"><a href="/home.html" class="nav-item">首页</a></li>
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">档案信息库</a>
+            <dl class="layui-nav-child">
+                <dd><a class="nav-item" href="/jobList.html">职位信息库</a></dd>
+                <dd><a class="nav-item" href="/companyList.html">企业信息库</a></dd>
+                <dd><a class="nav-item" href="/resumeList.html">简历信息库</a></dd>
+                <dd><a class="nav-item" href="/thirdPartyList.html">第三方信息库</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">添加信息操作</a>
+            <dl class="layui-nav-child">
+                <dd><a class="nav-item" href="javascript:;">新增职位</a></dd>
+                <dd><a class="nav-item" href="javascript:;">新增企业</a></dd>
+                <dd><a class="nav-item" href="javascript:;">新增简历</a></dd>
+                <dd><a class="nav-item" href="javascript:;">新增第三方</a></dd>
+            </dl>
+        </li>
     </ul>
 </nav>

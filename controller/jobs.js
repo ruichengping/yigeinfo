@@ -71,8 +71,8 @@ router.get("/", function (req, res, next) {
         }
     });
 }, function (req, res) {
-    res.render("jobs/jobs", {
-        "activePage":"jobs",
+    res.render("job/job", {
+        "activePage":"job",
         "salary": commonData.salary,
         "jobNature": commonData.jobNature,
         "cityDatas": cityData,

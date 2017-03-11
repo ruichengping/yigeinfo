@@ -19,21 +19,9 @@ log4js.configure({
         }
     ]
 });
-var index = require('./controller/index');
-var login = require('./controller/login');
-var jobs=require("./controller/jobs");
-var company=require("./controller/company");
-var resume=require("./controller/resume");
-var thirdParty=require("./controller/thirdParty");
-var loginout=require('./controller/loginout');
-var cityData=require('./controller/getCitys');
-var jobDetail=require("./controller/getJobDetail");
-var companyDetail=require("./controller/getCompanyDetail");
-var uploadImage=require("./controller/uploadImage");
-
-
+//路由模块
+var router=require("./router");
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -61,17 +49,7 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/login', login);
-app.use('/jobs',jobs);
-app.use('/company',company);
-app.use('/resume',resume);
-app.use('/thirdParty',thirdParty);
-app.use('/loginout',loginout);
-app.use('/getCities',cityData);
-app.use("/getJobDetail",jobDetail);
-app.use("/getCompanyDetail",companyDetail);
-app.use("/uploadImage",uploadImage);
+app.use('/', router);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

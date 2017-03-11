@@ -1,18 +1,16 @@
-<script src="/javascripts/jquery-3.1.1.min.js"></script>
+<!--jquery-->
+<script src="/plugin/jquery/jquery-3.1.1.min.js"></script>
+<!--select2-->
+<script src="/plugin/select2/select2.full.min.js"></script>
+<!--layui-->
+<script src="/plugin/layui/layui.js"></script>
 <script>
-    $("#loginOut").on("click",function () {
-        location.href="/loginout";
-    });
     var activePage=$(".activePage").val();
-    if(activePage=="home"){
-        $(".nav-link:eq(0)").addClass("active");
-    }else if(activePage=="jobs"){
-        $(".nav-link:eq(1)").addClass("active");
-    }else if(activePage=="resumes"){
-        $(".nav-link:eq(2)").addClass("active");
-    }else if(activePage=="company"){
-        $(".nav-link:eq(3)").addClass("active");
-    }else if(activePage=="thirdParty"){
-        $(".nav-link:eq(4)").addClass("active");
-    }
+    $(".nav-item").each(function () {
+        if($(this).html()==activePage){
+            $(this).addClass("layui-this");
+        }else{
+            $(this).removeClass("layui-this");
+        }
+    });
 </script>

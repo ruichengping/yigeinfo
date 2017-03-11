@@ -8,7 +8,7 @@ function getJobDetail(id,callback) {
         if(err){
             console.log("POOL ==> " + err);
         }else{
-            conn.query("SELECT * FROM jobs WHERE jobId='"+id+"'",function (err,result) {
+            conn.query("SELECT * FROM job WHERE jobId='"+id+"'",function (err,result) {
                 if(err){
                     throw err;
                 }else{
@@ -24,7 +24,7 @@ function getAllJobDeatil(callback) {
        if(err){
            console.log("POOL ==> " + err);
        }else{
-        conn.query("SELECT * FROM jobs",function (err,result) {
+        conn.query("SELECT * FROM job",function (err,result) {
             if(err){
                 throw err;
             }else{
