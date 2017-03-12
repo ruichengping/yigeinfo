@@ -1,0 +1,9 @@
+/*导航*/
+.breadcrumb-wrapper{
+    padding: 20px 0 0 10px;
+}
+/*新增职位表单*/
+.form-addJob{
+    margin-top: 20px;
+    padding-right: 30px;
+}

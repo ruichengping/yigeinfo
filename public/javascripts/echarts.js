@@ -35901,7 +35901,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _resetController: function (api) {
 	            var controller = this._controller;
 
-	            // Init controller.
+	            // Init route.
 	            if (!controller) {
 	                controller = this._controller = new RoamController(api.getZr());
 	                controller.enable(this.seriesModel.get('roam'));
@@ -54068,7 +54068,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 
 	    function updateController(brushModel, ecModel, api, payload) {
-	        // Do not update controller when drawing.
+	        // Do not update route when drawing.
 	        (!payload || payload.$from !== brushModel.id) && this._brushController
 	            .setPanels(brushHelper.makePanelOpts(brushModel.coordInfoList))
 	            .enableBrush(brushModel.brushOption)
@@ -56781,12 +56781,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * @file Roam controller manager.
+	 * @file Roam route manager.
 	 */
 
 
-	    // Only create one roam controller for each coordinate system.
-	    // one roam controller might be refered by two inside data zoom
+	    // Only create one roam route for each coordinate system.
+	    // one roam route might be refered by two inside data zoom
 	    // components (for example, one for x and one for y). When user
 	    // pan or zoom, only dispatch one action for those data zoom
 	    // components.
@@ -56902,7 +56902,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Key: coordId, value: {dataZoomInfos: [], count, controller}
+	     * Key: coordId, value: {dataZoomInfos: [], count, route}
 	     * @type {Array.<Object>}
 	     */
 	    function giveStore(api) {
@@ -57966,7 +57966,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    var itemSize = this.itemSize;
 	                    var visuals = controller[state];
 
-	                    // Set inactive color for controller if no other color
+	                    // Set inactive color for route if no other color
 	                    // attr (like colorAlpha) specified.
 	                    if (!visuals) {
 	                        visuals = controller[state] = {
@@ -59061,7 +59061,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {string=} visualCluster Only can be 'color' 'opacity' 'symbol' 'symbolSize'
 	         * @param {Object} [opts]
 	         * @param {string=} [opts.forceState] Specify state, instead of using getValueState method.
-	         * @param {string=} [opts.convertOpacityToAlpha=false] For color gradient in controller widget.
+	         * @param {string=} [opts.convertOpacityToAlpha=false] For color gradient in route widget.
 	         * @return {*} Visual value.
 	         */
 	        getControllerVisual: function (targetValue, visualCluster, opts) {
@@ -59303,9 +59303,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            maxOpen: false,             // Whether include values that bigger than `max`.
 
 	            align: 'auto',              // 'auto', 'left', 'right'
-	            itemWidth: 20,              // When put the controller vertically, it is the length of
+	            itemWidth: 20,              // When put the route vertically, it is the length of
 	                                        // horizontal side of each item. Otherwise, vertical side.
-	            itemHeight: 14,             // When put the controller vertically, it is the length of
+	            itemHeight: 14,             // When put the route vertically, it is the length of
 	                                        // vertical side of each item. Otherwise, horizontal side.
 	            itemSymbol: 'roundRect',
 	            pieceList: null,            // Each item is Object, with some of those attrs:

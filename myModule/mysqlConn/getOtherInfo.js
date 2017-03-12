@@ -157,7 +157,9 @@ function getEvaluationLabels(id,callback) {
        });
     });
 }
-
+getCompanyName(1,function (result) {
+   console.log(result)
+});
 module.exports.getCities=getCities;
 module.exports.getCityName=getCityName;
 module.exports.getDistricts=getDistricts;

@@ -1,14 +1,19 @@
 header{
-    background: #000000;
-    font-size: 28px;
-    color: white;
-    padding: 18px 60px;
+    font-size: 22px;
+    height: 52px;
+    line-height: 52px;
+    color:#FFFFFF;
+    background-color: #393D49;
+    text-align: center;
 }
-#right-content{
-    width: 300px;
-    float: right;
+#form-login{
+    width: 600px;
+    margin: 20px auto;
 }
-span{
-    color: #FF0000;
-    display: none;
+.btn-login{
+    margin-right: 40px;
+    width: 80px;
+}
+#forget{
+    vertical-align: -6px;
 }

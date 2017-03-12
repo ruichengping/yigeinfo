@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+</head>
+<body>
+<header>易格管理系统</header>
+<div class="panel">
+        <form id="form-login" class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="userName" required lay-verify="required" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="password" required lay-verify="required" autocomplete="off" placeholder="请输入密码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="button" lay-filter="btn-login" lay-submit="" class="layui-btn layui-btn-small btn-login">确定</button>
+                    <input type="checkbox" name="isRemember" title="记住密码" lay-skin="primary" checked>
+                    <a id="forget" href="javascript:;" >忘记密码</a>
+                </div>
+            </div>
+        </form>
+</div>
+</body>
+</html>
+<script src="/plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="/plugin/layui/layui.js"></script>
+<script>
+    layui.use('form',function () {
+        var form=layui.form();
+        form.on('submit(btn-login)', function(data) {
+            $.ajax({
+                type:"post",
+                url:"/yige/login.json",
+                data:$("#form-login").serialize()
+            }).done(function (data) {
+                if(data.success){
+                    layer.msg(data.msg,{
+                        title:"",
+                        icon:1
+                    });
+                    setTimeout(function () {
+                        window.location.href="/home.html";
+                    },1000)
+                }else{
+                    layer.alert(data.msg,{
+                        title:"信息",
+                        icon:3
+                    });
+                }
+            });
+        });
+    });
+</script>

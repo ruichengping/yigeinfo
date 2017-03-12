@@ -1,0 +1,29 @@
+/**
+ * Created by ruichengping on 2017/3/12.
+ */
+module.exports=[
+    {
+        id:1,
+        name:"应届毕业生"
+    },
+    {
+        id:2,
+        name:"3年及以下"
+    },
+    {
+        id:3,
+        name:"3-5年"
+    },
+    {
+        id:4,
+        name:"5-10年"
+    },
+    {
+        id:5,
+        name:"10年以上"
+    },
+    {
+        id:6,
+        name:"不要求"
+    }
+];
