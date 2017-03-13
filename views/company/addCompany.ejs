@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增企业</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%- include ../publicPages/css_content.ejs%>
+    <link rel='stylesheet' href='/stylesheets/company/addCompany.css' >
+</head>
+<body>
+<!--头部区域-->
+<%- include ../publicPages/header.ejs %>
+<!--主体区域-->
+<div id="main-body">
+    <!--导航栏-->
+    <%- include ../publicPages/nav.ejs %>
+    <!--文本区域-->
+    <div id="content-wrapper">
+        <div class="addCompany-wrapper">
+            <fieldset class="layui-elem-field">
+                <legend>新增企业</legend>
+                <form class="form-company layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">公司名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="companyName" required lay-verify="required" autocomplete="off" placeholder="请输入企业名称" class="layui-input"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">融资阶段</label>
+                        <div class="layui-input-inline">
+                            <select name="financingStage">
+                                <option value="">不限</option>
+                                <option value="1">未融资</option>
+                                <option value="2">天使轮</option>
+                                <option value="3">A轮</option>
+                                <option value="4">B轮</option>
+                                <option value="5">C轮</option>
+                                <option value="6">D轮及以上</option>
+                                <option value="7">上市公司</option>
+                                <option value="8">不需要融资</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label">行业领域</label>
+                        <div class="layui-input-inline">
+                            <select name="industryField" lay-search>
+                                <option value="">不限</option>
+                                <option value="1">移动互联网</option>
+                                <option value="2">电子商务</option>
+                                <option value="3">金融</option>
+                                <option value="4">企业服务</option>
+                                <option value="5">教育</option>
+                                <option value="6">文化娱乐</option>
+                                <option value="7">游戏</option>
+                                <option value="8">O2O</option>
+                                <option value="9">硬件</option>
+                                <option value="10">社交网络</option>
+                                <option value="11">旅游</option>
+                                <option value="12">医疗健康</option>
+                                <option value="13">生活服务</option>
+                                <option value="14">信息安全</option>
+                                <option value="15">社交网络</option>
+                                <option value="16">数据服务</option>
+                                <option value="17">广告营销</option>
+                                <option value="18">分类信息</option>
+                                <option value="19">招聘</option>
+                                <option value="20">其他</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label">企业规模</label>
+                        <div class="layui-input-inline">
+                            <select name="employeeNum" lay-search>
+                                <option value="">不限</option>
+                                <option value="1">少于15人</option>
+                                <option value="2">15-50人</option>
+                                <option value="3">50-150人</option>
+                                <option value="4">150-500人</option>
+                                <option value="5">500-2000人</option>
+                                <option value="6">2000人以上</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">所在地区</label>
+                        <div class="layui-input-inline">
+                            <select name="provinceId" lay-filter="province">
+                                <option value="">请选择省份</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="cityId" lay-filter="city">
+                                <option value="">请选择城市</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="countryId" required lay-verify="required">
+                                <option value="">请选择县/区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">详细地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="address" required lay-verify="required" autocomplete="off" placeholder="请输入详细地址" class="layui-input"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">公司定位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="companyWord" required lay-verify="required" autocomplete="off" placeholder="请输入企业定位" class="layui-input"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">公司介绍</label>
+                        <div class="layui-input-block">
+                            <textarea class="layui-textarea layui-hide" name="introduction" lay-verify="content" id="companyIntroduction"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn" lay-submit="" lay-filter="addCompany">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+</body>
+<!--JS-->
+<%- include ../publicPages/script_content.ejs %>
+<script src="/javascripts/company/addCompany.js"></script>
+</html>

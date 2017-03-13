@@ -1,7 +1,7 @@
 /**
  * Created by ruichengping on 2017/3/12.
  */
-const getPasswordByUserName=require("../service/getPasswordByUserName");
+const getPasswordByUserName=require("../../service/getPasswordByUserName");
 module.exports=(req,res,next) => {
     let userName=req.body.userName;
     let password=req.body.password;

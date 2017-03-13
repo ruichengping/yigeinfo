@@ -6,17 +6,25 @@ const router=express.Router();
 //验证模块
 const verify=require("./middleware/verify");
 //登录控制器
-const loginController=require("./controller/loginController");
+const loginController=require("./controller/common/loginController");
 //获取省份控制器
-const provinceController=require("./controller/provinceController");
+const provinceController=require("./controller/common/provinceController");
 //获取城市控制器
-const cityController=require("./controller/cityController");
+const cityController=require("./controller/common/cityController");
 //获取县区控制器
-const countryController=require("./controller/countryController");
+const countryController=require("./controller/common/countryController");
 //职位
-const jobListController=require("./controller/jobListController");
-const addJobPageController=require("./controller/addJobPageController");
-const addJobController=require("./controller/addJobController");
+const jobListController=require("./controller/job/jobListController");
+const addJobPageController=require("./controller/job/addJobPageController");
+const addJobController=require("./controller/job/addJobController");
+//职位
+const addCompanyPageController=require("./controller/company/addCompanyPageController");
+const companyListController=require("./controller/company/companyListController");
+
+//---------------------------------------
+router.get("/",verify,function (req,res,next) {
+    res.redirect("/login.html")
+});
 //登录
 router.get("/login.html",function (req,res,next) {
     res.render("login",{});
@@ -29,16 +37,13 @@ router.get("/home.html",verify,function (req,res,next) {
         activePage:"首页"
     });
 });
-//职位信息库
-router.get("/jobList.html",verify,jobListController);
-router.get("/addJob.html",verify,addJobPageController);
+//职位
+router.get("/job/jobList.html",verify,jobListController);
+router.get("/job/addJob.html",verify,addJobPageController);
 router.post("/yige/addJob.json",addJobController);
-//企业信息库
-router.get("/companyList.html",verify,function (req,res,next) {
-    res.render("company/companyList",{
-        activePage:"企业信息库"
-    });
-});
+//企业
+router.get("/company/companyList.html",verify,companyListController);
+router.get("/company/addCompany.html",verify,addCompanyPageController);
 //简历信息库
 router.get("/resumeList.html",verify,function (req,res,next) {
     res.render("resume/resumeList",{

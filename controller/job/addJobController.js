@@ -1,9 +1,9 @@
 /**
  * Created by ruichengping on 2017/3/12.
  */
-const Job=require("../model/jobModel");
-const getCurrentTime=require("../tool/getCurrentTime");
-const insertJob=require("../service/insertJob");
+const Job=require("../../model/jobModel");
+const getCurrentTime=require("../../tool/getCurrentTime");
+const insertJob=require("../../service/insertJob");
 module.exports=(req,res,next) => {
     let jobName=req.body.jobName;
     let companyId=req.body.companyId;

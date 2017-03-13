@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1588ddd4-50a8-432d-b13e-9017947c7390" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/company.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/getCitys.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/getJobDetail.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/jobs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/loginout.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/resume.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/thirdParty.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/uploadImage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/users.js" afterPath="" />
+    <list default="true" id="1588ddd4-50a8-432d-b13e-9017947c7390" name="Default" comment="添加职位功能完成">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/employeeNumList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/company/addCompanyPageController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/company/companyListController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/company/addCompany.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/company/addCompany.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/company/addCompany.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/job/addJob.css" afterPath="$PROJECT_DIR$/public/stylesheets/job/addJob.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router.js" afterPath="$PROJECT_DIR$/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/job/addJob.ejs" afterPath="$PROJECT_DIR$/views/job/addJob.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/publicPages/nav.ejs" afterPath="$PROJECT_DIR$/views/publicPages/nav.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/addJobController.js" afterPath="$PROJECT_DIR$/controller/job/addJobController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/addJobPageController.js" afterPath="$PROJECT_DIR$/controller/job/addJobPageController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/cityController.js" afterPath="$PROJECT_DIR$/controller/common/cityController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/countryController.js" afterPath="$PROJECT_DIR$/controller/common/countryController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/jobListController.js" afterPath="$PROJECT_DIR$/controller/job/jobListController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/loginController.js" afterPath="$PROJECT_DIR$/controller/common/loginController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/provinceController.js" afterPath="$PROJECT_DIR$/controller/common/provinceController.js" />
     </list>
     <ignored path="yigeinfo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,89 +43,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="insertJob.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/insertJob.js">
+      <file leaf-file-name="jobList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/job/jobList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getPasswordByUserName.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/getPasswordByUserName.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addJob.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/job/addJob.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1342">
-              <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/home.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="91">
+              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <file leaf-file-name="jobList.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/job/jobList.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="121" lean-forward="true" selection-start-line="25" selection-start-column="112" selection-end-line="25" selection-end-column="121" />
+            <state relative-caret-position="682">
+              <caret line="129" column="26" lean-forward="true" selection-start-line="104" selection-start-column="19" selection-end-line="129" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/login.css">
+      <file leaf-file-name="addCompany.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/company/addCompany.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addJobController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/addJobController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            <state relative-caret-position="242">
+              <caret line="64" column="33" lean-forward="false" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
               </folding>
@@ -126,14 +75,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getJobByFilter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/getJobByFilter.js">
+      <file leaf-file-name="companyList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/company/companyList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,9 +88,70 @@
       <file leaf-file-name="addJob.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/job/addJob.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3168">
-              <caret line="144" column="101" lean-forward="false" selection-start-line="144" selection-start-column="82" selection-end-line="144" selection-end-column="101" />
+            <state relative-caret-position="360">
+              <caret line="147" column="26" lean-forward="true" selection-start-line="142" selection-start-column="19" selection-end-line="147" selection-end-column="26" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addCompany.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/company/addCompany.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="122" column="104" lean-forward="false" selection-start-line="122" selection-start-column="94" selection-end-line="122" selection-end-column="104" />
+              <folding>
+                <element signature="n#div#1;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#select#0;n#div#0;n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#select#0;n#div#1;n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#select#0;n#div#2;n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employeeNumList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/employeeNumList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#48#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commonData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myModule/commonData/commonData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="340" column="2" lean-forward="true" selection-start-line="340" selection-start-column="2" selection-end-line="351" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="countryList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/countryList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="financingStageList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/financingStageList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="36" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#48#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,16 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/thirdParty/thirdPartyList.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/thirdParty/thirdPartyList.css" />
-        <option value="$PROJECT_DIR$/views/resume/resumeList.ejs" />
-        <option value="$PROJECT_DIR$/views/thirdParty/thirdPartyList.ejs" />
-        <option value="$PROJECT_DIR$/views/company/companyList.ejs" />
-        <option value="$PROJECT_DIR$/middleware/verify.js" />
-        <option value="$PROJECT_DIR$/config/mysql.config.js" />
-        <option value="$PROJECT_DIR$/myModule/mysqlConn/getOtherInfo.js" />
-        <option value="$PROJECT_DIR$/myModule/mysqlConn/mysqlconfig.js" />
-        <option value="$PROJECT_DIR$/controller/loginController.js" />
         <option value="$PROJECT_DIR$/service/getPasswordByUserName.js" />
         <option value="$PROJECT_DIR$/service/getJobsByFilter.js" />
         <option value="$PROJECT_DIR$/route.js" />
@@ -217,22 +215,32 @@
         <option value="$PROJECT_DIR$/controller/jobListController.js" />
         <option value="$PROJECT_DIR$/service/getJobByFilter.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/job/addJob.js" />
-        <option value="$PROJECT_DIR$/views/publicPages/nav.ejs" />
         <option value="$PROJECT_DIR$/views/job/jobList.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/job/jobList.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/job/addJob.css" />
-        <option value="$PROJECT_DIR$/router.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/tool/getCurrentTime.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
         <option value="$PROJECT_DIR$/model/jobFilterModel.js" />
         <option value="$PROJECT_DIR$/model/jobModel.js" />
-        <option value="$PROJECT_DIR$/views/job/addJob.ejs" />
         <option value="$PROJECT_DIR$/service/insertJob.js" />
         <option value="$PROJECT_DIR$/controller/addJobController.js" />
         <option value="$PROJECT_DIR$/public/javascripts/job/addJob.js" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/public/stylesheets/login.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/controller/addCompanyController.js" />
+        <option value="$PROJECT_DIR$/controller/addCompanyPageController.js" />
+        <option value="$PROJECT_DIR$/controller/companyListController.js" />
+        <option value="$PROJECT_DIR$/controller/company/companyListController.js" />
+        <option value="$PROJECT_DIR$/controller/company/addCompanyPageController.js" />
+        <option value="$PROJECT_DIR$/views/publicPages/nav.ejs" />
+        <option value="$PROJECT_DIR$/router.js" />
+        <option value="$PROJECT_DIR$/views/job/addJob.ejs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/job/addJob.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/company/addCompany.css" />
+        <option value="$PROJECT_DIR$/common/employeeNumList.js" />
+        <option value="$PROJECT_DIR$/views/company/addCompany.ejs" />
+        <option value="$PROJECT_DIR$/public/javascripts/company/addCompany.js" />
       </list>
     </option>
   </component>
@@ -312,6 +320,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="publicPages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="job" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -331,6 +357,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,7 +416,223 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myModule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myModule" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonData" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yigeinfo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -393,19 +653,19 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\webWorkPace\yigeinfo\public\javascripts\job" />
-      <recent name="F:\webWorkPace\yigeinfo" />
-      <recent name="F:\webWorkPace\yigeinfo\route" />
-      <recent name="F:\webWorkPace\yigeinfo\views\company" />
-      <recent name="F:\webWorkPace\yigeinfo\public\javascripts\resumeList" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\webWorkPace\yigeinfo\public\plugin" />
       <recent name="F:\webWorkPace\yigeinfo\public\plugin\bootstarp\css" />
       <recent name="F:\webWorkPace\yigeinfo\public\plugin\bootstarp" />
       <recent name="F:\webWorkPace\yigeinfo\public\plugin\select2" />
       <recent name="F:\webWorkPace\yigeinfo\public\images\nav_icon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\webWorkPace\yigeinfo\controller\common" />
+      <recent name="F:\webWorkPace\yigeinfo\controller\job" />
+      <recent name="F:\webWorkPace\yigeinfo\controller\company" />
+      <recent name="F:\webWorkPace\yigeinfo\public\javascripts\job" />
+      <recent name="F:\webWorkPace\yigeinfo" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.bin\www">
@@ -544,7 +804,7 @@
       <workItem from="1489251372978" duration="10645000" />
       <workItem from="1489296508855" duration="25248000" />
       <workItem from="1489326090988" duration="11873000" />
-      <workItem from="1489412065948" duration="87000" />
+      <workItem from="1489412065948" duration="5792000" />
     </task>
     <task id="LOCAL-00001" summary="修改配置文件">
       <created>1480333810421</created>
@@ -581,34 +841,41 @@
       <option name="project" value="LOCAL" />
       <updated>1489341568956</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加职位功能完成">
+      <created>1489412177707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489412177707</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137938000" />
+    <option name="totallyTimeSpent" value="143643000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.49344262" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29613096" sideWeight="0.49344262" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.42686567" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49344262" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32459018" sideWeight="0.5731343" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5065574" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60655737" sideWeight="0.4910249" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.4956572" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34754097" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60655737" sideWeight="0.4910249" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,65 +910,8 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/oldRoute/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myModule/mysqlConn/getOtherInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3498">
-          <caret line="159" column="33" lean-forward="false" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myModule/mysqlConn/mysqlconfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/mysql.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/verify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oldRoute/loginout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/access.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/route.js" />
-    <entry file="file://$PROJECT_DIR$/controller/loginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tool/getAllProvince.js" />
-    <entry file="file://$PROJECT_DIR$/controller/provinceController.js">
+    <entry file="file://$PROJECT_DIR$/controller/common/provinceController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="21" />
@@ -722,17 +932,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/cityController.js">
+    <entry file="file://$PROJECT_DIR$/controller/common/cityController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/countryController.js">
+    <entry file="file://$PROJECT_DIR$/controller/common/countryController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,27 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/financingStageList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myModule/commonData/commonData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="237" column="6" lean-forward="true" selection-start-line="237" selection-start-column="6" selection-end-line="237" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/et --hard resetVersionHash">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1287">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -820,31 +1015,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/countryList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/jobListController.js">
+    <entry file="file://$PROJECT_DIR$/controller/job/jobListController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/publicPages/nav.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="58" lean-forward="false" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/job/jobList.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2618">
-          <caret line="39" column="60" lean-forward="false" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -852,20 +1026,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/job/addJob.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/addJobPageController.js">
+    <entry file="file://$PROJECT_DIR$/controller/job/addJobPageController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -884,24 +1055,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js" />
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/jobFilterModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/job/jobList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -922,16 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/getPasswordByUserName.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -942,7 +1089,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/addJobController.js">
+    <entry file="file://$PROJECT_DIR$/controller/job/addJobController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
@@ -956,24 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/job/addJob.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3168">
-          <caret line="144" column="101" lean-forward="false" selection-start-line="144" selection-start-column="82" selection-end-line="144" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/job/addJob.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1342">
-          <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
@@ -1001,6 +1130,195 @@
         <state relative-caret-position="286">
           <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/et --hard resetVersionHash">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1267">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-778">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/company/companyList.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/company/addCompanyPageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/company/companyListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/publicPages/nav.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="70" lean-forward="false" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/job/addJob.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/company/addCompany.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/job/addJob.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="86" column="3" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="86" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/job/jobList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/job/jobList.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="129" column="26" lean-forward="true" selection-start-line="104" selection-start-column="19" selection-end-line="129" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/company/companyList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/countryList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/financingStageList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="36" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myModule/commonData/commonData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="340" column="2" lean-forward="true" selection-start-line="340" selection-start-column="2" selection-end-line="351" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/employeeNumList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/job/addJob.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="147" column="26" lean-forward="true" selection-start-line="142" selection-start-column="19" selection-end-line="147" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/company/addCompany.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="122" column="104" lean-forward="false" selection-start-line="122" selection-start-column="94" selection-end-line="122" selection-end-column="104" />
+          <folding>
+            <element signature="n#div#1;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#div#0;n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#div#1;n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#div#2;n#div#2;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#form#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/company/addCompany.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="64" column="33" lean-forward="false" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
