@@ -2,79 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1588ddd4-50a8-432d-b13e-9017947c7390" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/cityList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/countryList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/educationList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/financingStageList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/industryFieldList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/jobNatureList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/provinceList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/salaryLevelList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/workExperienceList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/mysql.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/addJobController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/addJobPageController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/cityController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/countryController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/jobListController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/loginController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/provinceController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/middleware/verify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/jobFilterModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/jobModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/job/addJob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/job/addJob.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/getJobByFilter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/getPasswordByUserName.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/insertJob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/getCityListByProvinceId.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/getCountryListByCityId.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tool/getCurrentTime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/job/addJob.ejs" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/layui.config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/abilityTestLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/addFileInfo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/boy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/breakline_943b680.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/companylogo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/companylogo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/companylogo3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/educationLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/girl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/jd_icon_26c1c8b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/jobExperienceLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/jobSeeker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/newCompany.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/newCvData.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/newJobSeeker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/newThirdParty.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/star_small_dd4ff50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/testSmall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/company.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/getCitys.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/getJobDetail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/jobs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/loginout.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/resume.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/thirdParty.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/uploadImage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldRoute/users.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myModule/mysqlConn/getOtherInfo.js" afterPath="$PROJECT_DIR$/myModule/mysqlConn/getOtherInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myModule/mysqlConn/mysqlconfig.js" afterPath="$PROJECT_DIR$/myModule/mysqlConn/mysqlconfig.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/echarts.js" afterPath="$PROJECT_DIR$/public/javascripts/echarts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/job/jobList.js" afterPath="$PROJECT_DIR$/public/javascripts/job/jobList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/job/jobList.css" afterPath="$PROJECT_DIR$/public/stylesheets/job/jobList.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/login.css" afterPath="$PROJECT_DIR$/public/stylesheets/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home/home.ejs" afterPath="$PROJECT_DIR$/views/home/home.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/job/jobList.ejs" afterPath="$PROJECT_DIR$/views/job/jobList.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/publicPages/nav.ejs" afterPath="$PROJECT_DIR$/views/publicPages/nav.ejs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/company.js" afterPath="$PROJECT_DIR$/oldRoute/company.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/getCitys.js" afterPath="$PROJECT_DIR$/oldRoute/getCitys.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/getJobDetail.js" afterPath="$PROJECT_DIR$/oldRoute/getJobDetail.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/index.js" afterPath="$PROJECT_DIR$/oldRoute/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/jobs.js" afterPath="$PROJECT_DIR$/oldRoute/jobs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/login.js" afterPath="$PROJECT_DIR$/oldRoute/login.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/loginout.js" afterPath="$PROJECT_DIR$/oldRoute/loginout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/resume.js" afterPath="$PROJECT_DIR$/oldRoute/resume.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/thirdParty.js" afterPath="$PROJECT_DIR$/oldRoute/thirdParty.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/uploadImage.js" afterPath="$PROJECT_DIR$/oldRoute/uploadImage.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/users.js" afterPath="$PROJECT_DIR$/oldRoute/users.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/Login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
     </list>
     <ignored path="yigeinfo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,8 +39,8 @@
       <file leaf-file-name="insertJob.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/insertJob.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+            <state relative-caret-position="638">
+              <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
               </folding>
@@ -112,7 +51,7 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
+            <state relative-caret-position="704">
               <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="30" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
@@ -136,7 +75,7 @@
       <file leaf-file-name="addJob.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/job/addJob.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
+            <state relative-caret-position="1342">
               <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
@@ -148,7 +87,7 @@
       <file leaf-file-name="home.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
+            <state relative-caret-position="528">
               <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
               <folding />
             </state>
@@ -158,7 +97,7 @@
       <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/login.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
+            <state relative-caret-position="550">
               <caret line="25" column="121" lean-forward="true" selection-start-line="25" selection-start-column="112" selection-end-line="25" selection-end-column="121" />
               <folding />
             </state>
@@ -178,7 +117,7 @@
       <file leaf-file-name="addJobController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/addJobController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="594">
               <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
@@ -202,7 +141,7 @@
       <file leaf-file-name="addJob.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/job/addJob.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="3168">
               <caret line="144" column="101" lean-forward="false" selection-start-line="144" selection-start-column="82" selection-end-line="144" selection-end-column="101" />
               <folding />
             </state>
@@ -332,7 +271,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -434,84 +372,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="job" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yigeinfo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -676,7 +543,8 @@
       <workItem from="1489244394035" duration="5762000" />
       <workItem from="1489251372978" duration="10645000" />
       <workItem from="1489296508855" duration="25248000" />
-      <workItem from="1489326090988" duration="9890000" />
+      <workItem from="1489326090988" duration="11873000" />
+      <workItem from="1489412065948" duration="87000" />
     </task>
     <task id="LOCAL-00001" summary="修改配置文件">
       <created>1480333810421</created>
@@ -706,34 +574,41 @@
       <option name="project" value="LOCAL" />
       <updated>1489253790738</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加职位功能完成">
+      <created>1489341568956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1489341568956</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135868000" />
+    <option name="totallyTimeSpent" value="137938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.49344262" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.49344262" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.42686567" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49344262" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32459018" sideWeight="0.5731343" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5065574" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60655737" sideWeight="0.4910249" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.4956572" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34754097" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60655737" sideWeight="0.4910249" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,7 +629,8 @@
     <MESSAGE value="修改配置文件" />
     <MESSAGE value="职位详情页数据迁移" />
     <MESSAGE value="项目更换UI框架" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目更换UI框架" />
+    <MESSAGE value="添加职位功能完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加职位功能完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -836,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-198">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,9 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -861,9 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -892,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="237" column="6" lean-forward="true" selection-start-line="237" selection-start-column="6" selection-end-line="237" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2618">
           <caret line="39" column="60" lean-forward="false" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,9 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1562">
           <caret line="71" column="49" lean-forward="true" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,25 +880,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.js" />
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,9 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1055,7 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,16 +909,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/insertJob.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="638">
+          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
@@ -1081,7 +924,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
+        <state relative-caret-position="704">
           <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="30" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
@@ -1101,7 +944,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/addJobController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="594">
           <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
@@ -1121,7 +964,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/job/addJob.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="3168">
           <caret line="144" column="101" lean-forward="false" selection-start-line="144" selection-start-column="82" selection-end-line="144" selection-end-column="101" />
           <folding />
         </state>
@@ -1129,7 +972,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/job/addJob.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
+        <state relative-caret-position="1342">
           <caret line="63" column="24" lean-forward="true" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
@@ -1139,7 +982,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/home/home.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="528">
           <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding />
         </state>
@@ -1147,7 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
+        <state relative-caret-position="550">
           <caret line="25" column="121" lean-forward="true" selection-start-line="25" selection-start-column="112" selection-end-line="25" selection-end-column="121" />
           <folding />
         </state>
