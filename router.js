@@ -17,9 +17,10 @@ const countryController=require("./controller/common/countryController");
 const jobListController=require("./controller/job/jobListController");
 const addJobPageController=require("./controller/job/addJobPageController");
 const addJobController=require("./controller/job/addJobController");
-//职位
+//企业
 const addCompanyPageController=require("./controller/company/addCompanyPageController");
 const companyListController=require("./controller/company/companyListController");
+const addCompanyController=require('./controller/company/addCompanyController');
 
 //---------------------------------------
 router.get("/",verify,function (req,res,next) {
@@ -44,6 +45,7 @@ router.post("/yige/addJob.json",addJobController);
 //企业
 router.get("/company/companyList.html",verify,companyListController);
 router.get("/company/addCompany.html",verify,addCompanyPageController);
+router.post("/company/addCompany.json",addCompanyController);
 //简历信息库
 router.get("/resumeList.html",verify,function (req,res,next) {
     res.render("resume/resumeList",{

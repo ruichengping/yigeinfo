@@ -1,11 +1,11 @@
 /**
  * Created by ruichengping on 2017/3/13.
  */
-layui.use(['form', 'layedit','element'],function () {
+layui.use(['form','jquery', 'layedit','element'],function () {
     var form=layui.form();
-    var layedit = layui.layedit;
+    var layedit =layui.layedit ;
     //创建一个编辑器
-    var editIndex = layedit.build('companyIntroduction');
+    var editIndex =layedit.build('companyIntroduction');
     //获取省份数据
     $.ajax({
         type:"get",
@@ -62,8 +62,8 @@ layui.use(['form', 'layedit','element'],function () {
     form.on('submit(addCompany)', function(){
         $.ajax({
             type:"post",
-            url:"/yige/addCompany.json",
-            data:$(".form-addJob").serialize()
+            url:"/company/addCompany.json",
+            data:$(".form-company").serialize()
         }).done(function (data) {
             if(data.success){
                 layer.confirm('新增成功', {
@@ -71,7 +71,7 @@ layui.use(['form', 'layedit','element'],function () {
                     icon:1,
                     btn: ['查看','继续添加'] //按钮
                 }, function(){
-                    window.location.href="/job/jobDetail.html?jobId="+data.id;
+                    window.location.href="/company/companyDetail.html?companyId="+data.id;
                 }, function(index){
                     layer.close(index);
                     window.location.reload();

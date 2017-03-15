@@ -45,7 +45,7 @@
                         </div>
                         <label class="layui-form-label">行业领域</label>
                         <div class="layui-input-inline">
-                            <select name="industryField" lay-search>
+                            <select name="industryField">
                                 <option value="">不限</option>
                                 <option value="1">移动互联网</option>
                                 <option value="2">电子商务</option>
@@ -71,7 +71,7 @@
                         </div>
                         <label class="layui-form-label">企业规模</label>
                         <div class="layui-input-inline">
-                            <select name="employeeNum" lay-search>
+                            <select name="employeeNum">
                                 <option value="">不限</option>
                                 <option value="1">少于15人</option>
                                 <option value="2">15-50人</option>
@@ -132,5 +132,6 @@
 </body>
 <!--JS-->
 <%- include ../publicPages/script_content.ejs %>
+<script src="/plugin/layui/layui-mz-min.js"></script>
 <script src="/javascripts/company/addCompany.js"></script>
 </html>
