@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>企业详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%- include ../publicPages/css_content.ejs%>
+    <link rel='stylesheet' href='/stylesheets/company/companyDetail.css' >
+</head>
+<body>
+<!--头部区域-->
+<%- include ../publicPages/header.ejs %>
+<!--主体区域-->
+<div id="main-body">
+    <div class="left-wrapper">
+        <ul class="layui-nav layui-nav-tree nav-list">
+            <li class="layui-nav-item active"><a href="#basic-info">基本信息</a></li>
+            <li class="layui-nav-item"><a href="">HR列表</a></li>
+            <li class="layui-nav-item"><a href="">发布职位</a></li>
+            <li class="layui-nav-item"><a href="">面试评价</a></li>
+        </ul>
+    </div>
+    <div class="right-wrapper">
+        <div id="basic-info">
+            <blockquote class="layui-elem-quote" style="position: relative;">基本信息
+                <button type="button" id="basicInfo-btn-edit" style="position: absolute;top: 16px;right: 20px;" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe642;</i></button>
+            </blockquote>
+            <form id="form-basic-info" class="layui-form layui-form-pane">
+                <input type="hidden" value="<%=basicInfo.id%>" name="companyId"/>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="companyName" readonly="readonly" class="layui-input" value="<%= basicInfo.companyName%>">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">融资阶段</label>
+                    <div class="layui-input-inline">
+                        <select  disabled="disabled" name="financingStage">
+                            <%for(var i=0;i<basicInfo.financingStageList.length;i++){%>
+                                <%if(basicInfo.financingStageList[i].id==basicInfo.financingStage){%>
+                                    <option value="<%=basicInfo.financingStageList[i].id%>" selected><%=basicInfo.financingStageList[i].name%></option>
+                                <%}else{%>
+                                    <option value="<%=basicInfo.financingStageList[i].id%>"><%=basicInfo.financingStageList[i].name%></option>
+                                <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+                    <label class="layui-form-label">行业领域</label>
+                    <div class="layui-input-inline">
+                        <select  disabled="disabled" name="industryField">
+                            <%for(var i=0;i<basicInfo.industryFieldList.length;i++){%>
+                                <%if(basicInfo.industryFieldList[i].id==basicInfo.industryField){%>
+                                    <option value="<%=basicInfo.industryFieldList[i].id%>" selected><%=basicInfo.industryFieldList[i].name%></option>
+                                 <%}else{%>
+                                    <option value="<%=basicInfo.industryFieldList[i].id%>"><%=basicInfo.industryFieldList[i].name%></option>
+                                <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+                    <label class="layui-form-label">企业规模</label>
+                    <div class="layui-input-inline">
+                        <select  disabled="disabled" name="employeeNum">
+                            <%for(var i=0;i<basicInfo.employeeNumList.length;i++){%>
+                                <%if(basicInfo.employeeNumList[i].id==basicInfo.employeeNum){%>
+                                    <option value="<%=basicInfo.employeeNumList[i].id%>" selected><%=basicInfo.employeeNumList[i].name%></option>
+                                <%}else{%>
+                                    <option value="<%=basicInfo.employeeNumList[i].id%>"><%=basicInfo.employeeNumList[i].name%></option>
+                                <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所在地区</label>
+                    <div class="layui-input-inline">
+                        <select name="provinceId" disabled="disabled" lay-filter="province">
+                            <%for(var i=0;i<basicInfo.provinceList.length;i++){%>
+                            <%if(basicInfo.provinceList[i].ProID===basicInfo.provinceId){%>
+                            <option value="<%=basicInfo.provinceList[i].ProID%>" selected><%=basicInfo.provinceList[i].name%></option>
+                            <%}else{%>
+                            <option value="<%=basicInfo.provinceList[i].ProID%>"><%=basicInfo.provinceList[i].name%></option>
+                            <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline">
+                        <select name="cityId" disabled="disabled" lay-filter="city">
+                            <%for(var i=0;i<basicInfo.cityList.length;i++){%>
+                            <%if(basicInfo.cityList[i].CityID===basicInfo.cityId){%>
+                            <option value="<%=basicInfo.cityList[i].CityID%>" selected><%=basicInfo.cityList[i].name%></option>
+                            <%}else{%>
+                            <option value="<%=basicInfo.cityList[i].CityID%>"><%=basicInfo.cityList[i].name%></option>
+                            <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline">
+                        <select name="countryId" disabled="disabled">
+                            <%for(var i=0;i<basicInfo.countryList.length;i++){%>
+                            <%if(basicInfo.countryList[i].Id===basicInfo.countryId){%>
+                            <option value="<%=basicInfo.countryList[i].Id%>" selected><%=basicInfo.countryList[i].DisName%></option>
+                            <%}else{%>
+                            <option value="<%=basicInfo.countryList[i].Id%>"><%=basicInfo.countryList[i].DisName%></option>
+                            <%}%>
+                            <%}%>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">详细地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="address" readonly="readonly" class="layui-input"  value="<%=basicInfo.address%>">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司定位</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="companyWord" readonly="readonly" class="layui-input"  value="<%=basicInfo.companyWord%>">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">公司介绍</label>
+                    <input type="hidden" class="introductionHtmlStr" value="<%= basicInfo.introduction%>"/>
+                    <div class="introduction"></div>
+                    <textarea id="introduction-edit" name="introduction" style="display: none"></textarea>
+                </div>
+                <div class="layui-form-item basic-info-btn-wrapper" style="text-align: center;display: none;">
+                    <button type="button" lay-submit lay-filter="basicInfo-submit" class="layui-btn">保存</button>
+                    <button type="button" id="basicInfo-btn-cancel" class="layui-btn layui-btn-primary">取消</button>
+                </div>
+            </form>
+        </div>
+        <div class="hr-list">
+            <blockquote class="layui-elem-quote">HR列表</blockquote>
+        </div>
+        <div class="job-list">
+            <blockquote class="layui-elem-quote">发布职位</blockquote>
+        </div>
+        <div class="interview-list">
+            <blockquote class="layui-elem-quote">面试评价</blockquote>
+        </div>
+    </div>
+</div>
+</body>
+<!--JS-->
+<%- include ../publicPages/script_content.ejs %>
+<script src="/javascripts/company/companyDetail.js"></script>
+</html>

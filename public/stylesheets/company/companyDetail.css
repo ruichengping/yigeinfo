@@ -1,0 +1,28 @@
+.left-wrapper{
+    flex: 0 0 260px;
+}
+.nav-list{
+    margin: 20px auto;
+}
+.right-wrapper{
+    flex: 1;
+    overflow: auto;
+    padding: 20px 120px 20px 10px;
+}
+.nav-list .active a{
+    background: #009688;
+    color: #fff;
+}
+.nav-list .active a:hover{
+    color: #fff;
+    background: #009688;
+}
+
+/*基础信息*/
+.introduction{
+    padding: 12px 8px;
+    border: 1px solid #e6e6e6;
+}
+.layui-disabled{
+    color: #000 !important;
+}

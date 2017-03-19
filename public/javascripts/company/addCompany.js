@@ -71,7 +71,7 @@ layui.use(['form','jquery', 'layedit','element'],function () {
                     icon:1,
                     btn: ['查看','继续添加'] //按钮
                 }, function(){
-                    window.location.href="/company/companyDetail.html?companyId="+data.id;
+                    window.location.href="/company/companyDetail.html?companyId="+data.company.companyId;
                 }, function(index){
                     layer.close(index);
                     window.location.reload();

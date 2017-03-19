@@ -1,24 +1,34 @@
 /**
- * Created by ruichengping on 2017/3/12.
+ * Created by ruichengping on 2017/3/17.
  */
-layui.use(['form', 'layedit','element'],function () {
+layui.use(['form','layedit'],function () {
     var form=layui.form();
     var layedit = layui.layedit;
-    //创建一个编辑器
-    var editIndex = layedit.build('description');
-    //获取省份数据
-    $.ajax({
-        type:"get",
-        url:"/yige/getProvince.json"
-    }).done(function (data) {
-        if(data.success){
-            var provinceHtmlArray=data.provinceList.map(function (provinceItem) {
-                return "<option value='"+provinceItem.ProID+"'>"+provinceItem.name+"</option>";
-            });
-            provinceHtmlArray.unshift("<option value=''>请选择省</option>");
-            $("select[name=provinceId]").html(provinceHtmlArray.join(""));
-            form.render();
-        }
+    //公司介绍
+    var introductionHtmlStr=$(".introductionHtmlStr").val();
+    $(".introduction").html(introductionHtmlStr);
+    $("#introduction-edit").val(introductionHtmlStr);
+    //监听编辑按钮
+    $("#basicInfo-btn-edit").on("click",function () {
+        layer.msg('切换成编辑模式',{time:1000});
+        $("select").removeAttr("disabled");
+        $("input[type=text]").removeAttr("readonly");
+        $(".introduction").hide();
+        $("#introduction-edit").show();
+        layedit.build("introduction-edit");
+        $(".basic-info-btn-wrapper").show();
+        form.render();
+    });
+    //监听取消按钮
+    $(document).on("click",'#basicInfo-btn-cancel',function () {
+        layer.msg('切换成普通模式',{time:1000});
+        $("select").attr("disabled","disabled");
+        $("input[type=text]").attr("readonly","readonly");
+        $(".introduction").show();
+        $("#introduction-edit").hide();
+        $(".layui-layedit").remove();
+        $(".basic-info-btn-wrapper").hide();
+        form.render();
     });
     //省份改变获取城市
     form.on('select(province)', function(data){
@@ -58,30 +68,20 @@ layui.use(['form', 'layedit','element'],function () {
             }
         });
     });
-    //监听提交按钮
-    form.on('submit(addJob)', function(){
+    form.on('submit(basicInfo-submit)',function () {
         $.ajax({
             type:"post",
-            url:"/job/addJob.json",
-            data:$(".form-addJob").serialize()
+            url:"/company/editCompany.json",
+            data:$("#form-basic-info").serialize()
         }).done(function (data) {
-            if(data.success){
-                layer.confirm('新增成功', {
-                    title:"信息",
-                    icon:1,
-                    btn: ['查看','继续添加'] //按钮
-                }, function(){
-                    window.location.href="/job/jobDetail.html?jobId="+data.id;
-                }, function(index){
-                    layer.close(index);
-                    window.location.reload();
-                });
-            }else{
-                layer.alert("新增失败",{
-                    title:"信息",
-                    icon:2,
-                });
-            }
+           if(data.success){
+               layer.msg("保存成功",{time:1000});
+               setTimeout(function () {
+                   window.location.reload();
+               },1000);
+           }else{
+               layer.msg("保存失败",{time:1000});
+           }
         });
     });
 });

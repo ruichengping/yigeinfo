@@ -4,19 +4,19 @@
 const mysql=require("mysql");
 const mysqlConfig=require("../../config/mysql.config.js");
 let pool=mysql.createPool(mysqlConfig);
-module.exports=(jobModel,callback) => {
+module.exports=(companyModel,callback) => {
   pool.getConnection((err,conn) => {
       if(err){
           throw err;
       }else{
           let keyArray=[];
           let valueArray=[];
-          for(let key of Object.keys(jobModel)){
+          for(let key of Object.keys(companyModel)){
               keyArray.push(key);
-              if(isNaN(jobModel[key])){
-                  valueArray.push(`'${jobModel[key]}'`);
+              if(isNaN(companyModel[key])){
+                  valueArray.push(`'${companyModel[key]}'`);
               }else{
-                  valueArray.push(jobModel[key]);
+                  valueArray.push(companyModel[key]);
               }
           }
           let keyStr=keyArray.join(",");
