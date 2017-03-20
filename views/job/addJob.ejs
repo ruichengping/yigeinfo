@@ -25,28 +25,24 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">职位名称</label>
                         <div class="layui-input-block">
-                            <input type="text" name="jobName" required lay-verify="required" placeholder="请输入职位名称"
-                                   autocomplete="off" class="layui-input">
+                            <input type="text" name="jobName"  placeholder="请输入职位名称"
+                                   autocomplete="off" class="layui-input"/>
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">所属公司</label>
                         <div class="layui-input-block">
-                            <select name="companyId" required lay-verify="company" lay-search >
-                                <option value="">请选择所属公司</option>
-                                <option value="1">支付宝</option>
-                                <option value="2">阿里巴巴集团</option>
-                                <option value="3">淘宝</option>
-                                <option value="4">网易</option>
-                                <option value="5">腾讯</option>
-                                <option value="6">百度</option>
+                            <select name="companyId" lay-search >
+                                <%for(var i=0;i<companyList.length;i++){%>
+                                    <option value="<%=companyList[i].id%>"><%=companyList[i].companyName%></option>
+                                <%}%>
                             </select>
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">HR</label>
                         <div class="layui-input-block">
-                            <select name="hrId" required lay-verify="required" lay-search>
+                            <select name="hrId" required lay-search>
                                 <option value="">请选择HR</option>
                                 <option value="1">邓紫棋</option>
                                 <option value="2">苍井空</option>
@@ -66,7 +62,7 @@
                             </select>
                         </div>
                         <div class="layui-input-inline">
-                            <select name="countryId" required lay-verify="required">
+                            <select name="countryId">
                                 <option value="">请选择县/区</option>
                             </select>
                         </div>
@@ -74,14 +70,14 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">详细地址</label>
                         <div class="layui-input-block">
-                            <input type="text" name="address" required lay-verify="required" placeholder="请输入详细地址"
-                                   autocomplete="off" class="layui-input">
+                            <input type="text" name="address" placeholder="请输入详细地址"
+                                   autocomplete="off" class="layui-input"/>
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">工作经验</label>
                         <div class="layui-input-inline">
-                            <select name="experience" required lay-verify="required">
+                            <select name="experience">
                                 <option value="">请选择工作经验</option>
                                 <option value="1">应届毕业生</option>
                                 <option value="2">3年及以下</option>
@@ -130,8 +126,8 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">职位诱惑</label>
                         <div class="layui-input-block">
-                            <input type="text" name="briefIntroduction" required lay-verify="required" placeholder="请输入职位诱惑"
-                                   autocomplete="off" class="layui-input">
+                            <input type="text" name="briefIntroduction" placeholder="请输入职位诱惑"
+                                   autocomplete="off" class="layui-input"/>
                         </div>
                     </div>
                     <div class="layui-form-item layui-form-text">

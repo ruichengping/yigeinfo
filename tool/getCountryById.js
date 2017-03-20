@@ -5,7 +5,7 @@ const countryList=require('../common/countryList');
 module.exports=(countryId) => {
     let country={};
     countryList.forEach((countryItem) => {
-        if(countryItem.Id=countryId){
+        if(countryItem.Id==countryId){
             country=countryItem;
         }
     });

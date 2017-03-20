@@ -5,7 +5,7 @@ const employeeNumList=require('../common/employeeNumList');
 module.exports=(enployeeNumId) => {
     let employeeNum={};
     employeeNumList.forEach((employeeNumItem) => {
-        if(employeeNumItem.id=enployeeNumId){
+        if(employeeNumItem.id==enployeeNumId){
             employeeNum=employeeNumItem;
         }
     });

@@ -27,7 +27,7 @@
             <blockquote class="layui-elem-quote" style="position: relative;">基本信息
                 <button type="button" id="basicInfo-btn-edit" style="position: absolute;top: 16px;right: 20px;" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe642;</i></button>
             </blockquote>
-            <form id="form-basic-info" class="layui-form layui-form-pane">
+            <form id="form-company-basicInfo" class="layui-form layui-form-pane">
                 <input type="hidden" value="<%=basicInfo.id%>" name="companyId"/>
                 <div class="layui-form-item">
                     <label class="layui-form-label">公司名称</label>
@@ -128,8 +128,8 @@
                     <textarea id="introduction-edit" name="introduction" style="display: none"></textarea>
                 </div>
                 <div class="layui-form-item basic-info-btn-wrapper" style="text-align: center;display: none;">
-                    <button type="button" lay-submit lay-filter="basicInfo-submit" class="layui-btn">保存</button>
-                    <button type="button" id="basicInfo-btn-cancel" class="layui-btn layui-btn-primary">取消</button>
+                    <button type="button" lay-submit lay-filter="company-basicInfo-submit" class="layui-btn">保存</button>
+                    <button type="button" id="company-basicInfo-btn-cancel" class="layui-btn layui-btn-primary">取消</button>
                 </div>
             </form>
         </div>

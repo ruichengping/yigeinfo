@@ -1,7 +1,14 @@
 /**
  * Created by ruichengping on 2017/3/13.
  */
-layui.use(['form','jquery', 'layedit','element'],function () {
+// layui.config({
+//     base: '/plugin/' //假设这是test.js所在的目录
+// }).extend({ //设定模块别名
+//     'multipeSelect': 'myplugin/multipeSelect' //如果test.js是在根目录，也可以不用设定别名
+// });
+layui.use(['form','jquery', 'layedit','element','multipeSelect'],function () {
+    // var multipeSelect=layui.multipeSelect;
+    // multipeSelect.hello('World!');
     var form=layui.form();
     var layedit =layui.layedit ;
     //创建一个编辑器

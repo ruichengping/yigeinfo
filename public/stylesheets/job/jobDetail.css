@@ -1,0 +1,13 @@
+#jobDetail{
+    width: 980px;
+    margin: 0 auto;
+    background: #fff;
+    padding:10px 0;
+}
+.layui-disabled{
+    color: #000 !important;
+}
+.jobDescriptionHtml{
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+}

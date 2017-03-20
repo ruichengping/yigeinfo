@@ -17,12 +17,14 @@ const countryController=require("./controller/common/countryController");
 const jobListController=require("./controller/job/jobListController");
 const addJobPageController=require("./controller/job/addJobPageController");
 const addJobController=require("./controller/job/addJobController");
+const jobDetailController=require('./controller/job/jobDetailController');
+const updateJobController=require('./controller/job/updateJobController');
 //企业
 const addCompanyPageController=require("./controller/company/addCompanyPageController");
 const companyListController=require("./controller/company/companyListController");
 const addCompanyController=require('./controller/company/addCompanyController');
 const companyDetailController=require('./controller/company/companyDetailController');
-const editCompanyController=require('./controller/company/editCompanyController');
+const updateCompanyController=require('./controller/company/updateCompanyController');
 //---------------------------------------
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
@@ -42,13 +44,15 @@ router.get("/home.html",verify,function (req,res,next) {
 //职位
 router.get("/job/jobList.html",verify,jobListController);
 router.get("/job/addJob.html",verify,addJobPageController);
+router.get("/job/jobDetail.html",jobDetailController);
 router.post("/job/addJob.json",addJobController);
+router.post('/job/updateJob.json',updateJobController);
 //企业
 router.get("/company/companyList.html",verify,companyListController);
 router.get("/company/addCompany.html",verify,addCompanyPageController);
 router.get("/company/companyDetail.html",verify,companyDetailController);
 router.post("/company/addCompany.json",addCompanyController);
-router.post("/company/editCompany.json",editCompanyController);
+router.post("/company/updateCompany.json",updateCompanyController);
 //简历信息库
 router.get("/resumeList.html",verify,function (req,res,next) {
     res.render("resume/resumeList",{

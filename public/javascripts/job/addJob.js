@@ -71,7 +71,7 @@ layui.use(['form', 'layedit','element'],function () {
                     icon:1,
                     btn: ['查看','继续添加'] //按钮
                 }, function(){
-                    window.location.href="/job/jobDetail.html?jobId="+data.id;
+                    window.location.href="/job/jobDetail.html?jobId="+data.job.jobId;
                 }, function(index){
                     layer.close(index);
                     window.location.reload();

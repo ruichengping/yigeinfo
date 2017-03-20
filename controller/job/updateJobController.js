@@ -1,10 +1,11 @@
 /**
- * Created by ruichengping on 2017/3/12.
+ * Created by ruichengping on 2017/3/20.
  */
 const Job=require("../../model/job/jobModel");
 const getCurrentTime=require("../../tool/getCurrentTime");
-const insertJob=require("../../service/job/insertJob");
+const updateJob=require("../../service/job/updateJob");
 module.exports=(req,res,next) => {
+    let jobId=req.body.jobId;
     let jobName=req.body.jobName;
     let companyId=req.body.companyId;
     let hrId=req.body.hrId;
@@ -22,13 +23,11 @@ module.exports=(req,res,next) => {
     let job=new Job(jobName,companyId,hrId,provinceId,cityId,
         countryId,createTime,address,experience,education,
         salary,jobNature,briefIntroduction,description);
-    insertJob(job,(result)=> {
+    delete job.hrId;
+    updateJob(job,jobId,(result)=> {
         if(result){
             res.send({
                 "success":true,
-                "job":{
-                    "jobId":result
-                }
             });
         }else{
             res.send({
