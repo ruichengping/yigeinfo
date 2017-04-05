@@ -1,85 +1,74 @@
-
-.clearfix:after{
-    content: '';
-    display: block;
-    clear: both;
+/*新增数据统计*/
+.newList{
+    display: flex;
+    padding: 30px 20px;
 }
-.clearfix{
-    zoom: 1;
+.newItem{
+    flex: 1;
+    display: flex;
+    min-width: 260px;
+    background-color: #fff;
+    border: 1px solid #e7e7e7;
+    height: 90px;
+    margin-left: 20px;
+    box-shadow:0 1px 1px rgba(0,0,0,0.1);
 }
-#navBar li:nth-child(1) a{
-    color: #000000;
-    background: #FFFFFF;
+.newItem:nth-child(1){
+    margin-left: 0;
 }
-#newInfo{
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-#newInfo li{
-    position: relative;
-    float: left;
-    width: 220px;
-    height:90px;
-    margin-left: 6%;
-    background: #FFFFFF;
-}
-.imageLabel{
-    position: absolute;
-    top: 0;
-    left:0;
-    height: 100%;
-    line-height: 100%;
+.item-left{
     width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.imageLabel img{
-    width:50px;
-    height: 50px;
-    margin-top: 18px;
+.item-right{
+    flex: 1;
 }
-.newUserNum div{
-    background: #00c0ef;
+.item-title{
+    padding: 8px 10px 6px;
 }
-.newCompanyNum div{
-    background: #00a65a;
+.item-content{
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
-.newCvData div{
-    background: #f39c12;
+/*注册用户总数*/
+.totalCount{
+    text-align: center;
+    font-size: 86px;
+    color: #222d32;
 }
-.newThirdParty div{
-   background: #dd4b39 ;
+/*区域统计*/
+#rangeStatistic{
+    width: 100%;
+    height: 800px;
 }
-.newUserNum>.newNum{
-    color: #00c0ef;
-}
-.newCompanyNum>.newNum{
-    color: #00a65a;
-}
-.newCvData>.newNum{
-    color: #f39c12;
-}
-.newThirdParty>.newNum{
-    color: #dd4b39 ;
-}
-
-.newTitle{
-    padding-left: 60px;
-    font-size: 16px;
-}
-.newNum{
-    font-size: 30px;
-    padding-left: 58px;
-}
-#numTredChart{
-    margin: 30px auto;
-    width: 1000px;
+/*功能使用情况统计*/
+#functionUseAnalysis{
+    flex: 1;
     height: 600px;
 }
-#totalNum{
-    font-size: 78px;
-    margin-bottom: 20px;
-    color:#708090;
+#register{
+    flex: 1;
+    height: 600px;
 }
-#interviewRate{
-    width: 400px;
-    height: 400px;
+#register table{
+    width: 100%;
+    height: 600px;
+    text-align: center;
+}
+#register tbody{
+    height: 600px;
+    overflow: auto;
+}
+#register table th{
+    height: 40px;
+    line-height: 40px;
+}
+#register table td{
+    height: 30px;
+    line-height: 30px;
 }
