@@ -12,24 +12,13 @@ var sequelize=new Sequelize(mysqlConfig.database,mysqlConfig.user,mysqlConfig.pa
         idle:10000
     }
 });
-var user=sequelize.define('users',{
-    userId:{
-        type:Sequelize.STRING,
-        primaryKey:true
-    },
-    userName:{
-        type:Sequelize.STRING
-    },
-    password:{
-        type:Sequelize.STRING
-    }
-},{
-    timestamps: false
-});
-user.findAll({
+var Job=require('../orm/Job');
+Job.findAll({
     where:{
-        userName:'admin'
+        id:'2'
     }
 }).then(function (result) {
     console.log(result);
+}).catch(function (err) {
+    console.log(err);
 });

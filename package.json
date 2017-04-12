@@ -16,9 +16,7 @@
     "morgan": "~1.7.0",
     "multer": "~1.2.0",
     "mysql": "~2.12.0",
-    "mysql2": "^1.2.0",
     "node-sass-middleware": "~0.9.8",
-    "orm": "^3.2.3",
     "sequelize": "^3.30.4",
     "serve-favicon": "~2.3.0"
   },

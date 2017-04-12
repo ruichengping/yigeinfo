@@ -5,7 +5,7 @@ const Sequelize=require('sequelize');
 const sequelize=require('../config/sequelize.config');
 const User=sequelize.define('user',{
     userId:{
-        type:Sequelize.STRING,
+        type:Sequelize.INTEGER,
         primaryKey:true
     },
     userName:{
@@ -15,6 +15,8 @@ const User=sequelize.define('user',{
         type:Sequelize.STRING
     }
 },{
+    freezeTableName:true,
+    tableName:'yige_user',
     timestamps: false
 });
 module.exports=User;

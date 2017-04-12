@@ -20,59 +20,52 @@
                 <button type="button" id="basicInfo-btn-edit" style="position: absolute;top: 16px;right: 20px;" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe642;</i></button>
             </blockquote>
             <form id="form-job-basicInfo" class="layui-form layui-form-pane">
-                <input type="hidden" name="jobId" value="<%=basicInfo.id%>"/>
+                <input type="hidden" name="jobId" value="<%=job.id%>"/>
                 <div class="layui-form-item">
                     <label class="layui-form-label">职位名称</label>
                     <div class="layui-input-block">
                         <input type="text" name="jobName" placeholder="请输入职位名称"
-                               autocomplete="off" class="layui-input" readonly="readonly" value="<%=basicInfo.jobName%>"/>
+                               autocomplete="off" class="layui-input" readonly="readonly" value="<%=job.jobName%>"/>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">所属公司</label>
                     <div class="layui-input-block">
-                        <select name="companyId" lay-search disabled >
-                            <%for(var i=0;i<companyList.length;i++){%>
-                            <%if(companyList[i].id==basicInfo.companyId){%>
-                            <option value="<%=companyList[i].id%>" selected><%=companyList[i].companyName%></option>
-                            <%}else{%>
-                            <option value="<%=companyList[i].id%>"><%=companyList[i].companyName%></option>
-                            <%}%>
-                            <%}%>
-                        </select>
+                        <input type="text" name="jobName" placeholder="请输入职位名称"
+                               autocomplete="off" class="layui-input" readonly="readonly" value="<%=job.jobName%>"/>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">所在地区</label>
                     <div class="layui-input-inline">
                         <select name="provinceId" disabled="disabled" lay-filter="province">
-                            <%for(var i=0;i<basicInfo.provinceList.length;i++){%>
-                            <%if(basicInfo.provinceList[i].ProID===basicInfo.provinceId){%>
-                            <option value="<%=basicInfo.provinceList[i].ProID%>" selected><%=basicInfo.provinceList[i].name%></option>
+                            <%for(var i=0;i<provinceList.length;i++){%>
+                            <%if(provinceList[i].ProID===job.provinceId){%>
+                            <option value="<%=provinceList[i].ProID%>" selected><%=provinceList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.provinceList[i].ProID%>"><%=basicInfo.provinceList[i].name%></option>
+                            <option value="<%=provinceList[i].ProID%>"><%=provinceList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
                     </div>
                     <div class="layui-input-inline">
                         <select name="cityId" disabled="disabled" lay-filter="city">
-                            <%for(var i=0;i<basicInfo.cityList.length;i++){%>
-                            <%if(basicInfo.cityList[i].CityID===basicInfo.cityId){%>
-                            <option value="<%=basicInfo.cityList[i].CityID%>" selected><%=basicInfo.cityList[i].name%></option>
+                            <%for(var i=0;i<cityList.length;i++){%>
+                            <%if(cityList[i].CityID===job.cityId){%>
+                            <option value="<%=cityList[i].CityID%>" selected><%=cityList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.cityList[i].CityID%>"><%=basicInfo.cityList[i].name%></option>
+                            <option value="<%=cityList[i].CityID%>"><%=cityList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
                     </div>
                     <div class="layui-input-inline">
                         <select name="countryId" disabled="disabled">
-                            <%for(var i=0;i<basicInfo.countryList.length;i++){%>
-                            <%if(basicInfo.countryList[i].Id===basicInfo.countryId){%>
-                            <option value="<%=basicInfo.countryList[i].Id%>" selected><%=basicInfo.countryList[i].DisName%></option>
+                            <%for(var i=0;i<countryList.length;i++){%>
+                            <%if(countryList[i].Id===job.countryId){%>
+                            <option value="<%=countryList[i].Id%>" selected><%=countryList[i].DisName%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.countryList[i].Id%>"><%=basicInfo.countryList[i].DisName%></option>
+                            <option value="<%=countryList[i].Id%>"><%=countryList[i].DisName%></option>
                             <%}%>
                             <%}%>
                         </select>
@@ -82,18 +75,18 @@
                     <label class="layui-form-label">详细地址</label>
                     <div class="layui-input-block">
                         <input type="text" name="address" readonly="readonly" placeholder="请输入详细地址"
-                               autocomplete="off" class="layui-input" value="<%=basicInfo.address%>" />
+                               autocomplete="off" class="layui-input" value="<%=job.address%>" />
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">工作经验</label>
                     <div class="layui-input-inline">
                         <select name="experience" disabled="disabled">
-                            <%for(var i=0;i<basicInfo.workExperienceList.length;i++){%>
-                            <%if(basicInfo.workExperienceList[i].id===basicInfo.experience){%>
-                            <option value="<%=basicInfo.workExperienceList[i].id%>" selected><%=basicInfo.workExperienceList[i].name%></option>
+                            <%for(var i=0;i<workExperienceList.length;i++){%>
+                            <%if(workExperienceList[i].id===job.experience){%>
+                            <option value="<%=workExperienceList[i].id%>" selected><%=workExperienceList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.workExperienceList[i].id%>"><%=basicInfo.workExperienceList[i].name%></option>
+                            <option value="<%=workExperienceList[i].id%>"><%=workExperienceList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
@@ -101,11 +94,11 @@
                     <label class="layui-form-label">学历要求</label>
                     <div class="layui-input-inline">
                         <select name="education" disabled="disabled">
-                            <%for(var i=0;i<basicInfo.educationList.length;i++){%>
-                            <%if(basicInfo.educationList[i].id===basicInfo.education){%>
-                            <option value="<%=basicInfo.educationList[i].id%>" selected><%=basicInfo.educationList[i].name%></option>
+                            <%for(var i=0;i<educationList.length;i++){%>
+                            <%if(educationList[i].id===job.education){%>
+                            <option value="<%=educationList[i].id%>" selected><%=educationList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.educationList[i].id%>"><%=basicInfo.educationList[i].name%></option>
+                            <option value="<%=educationList[i].id%>"><%=educationList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
@@ -115,11 +108,11 @@
                     <label class="layui-form-label">月薪</label>
                     <div class="layui-input-inline">
                         <select name="salary" disabled="disabled">
-                            <%for(var i=0;i<basicInfo.salaryLevelList.length;i++){%>
-                            <%if(basicInfo.salaryLevelList[i].id===basicInfo.salary){%>
-                            <option value="<%=basicInfo.salaryLevelList[i].id%>" selected><%=basicInfo.salaryLevelList[i].name%></option>
+                            <%for(var i=0;i<salaryLevelList.length;i++){%>
+                            <%if(salaryLevelList[i].id===job.salary){%>
+                            <option value="<%=salaryLevelList[i].id%>" selected><%=salaryLevelList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.salaryLevelList[i].id%>"><%=basicInfo.salaryLevelList[i].name%></option>
+                            <option value="<%=salaryLevelList[i].id%>"><%=salaryLevelList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
@@ -127,11 +120,11 @@
                     <label class="layui-form-label">工作性质</label>
                     <div class="layui-input-inline">
                         <select name="jobNature" disabled="disabled">
-                            <%for(var i=0;i<basicInfo.jobNatureList.length;i++){%>
-                            <%if(basicInfo.jobNatureList[i].id===basicInfo.jobNature){%>
-                            <option value="<%=basicInfo.jobNatureList[i].id%>" selected><%=basicInfo.jobNatureList[i].name%></option>
+                            <%for(var i=0;i<jobNatureList.length;i++){%>
+                            <%if(jobNatureList[i].id===job.jobNature){%>
+                            <option value="<%=jobNatureList[i].id%>" selected><%=jobNatureList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.jobNatureList[i].id%>"><%=basicInfo.jobNatureList[i].name%></option>
+                            <option value="<%=jobNatureList[i].id%>"><%=jobNatureList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
@@ -141,12 +134,12 @@
                     <label class="layui-form-label">职位诱惑</label>
                     <div class="layui-input-block">
                         <input type="text" name="briefIntroduction" readonly="readonly" placeholder="请输入职位诱惑"
-                               autocomplete="off" class="layui-input" value="<%=basicInfo.briefIntroduction%>"/>
+                               autocomplete="off" class="layui-input" value="<%=job.briefIntroduction%>"/>
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">职位描述</label>
-                    <input type="hidden" value="<%=basicInfo.description%>" name="jobDescriptionHtmlStr"/>
+                    <input type="hidden" value="<%=job.description%>" name="jobDescriptionHtmlStr"/>
                     <div class="jobDescriptionHtml"></div>
                     <textarea id="description-edit" name="description" style="display: none"></textarea>
                 </div>

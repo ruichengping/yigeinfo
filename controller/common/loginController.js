@@ -5,13 +5,12 @@ const User=require('../../orm/User');
 module.exports=(req,res,next) => {
     let userName=req.body.userName;
     let password=req.body.password;
-    User.findAll({
+    User.findOne({
         where:{
             userName:userName
         }
-    }).then(function (result) {
-        if(result.length>0){
-            if(password==result[0].dataValues.password){
+    }).then((result) => {
+            if(password==result.get('password')){
                 req.session.user=userName;
                 res.send({
                     success:true,
@@ -23,12 +22,8 @@ module.exports=(req,res,next) => {
                     msg:"用户名或密码错误！"
                 });
             }
-        }else{
-            res.send({
-                success:false,
-                msg:"该账号不存在，请找管理申请"
-            });
-        }
+    }).catch((err) =>{
+        console.log(err);
     });
 
 };
