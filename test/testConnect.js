@@ -12,8 +12,8 @@ var sequelize=new Sequelize(mysqlConfig.database,mysqlConfig.user,mysqlConfig.pa
         idle:10000
     }
 });
-var Job=require('../orm/Job');
-Job.findAll({
+var Company=require('../orm/Company');
+Company.findOne({
     where:{
         id:'2'
     }

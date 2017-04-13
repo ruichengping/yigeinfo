@@ -1,20 +1,23 @@
 /**
- * Created by ruichengping on 2017/4/12.
+ * Created by wuming on 2017/4/13.
  */
 const Sequelize=require('sequelize');
 const sequelize=require('../config/sequelize.config');
-const Job=sequelize.define('job',{
+var Company=sequelize.define("",{
     id:{
         type:Sequelize.INTEGER,
         primaryKey:true
     },
-    jobName:{
+    companyName:{
         type:Sequelize.STRING
     },
-    companyId:{
+    financingStage:{
         type:Sequelize.INTEGER
     },
-    hrId:{
+    industryField:{
+        type:Sequelize.STRING
+    },
+    employeeNum:{
         type:Sequelize.INTEGER
     },
     provinceId:{
@@ -26,30 +29,21 @@ const Job=sequelize.define('job',{
     countryId:{
         type:Sequelize.INTEGER
     },
-    createTime:{
-        type:Sequelize.DATE
-    },
     address:{
         type:Sequelize.STRING
     },
-    experience:{
-        type:Sequelize.INTEGER
-    },
-    salary:{
-        type:Sequelize.INTEGER
-    },
-    jobNature:{
-        type:Sequelize.INTEGER
-    },
-    briefIntroduction:{
+    companyWord:{
         type:Sequelize.STRING
     },
-    description:{
-        type:Sequelize.STRING
+    introduction:{
+        type:Sequelize.TEXT('long')
     },
+    createTime:{
+        type:Sequelize.DATE
+    }
 },{
     freezeTableName:true,
-    tableName:'yige_job',
+    tableName:'yige_company',
     timestamps: false
 });
-module.exports=Job;
+module.exports=Company;
