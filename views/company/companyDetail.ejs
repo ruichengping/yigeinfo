@@ -28,22 +28,22 @@
                 <button type="button" id="basicInfo-btn-edit" style="position: absolute;top: 16px;right: 20px;" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe642;</i></button>
             </blockquote>
             <form id="form-company-basicInfo" class="layui-form layui-form-pane">
-                <input type="hidden" value="<%=basicInfo.id%>" name="companyId"/>
+                <input type="hidden" value="<%=company.id%>" name="companyId"/>
                 <div class="layui-form-item">
                     <label class="layui-form-label">公司名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="companyName" readonly="readonly" class="layui-input" value="<%= basicInfo.companyName%>">
+                        <input type="text" name="companyName" readonly="readonly" class="layui-input" value="<%= company.companyName%>">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">融资阶段</label>
                     <div class="layui-input-inline">
                         <select  disabled="disabled" name="financingStage">
-                            <%for(var i=0;i<basicInfo.financingStageList.length;i++){%>
-                                <%if(basicInfo.financingStageList[i].id==basicInfo.financingStage){%>
-                                    <option value="<%=basicInfo.financingStageList[i].id%>" selected><%=basicInfo.financingStageList[i].name%></option>
+                            <%for(var i=0;i<financingStageList.length;i++){%>
+                                <%if(financingStageList[i].id==company.financingStage){%>
+                                    <option value="<%=financingStageList[i].id%>" selected><%=financingStageList[i].name%></option>
                                 <%}else{%>
-                                    <option value="<%=basicInfo.financingStageList[i].id%>"><%=basicInfo.financingStageList[i].name%></option>
+                                    <option value="<%=financingStageList[i].id%>"><%=financingStageList[i].name%></option>
                                 <%}%>
                             <%}%>
                         </select>
@@ -51,11 +51,11 @@
                     <label class="layui-form-label">行业领域</label>
                     <div class="layui-input-inline">
                         <select  disabled="disabled" name="industryField">
-                            <%for(var i=0;i<basicInfo.industryFieldList.length;i++){%>
-                                <%if(basicInfo.industryFieldList[i].id==basicInfo.industryField){%>
-                                    <option value="<%=basicInfo.industryFieldList[i].id%>" selected><%=basicInfo.industryFieldList[i].name%></option>
+                            <%for(var i=0;i<industryFieldList.length;i++){%>
+                                <%if(industryFieldList[i].id==company.industryField){%>
+                                    <option value="<%=industryFieldList[i].id%>" selected><%=industryFieldList[i].name%></option>
                                  <%}else{%>
-                                    <option value="<%=basicInfo.industryFieldList[i].id%>"><%=basicInfo.industryFieldList[i].name%></option>
+                                    <option value="<%=industryFieldList[i].id%>"><%=industryFieldList[i].name%></option>
                                 <%}%>
                             <%}%>
                         </select>
@@ -63,11 +63,11 @@
                     <label class="layui-form-label">企业规模</label>
                     <div class="layui-input-inline">
                         <select  disabled="disabled" name="employeeNum">
-                            <%for(var i=0;i<basicInfo.employeeNumList.length;i++){%>
-                                <%if(basicInfo.employeeNumList[i].id==basicInfo.employeeNum){%>
-                                    <option value="<%=basicInfo.employeeNumList[i].id%>" selected><%=basicInfo.employeeNumList[i].name%></option>
+                            <%for(var i=0;i<employeeNumList.length;i++){%>
+                                <%if(employeeNumList[i].id==company.employeeNum){%>
+                                    <option value="<%=employeeNumList[i].id%>" selected><%=employeeNumList[i].name%></option>
                                 <%}else{%>
-                                    <option value="<%=basicInfo.employeeNumList[i].id%>"><%=basicInfo.employeeNumList[i].name%></option>
+                                    <option value="<%=employeeNumList[i].id%>"><%=employeeNumList[i].name%></option>
                                 <%}%>
                             <%}%>
                         </select>
@@ -77,33 +77,33 @@
                     <label class="layui-form-label">所在地区</label>
                     <div class="layui-input-inline">
                         <select name="provinceId" disabled="disabled" lay-filter="province">
-                            <%for(var i=0;i<basicInfo.provinceList.length;i++){%>
-                            <%if(basicInfo.provinceList[i].ProID===basicInfo.provinceId){%>
-                            <option value="<%=basicInfo.provinceList[i].ProID%>" selected><%=basicInfo.provinceList[i].name%></option>
+                            <%for(var i=0;i<provinceList.length;i++){%>
+                            <%if(provinceList[i].ProID===company.provinceId){%>
+                            <option value="<%=provinceList[i].ProID%>" selected><%=provinceList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.provinceList[i].ProID%>"><%=basicInfo.provinceList[i].name%></option>
+                            <option value="<%=provinceList[i].ProID%>"><%=provinceList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
                     </div>
                     <div class="layui-input-inline">
                         <select name="cityId" disabled="disabled" lay-filter="city">
-                            <%for(var i=0;i<basicInfo.cityList.length;i++){%>
-                            <%if(basicInfo.cityList[i].CityID===basicInfo.cityId){%>
-                            <option value="<%=basicInfo.cityList[i].CityID%>" selected><%=basicInfo.cityList[i].name%></option>
+                            <%for(var i=0;i<cityList.length;i++){%>
+                            <%if(cityList[i].CityID===company.cityId){%>
+                            <option value="<%=cityList[i].CityID%>" selected><%=cityList[i].name%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.cityList[i].CityID%>"><%=basicInfo.cityList[i].name%></option>
+                            <option value="<%=cityList[i].CityID%>"><%=cityList[i].name%></option>
                             <%}%>
                             <%}%>
                         </select>
                     </div>
                     <div class="layui-input-inline">
                         <select name="countryId" disabled="disabled">
-                            <%for(var i=0;i<basicInfo.countryList.length;i++){%>
-                            <%if(basicInfo.countryList[i].Id===basicInfo.countryId){%>
-                            <option value="<%=basicInfo.countryList[i].Id%>" selected><%=basicInfo.countryList[i].DisName%></option>
+                            <%for(var i=0;i<countryList.length;i++){%>
+                            <%if(countryList[i].Id===company.countryId){%>
+                            <option value="<%=countryList[i].Id%>" selected><%=countryList[i].DisName%></option>
                             <%}else{%>
-                            <option value="<%=basicInfo.countryList[i].Id%>"><%=basicInfo.countryList[i].DisName%></option>
+                            <option value="<%=countryList[i].Id%>"><%=countryList[i].DisName%></option>
                             <%}%>
                             <%}%>
                         </select>
@@ -112,18 +112,18 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">详细地址</label>
                     <div class="layui-input-block">
-                        <input type="text" name="address" readonly="readonly" class="layui-input"  value="<%=basicInfo.address%>">
+                        <input type="text" name="address" readonly="readonly" class="layui-input"  value="<%=company.address%>">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">公司定位</label>
                     <div class="layui-input-block">
-                        <input type="text" name="companyWord" readonly="readonly" class="layui-input"  value="<%=basicInfo.companyWord%>">
+                        <input type="text" name="companyWord" readonly="readonly" class="layui-input"  value="<%=company.companyWord%>">
                     </div>
                 </div>
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">公司介绍</label>
-                    <input type="hidden" class="introductionHtmlStr" value="<%= basicInfo.introduction%>"/>
+                    <input type="hidden" class="introductionHtmlStr" value="<%= company.introduction%>"/>
                     <div class="introduction"></div>
                     <textarea id="introduction-edit" name="introduction" style="display: none"></textarea>
                 </div>

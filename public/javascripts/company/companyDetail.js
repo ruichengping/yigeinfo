@@ -4,6 +4,7 @@
 layui.use(['form','layedit'],function () {
     var form=layui.form();
     var layedit = layui.layedit;
+    var editIndex;//富本编辑器编号
     //公司介绍
     var introductionHtmlStr=$(".introductionHtmlStr").val();
     $(".introduction").html(introductionHtmlStr);
@@ -15,7 +16,7 @@ layui.use(['form','layedit'],function () {
         $("input[type=text]").removeAttr("readonly");
         $(".introduction").hide();
         $("#introduction-edit").show();
-        layedit.build("introduction-edit");
+        editIndex=layedit.build("introduction-edit");
         $(".basic-info-btn-wrapper").show();
         form.render();
     });
@@ -69,6 +70,7 @@ layui.use(['form','layedit'],function () {
         });
     });
     form.on('submit(company-basicInfo-submit)',function () {
+        layedit.sync(editIndex);
         $.ajax({
             type:"post",
             url:"/company/updateCompany.json",

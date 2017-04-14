@@ -1,36 +1,30 @@
 /**
  * Created by ruichengping on 2017/3/15.
  */
-const Company=require("../../model/company/companyModel");
+const Company=require("../../orm/Company");
 const getCurrentTime=require("../../tool/getCurrentTime");
-const insertCompany=require('../../service/company/insertCompany');
 module.exports=(req,res,next) => {
-    let companyName=req.body.companyName;
-    let financingStage=req.body.financingStage;
-    let industryField=req.body.industryField;
-    let employeeNum=req.body.employeeNum;
-    let provinceId=req.body.provinceId;
-    let cityId=req.body.cityId;
-    let countryId=req.body.countryId;
-    let address=req.body.address;
-    let companyWord=req.body.companyWord;
-    let introduction=req.body.introduction;
-    let createTime=getCurrentTime();
-
-    let company=new Company(companyName,financingStage,industryField,employeeNum,provinceId,
-        cityId,countryId,address,companyWord,introduction,createTime);
-    insertCompany(company,(result) => {
-        if(result){
-            res.send({
-               "success":true,
-                "company":{
-                   "companyId":result
-                }
-            });
-        }else{
-            res.send({
-                "success":false
-            })
-        }
+    Company.create({
+        companyName:req.body.companyName,
+        financingStage:req.body.financingStage,
+        industryField:req.body.industryField,
+        employeeNum:req.body.employeeNum,
+        provinceId:req.body.provinceId,
+        cityId:req.body.cityId,
+        countryId:req.body.countryId,
+        address:req.body.address,
+        companyWord:req.body.companyWord,
+        introduction:req.body.introduction,
+        createTime:getCurrentTime()
+    }).then((mysqlCompany)=>{
+        res.send({
+           success:true,
+           company:mysqlCompany.dataValues
+        });
+    }).catch((err)=>{
+        console.log(err);
+        res.send({
+           success:false
+        });
     });
 };

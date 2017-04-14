@@ -6,7 +6,8 @@ const sequelize=require('../config/sequelize.config');
 const Job=sequelize.define('job',{
     id:{
         type:Sequelize.INTEGER,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement:true
     },
     jobName:{
         type:Sequelize.STRING

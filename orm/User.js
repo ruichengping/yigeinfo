@@ -4,9 +4,12 @@
 const Sequelize=require('sequelize');
 const sequelize=require('../config/sequelize.config');
 const User=sequelize.define('user',{
-    userId:{
+    id:{
         type:Sequelize.INTEGER,
         primaryKey:true
+    },
+    userId:{
+        type:Sequelize.STRING,
     },
     userName:{
         type:Sequelize.STRING

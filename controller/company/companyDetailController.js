@@ -1,7 +1,7 @@
 /**
  * Created by ruichengping on 2017/3/17.
  */
-const getCompanyBasicInfoById=require('../../service/company/getCompanyBasicInfoById');
+const Company=require("../../orm/Company");
 const financingStageList=require('../../common/financingStageList');
 const industryFieldList=require('../../common/industryFieldList');
 const employeeNumList=require('../../common/employeeNumList');
@@ -9,26 +9,28 @@ const provinceList=require('../../common/provinceList');
 const getCityListByProvinceId=require('../../tool/getCityListByProvinceId');
 const getCountryListByCityId=require('../../tool/getCountryListByCityId');
 module.exports=(req,res,next) => {
+    var result={};
+    result.financingStageList=financingStageList;
+    result.industryFieldList=industryFieldList;
+    result.employeeNumList=employeeNumList;
+    result.provinceList=provinceList;
     if(req.query.companyId){
         let companyId=req.query.companyId;
-        new Promise((resolve, reject) => {
-            getCompanyBasicInfoById(companyId,(result) => {
-                let basicInfo=result;
-                basicInfo.financingStageList=financingStageList;
-                basicInfo.industryFieldList=industryFieldList;
-                basicInfo.employeeNumList=employeeNumList;
-                basicInfo.provinceList=provinceList;
-                basicInfo.cityList=getCityListByProvinceId(basicInfo.provinceId);
-                basicInfo.countryList=getCountryListByCityId(basicInfo.cityId);
-                resolve(basicInfo);
-            });
-        }).then((basicInfo) => {
-            res.render('company/companyDetail',{
-                'basicInfo':basicInfo
-            });
+        Company.findOne({
+            where:{
+                id:companyId
+            }
+        }).then(function (mysqlResult) {
+            result.company=mysqlResult.dataValues;
+            result.cityList=getCityListByProvinceId(mysqlResult.provinceId);
+            result.countryList=getCountryListByCityId(mysqlResult.cityId);
+            res.render('company/companyDetail',result);
+        }).catch(function (err) {
+            console.log(err);
+            res.send('该企业不存在');
         });
     }else{
-        res.send('该企业不存在');
+        res.send('参数不合法');
     }
 
 };

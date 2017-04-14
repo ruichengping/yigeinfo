@@ -4,6 +4,7 @@
 layui.use(['form','layedit'],function () {
     var form=layui.form();
     var layedit = layui.layedit;
+    var editIndex;//富本编辑器编号
     //职位描述
     var jobDescriptionHtmlStr=$("input[name=jobDescriptionHtmlStr]").val();
     $(".jobDescriptionHtml").html(jobDescriptionHtmlStr);
@@ -12,10 +13,10 @@ layui.use(['form','layedit'],function () {
     $("#basicInfo-btn-edit").on("click",function () {
         layer.msg('切换成编辑模式',{time:1000});
         $("select").removeAttr("disabled");
-        $("input[type=text]").removeAttr("readonly");
+        $("input[type=text]").not("input[name=companyName]").removeAttr("readonly");
         $(".jobDescriptionHtml").hide();
         $("#description-edit").show();
-        layedit.build("description-edit");
+        editIndex=layedit.build("description-edit");
         $(".basic-info-btn-wrapper").show();
         form.render();
     });
@@ -31,6 +32,7 @@ layui.use(['form','layedit'],function () {
         form.render();
     });
     form.on('submit(job-basicInfo-submit)',function () {
+        layedit.sync(editIndex);
         $.ajax({
             type:"post",
             url:"/job/updateJob.json",

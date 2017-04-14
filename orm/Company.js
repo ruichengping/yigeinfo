@@ -6,7 +6,8 @@ const sequelize=require('../config/sequelize.config');
 var Company=sequelize.define("",{
     id:{
         type:Sequelize.INTEGER,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement:true
     },
     companyName:{
         type:Sequelize.STRING
@@ -39,6 +40,9 @@ var Company=sequelize.define("",{
         type:Sequelize.TEXT('long')
     },
     createTime:{
+        type:Sequelize.DATE
+    },
+    modificateTime:{
         type:Sequelize.DATE
     }
 },{

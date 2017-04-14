@@ -44,7 +44,7 @@ router.get("/home.html",verify,function (req,res,next) {
 //职位
 router.get("/job/jobList.html",verify,jobListController);
 router.get("/job/addJob.html",verify,addJobPageController);
-router.get("/job/jobDetail.html",jobDetailController);
+router.get("/job/jobDetail.html",verify,jobDetailController);
 router.post("/job/addJob.json",addJobController);
 router.post('/job/updateJob.json',updateJobController);
 //企业

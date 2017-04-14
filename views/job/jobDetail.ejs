@@ -31,8 +31,9 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">所属公司</label>
                     <div class="layui-input-block">
-                        <input type="text" name="jobName" placeholder="请输入职位名称"
-                               autocomplete="off" class="layui-input" readonly="readonly" value="<%=job.jobName%>"/>
+                        <input type='hidden' name="companyId" value="<%=company.id%>"/>
+                        <input type="text" name="companyName" placeholder="请输入所属公司"
+                               autocomplete="off" class="layui-input" readonly="readonly" value="<%=company.companyName%>"/>
                     </div>
                 </div>
                 <div class="layui-form-item">

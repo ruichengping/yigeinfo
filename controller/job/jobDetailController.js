@@ -2,6 +2,7 @@
  * Created by ruichengping on 2017/3/20.
  */
 const Job=require('../../orm/Job');
+const Company=require('../../orm/Company');
 const provinceList=require('../../common/provinceList');
 const getCityListByProvinceId=require('../../tool/getCityListByProvinceId');
 const getCountryListByCityId=require('../../tool/getCountryListByCityId');
@@ -19,29 +20,33 @@ module.exports=(req,res,next) => {
     result.salaryLevelList=salaryLevelList;
     result.jobNatureList=jobNatureList;
     if(jobId){
-        let promise_getJobBasicInfoById=new Promise((resolve, reject) => {
-            Job.findOne({
-                where:{
-                    id:jobId
-                }
-            }).then((job)=>{
-                if(job){
-                    result.cityList=getCityListByProvinceId(job.get("provinceId"));
-                    result.countryList=getCountryListByCityId(job.get("cityId"));
-                    result.job=job.dataValues;
-                    resolve();
-                }else{
-                    reject();
-                }
-            }).catch((err)=>{
-                console.log(err);
-                reject();
-            });
-        }).then(()=>{
-            res.render("job/jobDetail",result);
+        Job.findOne({
+            where:{
+                id:jobId
+            }
+        }).then((mysqlJob)=>{
+            if(mysqlJob){
+                result.cityList=getCityListByProvinceId(mysqlJob.get("provinceId"));
+                result.countryList=getCountryListByCityId(mysqlJob.get("cityId"));
+                result.job=mysqlJob.dataValues;
+                Company.findOne({
+                    where:{
+                        id:mysqlJob.dataValues.companyId
+                    }
+                }).then((mysqlCompany)=>{
+                    result.company=mysqlCompany.dataValues;
+                    res.render("job/jobDetail",result);
+                }).catch((err)=>{
+                    res.send('系统异常');
+                });
+            }else{
+                res.send('该企业不存在');
+            }
         }).catch((err)=>{
             console.log(err);
-            res.render("job/jobDetail",result);
+            res.send('系统异常');
         });
+    }else{
+        res.send("参数不合法");
     }
 };
