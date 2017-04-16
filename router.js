@@ -3,8 +3,13 @@
  */
 const express=require("express");
 const router=express.Router();
-//验证模块
+/**
+ * 中间件
+ */
 const verify=require("./middleware/verify");
+/**
+ *常用控制器
+ */
 //登录控制器
 const loginController=require("./controller/common/loginController");
 //获取省份控制器
@@ -13,19 +18,29 @@ const provinceController=require("./controller/common/provinceController");
 const cityController=require("./controller/common/cityController");
 //获取县区控制器
 const countryController=require("./controller/common/countryController");
-//职位
+/**
+ * 职位控制器
+ */
 const jobListController=require("./controller/job/jobListController");
 const addJobPageController=require("./controller/job/addJobPageController");
 const addJobController=require("./controller/job/addJobController");
 const jobDetailController=require('./controller/job/jobDetailController');
 const updateJobController=require('./controller/job/updateJobController');
-//企业
+/**
+ * 企业控制器
+ */
 const addCompanyPageController=require("./controller/company/addCompanyPageController");
-const companyListController=require("./controller/company/companyListController");
+const companyListPageController=require("./controller/company/companyListPageController");
 const addCompanyController=require('./controller/company/addCompanyController');
 const companyDetailController=require('./controller/company/companyDetailController');
 const updateCompanyController=require('./controller/company/updateCompanyController');
-//---------------------------------------
+const getCompanyByFilterController=require('./controller/company/getCompanyByFilterController');
+/**
+ * 简历控制器
+ */
+const resumeListPageController=require('./controller/resume/resumeListPageController');
+const addResumePageController=require('./controller/resume/addResumePageController');
+/*-----------------------------------------------------------------------------------*/
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
 });
@@ -41,32 +56,31 @@ router.get("/home.html",verify,function (req,res,next) {
         activePage:"首页"
     });
 });
-//职位
+/**
+ * 职位
+ */
 router.get("/job/jobList.html",verify,jobListController);
 router.get("/job/addJob.html",verify,addJobPageController);
 router.get("/job/jobDetail.html",verify,jobDetailController);
 router.post("/job/addJob.json",addJobController);
 router.post('/job/updateJob.json',updateJobController);
-//企业
-router.get("/company/companyList.html",verify,companyListController);
+/**
+ * 企业
+ */
+router.get("/company/companyList.html",verify,companyListPageController);
 router.get("/company/addCompany.html",verify,addCompanyPageController);
 router.get("/company/companyDetail.html",verify,companyDetailController);
 router.post("/company/addCompany.json",addCompanyController);
 router.post("/company/updateCompany.json",updateCompanyController);
-//简历信息库
-router.get("/resumeList.html",verify,function (req,res,next) {
-    res.render("resume/resumeList",{
-        activePage:"简历信息库"
-    });
-});
-//第三方信息库
-router.get("/thirdPartyList.html",verify,function (req,res,next) {
-    res.render("thirdParty/thirdPartyList",{
-        activePage:"第三方信息库"
-    });
-});
-
-//----------常用省市县三级数据查询----------
+router.post("/company/getCompany.json",getCompanyByFilterController);
+/**
+ * 简历
+ */
+router.get("/resume/resumeList.html",verify,resumeListPageController);
+router.get("/resume/addResume.html",verify,addResumePageController);
+/**
+ * 常用接口
+ */
 router.get("/yige/getProvince.json",provinceController);
 router.get("/yige/getCityListByProvinceId.json",cityController);
 router.get("/yige/getCountryListByCityId.json",countryController);

@@ -25,95 +25,57 @@
             <legend>筛选条件</legend>
         </fieldset>
         <!--筛选条件-->
-        <form class="filter-wrapper hide layui-form">
+        <form id="companyFilter" class="filter-wrapper hide layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">企业名称</label>
                 <div class="layui-input-block">
-                    <input type="text" autocomplete="off" placeholder="请输入企业名称" class="layui-input">
+                    <input name="companyName" type="text" autocomplete="off" placeholder="请输入企业名称" class="layui-input"/>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">公司地点</label>
                 <div class="layui-input-inline">
-                    <select>
-                        <option value="">请选择省</option>
-                        <option value="浙江" selected="">浙江省</option>
-                        <option value="你的工号">江西省</option>
-                        <option value="你最喜欢的老师">福建省</option>
+                    <select name="provinceId" lay-filter="province">
+                        <option value="">请选</option>
                     </select>
                 </div>
                 <div class="layui-input-inline">
-                    <select >
+                    <select name="cityId" lay-filter="city">
                         <option value="">请选择市</option>
-                        <option value="杭州">杭州</option>
-                        <option value="宁波">宁波</option>
-                        <option value="温州">温州</option>
-                        <option value="温州">台州</option>
-                        <option value="温州">绍兴</option>
                     </select>
                 </div>
                 <div class="layui-input-inline">
-                    <select>
+                    <select name="countryId" lay-filter="city">
                         <option value="">请选择县/区</option>
-                        <option value="西湖区">西湖区</option>
-                        <option value="余杭区">余杭区</option>
-                        <option value="拱墅区">临安市</option>
+
                     </select>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">创建日期</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+                    <input type="text" name="startTime" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
                 </div>
                 <div class="layui-form-mid">-</div>
                 <div class="layui-input-inline">
-                    <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+                    <input type="text" name="endTime" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">融资阶段</label>
                 <div class="layui-input-inline">
-                    <select>
-                        <option value="">不限</option>
-                        <option value="1">未融资</option>
-                        <option value="2">天使轮</option>
-                        <option value="3">A轮</option>
-                        <option value="4">B轮</option>
-                        <option value="5">C轮</option>
-                        <option value="6">D轮及以上</option>
-                        <option value="7">上市公司</option>
-                        <option value="8">不需要融资</option>
+                    <select  disabled="disabled" name="financingStage">
+                        <%for(var i=0;i<financingStageList.length;i++){%>
+                        <option value="<%=financingStageList[i].id%>"><%=financingStageList[i].name%></option>
+                        <%}%>
                     </select>
                 </div>
                 <label class="layui-form-label">行业领域</label>
                 <div class="layui-input-inline">
-                    <select lay-search>
-                        <option value="">不限</option>
-                        <option value="1">移动互联网</option>
-                        <option value="2">电子商务</option>
-                        <option value="3">金融</option>
-                        <option value="4">企业服务</option>
-                        <option value="5">教育</option>
-                        <option value="6">文化娱乐</option>
-                        <option value="7">游戏</option>
-                        <option value="8">O2O</option>
-                        <option value="9">硬件</option>
-                        <option value="10">社交网络</option>
-                        <option value="11">旅游</option>
-                        <option value="12">医疗健康</option>
-                        <option value="13">生活服务</option>
-                        <option value="14">信息安全</option>
-                        <option value="15">社交网络</option>
-                        <option value="16">旅游</option>
-                        <option value="17">医疗健康</option>
-                        <option value="18">生活服务</option>
-                        <option value="19">信息安全</option>
-                        <option value="20">数据服务</option>
-                        <option value="21">广告营销</option>
-                        <option value="22">分类信息</option>
-                        <option value="23">招聘</option>
-                        <option value="24">其他</option>
+                    <select name="industryField">
+                        <%for(var i=0;i<industryFieldList.length;i++){%>
+                        <option value="<%=industryFieldList[i].id%>"><%=industryFieldList[i].name%></option>
+                        <%}%>
                     </select>
                 </div>
             </div>
@@ -236,15 +198,5 @@
 </body>
 <!--JS-->
 <%- include ../publicPages/script_content.ejs %>
-<script>
-    layui.use(['form', 'layedit', 'laydate','element','laypage'],function () {
-        layui.laypage({
-            cont: 'page-wrapper'
-            ,pages: 100 //总页数
-            ,groups: 5 //连续显示分页数
-            ,skip:"true"
-        });
-    });
-</script>
 <script src="/javascripts/company/companyList.js"></script>
 </html>

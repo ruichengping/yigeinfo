@@ -3,19 +3,21 @@
  */
 const log4js = require('log4js');
 const path=require('path');
-const getCurrentTime=require('../tool/getCurrentTime');
 //配置log4js
 log4js.configure({
     appenders: [
-        { type: 'console' }, //控制台输出
+        { type: 'console',category:'yige_console'}, //控制台输出
         {
             type: 'file', //文件输出
-            filename: path.resolve(__dirname,'../logs/'+getCurrentTime(),'/'+getCurrentTime()+'.log'),
+            filename: path.resolve(__dirname,'../logs/yigeInfo.log'),
             maxLogSize: 1024,
+            pattern: "_yyyy-MM-dd",
             backups:3,
-            category: 'normal'
-        }
-    ]
+            category: 'yige_dateFileLog'
+        },
+    ],
+    // replaceConsole:true
 });
-const logger=log4js.getLogger('yigeInfo');
-module.exports=logger;
+var yigeConsole=log4js.getLogger("yige_console");
+var yigeDateFileLog=log4js.getLogger("yige_dateFileLog")
+module.exports=yigeConsole;

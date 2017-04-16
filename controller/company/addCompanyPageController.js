@@ -3,6 +3,6 @@
  */
 module.exports=(req,res,next) => {
     res.render("company/addCompany",{
-        activePage:"新增企业"
+        "activePage":"新增企业",
     });
 };

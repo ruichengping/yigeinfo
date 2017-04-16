@@ -13,12 +13,15 @@ var sequelize=new Sequelize(mysqlConfig.database,mysqlConfig.user,mysqlConfig.pa
     }
 });
 var Company=require('../orm/Company');
-Company.findOne({
+Company.findAll({
     where:{
-        id:'2'
+        companyName:{
+            $like:'%卖%'
+        },
+
     }
-}).then(function (result) {
-    console.log(result);
-}).catch(function (err) {
-    console.log(err);
+}).then((mysqlCompany)=>{
+    console.log(mysqlCompany);
+}).catch((error)=>{
+    console.log(error);
 });

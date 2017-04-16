@@ -2,14 +2,7 @@
  * Created by ruichengping on 2017/3/12.
  */
 module.exports=(req,res,next) => {
-    new Promise((resolve, reject) => {
-        getCompanyList('',(companyList) => {
-            resolve(companyList);
-        });
-    }).then((companyList) =>{
-        res.render("job/addJob",{
-            'activePage':"新增职位",
-            'companyList':companyList
-        });
+    res.render("job/addJob",{
+        'activePage':"新增职位",
     });
 };

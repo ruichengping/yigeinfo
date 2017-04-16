@@ -2,6 +2,7 @@
  * Created by ruichengping on 2017/3/12.
  */
 const User=require('../../orm/User');
+const logger=require('../../config/log4js.config');
 module.exports=(req,res,next) => {
     let userName=req.body.userName;
     let password=req.body.password;
@@ -10,6 +11,7 @@ module.exports=(req,res,next) => {
             userName:userName
         }
     }).then((result) => {
+        logger.info('用户账号密码查询成功');
             if(password==result.get('password')){
                 req.session.user=userName;
                 res.send({
@@ -23,7 +25,7 @@ module.exports=(req,res,next) => {
                 });
             }
     }).catch((err) =>{
-        console.log(err);
+        logger.error('获取用户账号错误');
     });
 
 };

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增简历</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%- include ../publicPages/css_content.ejs%>
+    <link rel='stylesheet' href='/stylesheets/resume/addResume.css' >
+</head>
+<body>
+<!--头部区域-->
+<%- include ../publicPages/header.ejs %>
+<!--主体区域-->
+<div id="main-body">
+    <!--导航栏-->
+    <%- include ../publicPages/nav.ejs %>
+    <!--文本区域-->
+    <div id="content-wrapper">
+        <div class="addResume-wrapper">
+            <fieldset class="layui-elem-field">
+                <legend>新增简历</legend>
+                <form class="layui-form form-addResume">
+                    <h4 class="module-title">基本信息</h4>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                        <label class="layui-form-label">年龄</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号码</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                        <label class="layui-form-label">邮箱</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                        <label class="layui-form-label">所在城市</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                    </div>
+                    <h4 class="module-title">教育经历</h4>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">毕业院校</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                        <label class="layui-form-label">专业</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                        <label class="layui-form-label">学历</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">入学时间</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                        <label class="layui-form-label">毕业时间</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+                        </div>
+                    </div>
+                    <h4 class="module-title">工作经历</h4>
+                    <h4 class="module-title">自我评价</h4>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">编辑器</label>
+                        <div class="layui-input-block">
+                            <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+</body>
+<!--JS-->
+<%- include ../publicPages/script_content.ejs %>
+<script src="/javascripts/resume/addResume.js"></script>
+</html>

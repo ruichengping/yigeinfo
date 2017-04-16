@@ -13,7 +13,6 @@ const jobNatureList=require('../../common/jobNatureList');
 module.exports=(req,res,next) => {
     let jobId=req.query.jobId;
     let result={};
-    let funArray=[];
     result.provinceList=provinceList;
     result.educationList=educationList;
     result.workExperienceList=workExperienceList;
