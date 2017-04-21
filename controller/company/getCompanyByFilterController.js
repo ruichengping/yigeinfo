@@ -11,6 +11,7 @@ const getIndustryFieldById=require('../../tool/getIndustryFieldById');
 const getProvinceById=require('../../tool/getProvinceById');
 const getCityById=require('../../tool/getCityById');
 const getCountryById=require('../../tool/getCountryById');
+const moment = require('moment');
 module.exports=(req,res,next) => {
     //筛选条件
     let filter={};
@@ -55,6 +56,7 @@ module.exports=(req,res,next) => {
                 companyItem.dataValues.countryName=countryName;
                 companyItem.dataValues.financingStageName=getFinancingStageById(companyItem.financingStage).name;
                 companyItem.dataValues.industryFieldName=getIndustryFieldById(companyItem.industryField).name;
+                companyItem.dataValues.createTime=moment(companyItem.dataValues.createTime).format('YYYY-MM-DD HH:mm');
                 return companyItem.dataValues;
             });
         }
