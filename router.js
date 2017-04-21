@@ -35,6 +35,7 @@ const addCompanyController=require('./controller/company/addCompanyController');
 const companyDetailController=require('./controller/company/companyDetailController');
 const updateCompanyController=require('./controller/company/updateCompanyController');
 const getCompanyByFilterController=require('./controller/company/getCompanyByFilterController');
+const deleteCompanyController=require('./controller/company/deleteCompanyController');
 /**
  * 简历控制器
  */
@@ -73,6 +74,7 @@ router.get("/company/companyDetail.html",verify,companyDetailController);
 router.post("/company/addCompany.json",addCompanyController);
 router.post("/company/updateCompany.json",updateCompanyController);
 router.post("/company/getCompany.json",getCompanyByFilterController);
+router.post("/company/deleteCompany.json",deleteCompanyController);
 /**
  * 简历
  */

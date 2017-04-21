@@ -44,6 +44,9 @@ var Company=sequelize.define("",{
     },
     modificateTime:{
         type:Sequelize.DATE
+    },
+    status:{
+        type:Sequelize.INTEGER
     }
 },{
     freezeTableName:true,

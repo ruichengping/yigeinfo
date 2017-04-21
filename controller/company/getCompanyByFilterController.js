@@ -14,7 +14,9 @@ const getCountryById=require('../../tool/getCountryById');
 const moment = require('moment');
 module.exports=(req,res,next) => {
     //筛选条件
-    let filter={};
+    let filter={
+        status:1
+    };
     if(req.body.companyName!=''){
         filter.companyName={
             $like:"%"+req.body.companyName+"%"
