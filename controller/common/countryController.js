@@ -3,7 +3,7 @@
  */
 const getCountListByCityId=require("../../tool/getCountryListByCityId");
 module.exports=(req,res,next) => {
-    let cityId=req.query.countryId;
+    let cityId=req.query.cityId;
     res.send({
        "success":true,
         "countryList":getCountListByCityId(cityId)

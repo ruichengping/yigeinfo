@@ -18,6 +18,10 @@ log4js.configure({
     ],
     // replaceConsole:true
 });
-var yigeConsole=log4js.getLogger("yige_console");
-var yigeDateFileLog=log4js.getLogger("yige_dateFileLog")
-module.exports=yigeConsole;
+let logger={};
+if(process.env.NODE_ENV=='development'){
+    logger=log4js.getLogger();
+}else if(process.env.NODE_ENV=='production'){
+    logger=log4js.getLogger("yige_dateFileLog");
+}
+module.exports=logger;

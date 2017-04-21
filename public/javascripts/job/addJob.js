@@ -45,7 +45,7 @@ layui.use(['form', 'layedit','element'],function () {
             type:"get",
             url:"/yige/getCountryListByCityId.json",
             data:{
-                countryId:data.value
+                cityId:data.value
             }
         }).done(function (data) {
             if(data.success){

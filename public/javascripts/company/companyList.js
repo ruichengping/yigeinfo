@@ -2,12 +2,16 @@
  * Created by rcp1 on 2016/11/22.
  */
 layui.use(['form','laydate','element','laypage'],function () {
-    //分页
-    layui.laypage({
-        cont: 'page-wrapper'
-        ,pages: 100 //总页数
-        ,groups: 5 //连续显示分页数
-        ,skip:"true"
+    var form = layui.form();
+    //数据初始化
+    getCompanyListData(function (totalCount) {
+        //分页
+        layui.laypage({
+            cont: 'page-wrapper'
+            ,pages: Math.ceil(totalCount/10) //总页数
+            ,groups: 5 //连续显示分页数
+            ,skip:"true"
+        });
     });
     //删除按钮
     $(document).on("click",".delete",function () {
@@ -28,15 +32,6 @@ layui.use(['form','laydate','element','laypage'],function () {
             $(this).find("i").html("&#xe61a;");
         }
 
-    });
-    $.ajax({
-        type:'post',
-        url:"/company/getCompany.json",
-        data:$("#companyFilter").serialize()
-    }).done(function (data) {
-        if(data.success){
-            console.log(data);
-        }
     });
     //获取省份数据
     $.ajax({
@@ -77,7 +72,7 @@ layui.use(['form','laydate','element','laypage'],function () {
             type:"get",
             url:"/yige/getCountryListByCityId.json",
             data:{
-                countryId:data.value
+                cityId:data.value
             }
         }).done(function (data) {
             if(data.success){
@@ -90,5 +85,33 @@ layui.use(['form','laydate','element','laypage'],function () {
             }
         });
     });
+    //搜索功能
+    form.on('submit(search)',getCompanyListData);
+    function getCompanyListData(callback) {
+        $.ajax({
+            type:'post',
+            url:"/company/getCompany.json",
+            data:$("#companyFilter").serialize()
+        }).done(function (data) {
+            var html='';
+            if(data.success){
+                data.companyList.forEach(function (companyItem) {
+                    html+='<tr>'
+                        +'<td>'+companyItem.id+'</td>'
+                        +'<td>'+companyItem.companyName+'</td>'
+                        +'<td>'+companyItem.provinceName+'/'+companyItem.cityName+'/'+companyItem.countryName+'</td>'
+                        +'<td>'+companyItem.createTime+'</td>'
+                        +'<td>'+companyItem.industryFieldName+'</td>'
+                        +'<td>'+companyItem.financingStageName+'</td>'
+                        +"<td><a title='查看详情' href='/company/companyDetail.html?companyId="+companyItem.id+"'><i class='layui-icon'>&#xe63c;</i></a> <a title='删除' class='delete' href='javascript:;'><i class='layui-icon'>&#xe640;</i></a></td>"
+                        +'</tr>';
+                });
+                $("#companyList tbody").html(html);
+                if( typeof callback ==='function'){
+                    callback(data.totalCount);
+                }
+            }
+        });
+    }
 });
 

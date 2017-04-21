@@ -47,24 +47,24 @@
                 <div class="layui-input-inline">
                     <select name="countryId" lay-filter="city">
                         <option value="">请选择县/区</option>
-
                     </select>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">创建日期</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="startTime" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+                    <input type="text" name="startTime" id="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
                 </div>
                 <div class="layui-form-mid">-</div>
                 <div class="layui-input-inline">
-                    <input type="text" name="endTime" id="date" lay-verify="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+                    <input type="text" name="endTime" id="date" placeholder="yyyy-mm-dd" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">融资阶段</label>
                 <div class="layui-input-inline">
-                    <select  disabled="disabled" name="financingStage">
+                    <select  name="financingStage">
+                        <option value="">不限</option>
                         <%for(var i=0;i<financingStageList.length;i++){%>
                         <option value="<%=financingStageList[i].id%>"><%=financingStageList[i].name%></option>
                         <%}%>
@@ -73,6 +73,7 @@
                 <label class="layui-form-label">行业领域</label>
                 <div class="layui-input-inline">
                     <select name="industryField">
+                        <option value="">不限</option>
                         <%for(var i=0;i<industryFieldList.length;i++){%>
                         <option value="<%=industryFieldList[i].id%>"><%=industryFieldList[i].name%></option>
                         <%}%>
@@ -81,7 +82,7 @@
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn">搜索</button>
+                    <button type="button" lay-submit lay-filter="search" class="layui-btn" >搜索</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
@@ -107,89 +108,10 @@
                     <th>创建时间</th>
                     <th>行业领域</th>
                     <th>融资阶段</th>
-                    <th>面试评价</th>
-                    <th>在招职位</th>
-                    <th>建立处理率</th>
                     <th>操作</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>要出发</td>
-                    <td>浙江省/杭州/滨江</td>
-                    <td>08:57</td>
-                    <td>电子商务,生活服务</td>
-                    <td>成熟型(D轮及以上)</td>
-                    <td>13</td>
-                    <td>23</td>
-                    <td>86%</td>
-                    <td>
-                        <a title="查看详情" href="#"><i class="layui-icon">&#xe63c;</i></a>
-                        <a title="删除" class="delete" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>要出发</td>
-                    <td>浙江省/杭州/滨江</td>
-                    <td>08:57</td>
-                    <td>电子商务,生活服务</td>
-                    <td>成熟型(D轮及以上)</td>
-                    <td>13</td>
-                    <td>23</td>
-                    <td>86%</td>
-                    <td>
-                        <a title="查看详情" href="#"><i class="layui-icon">&#xe63c;</i></a>
-                        <a title="删除" class="delete" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>要出发</td>
-                    <td>浙江省/杭州/滨江</td>
-                    <td>08:57</td>
-                    <td>电子商务,生活服务</td>
-                    <td>成熟型(D轮及以上)</td>
-                    <td>13</td>
-                    <td>23</td>
-                    <td>86%</td>
-                    <td>
-                        <a title="查看详情" href="#"><i class="layui-icon">&#xe63c;</i></a>
-                        <a title="删除" class="delete" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>要出发</td>
-                    <td>浙江省/杭州/滨江</td>
-                    <td>08:57</td>
-                    <td>电子商务,生活服务</td>
-                    <td>成熟型(D轮及以上)</td>
-                    <td>13</td>
-                    <td>23</td>
-                    <td>86%</td>
-                    <td>
-                        <a title="查看详情" href="#"><i class="layui-icon">&#xe63c;</i></a>
-                        <a title="删除" class="delete" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>要出发</td>
-                    <td>浙江省/杭州/滨江</td>
-                    <td>08:57</td>
-                    <td>电子商务,生活服务</td>
-                    <td>成熟型(D轮及以上)</td>
-                    <td>13</td>
-                    <td>23</td>
-                    <td>86%</td>
-                    <td>
-                        <a title="查看详情" href="#"><i class="layui-icon">&#xe63c;</i></a>
-                        <a title="删除" class="delete" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
-                    </td>
-                </tr>
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
         <div id="page-wrapper"></div>
