@@ -25,7 +25,6 @@
             <legend>筛选条件</legend>
         </fieldset>
         <!--筛选条件-->
-        <div class="filter-wrapper-parent hide">
             <form class="filter-wrapper layui-form">
                 <input type="hidden" name="pageNo" value="1"/>
                 <div class="layui-form-item">
@@ -88,48 +87,6 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">融资阶段</label>
-                    <div class="layui-input-inline">
-                        <select name="financingStage">
-                            <option value="0">不限</option>
-                            <option value="1">未融资</option>
-                            <option value="2">天使轮</option>
-                            <option value="3">A轮</option>
-                            <option value="4">B轮</option>
-                            <option value="5">C轮</option>
-                            <option value="6">D轮及以上</option>
-                            <option value="7">上市公司</option>
-                            <option value="8">不需要融资</option>
-                        </select>
-                    </div>
-                    <label class="layui-form-label">行业领域</label>
-                    <div class="layui-input-inline">
-                        <select name="industryField" lay-search>
-                            <option value="0">不限</option>
-                            <option value="1">移动互联网</option>
-                            <option value="2">电子商务</option>
-                            <option value="3">金融</option>
-                            <option value="4">企业服务</option>
-                            <option value="5">教育</option>
-                            <option value="6">文化娱乐</option>
-                            <option value="7">游戏</option>
-                            <option value="8">O2O</option>
-                            <option value="9">硬件</option>
-                            <option value="10">社交网络</option>
-                            <option value="11">旅游</option>
-                            <option value="12">医疗健康</option>
-                            <option value="13">生活服务</option>
-                            <option value="14">信息安全</option>
-                            <option value="15">社交网络</option>
-                            <option value="16">数据服务</option>
-                            <option value="17">广告营销</option>
-                            <option value="18">分类信息</option>
-                            <option value="19">招聘</option>
-                            <option value="20">其他</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-form-item">
                     <label class="layui-form-label">月薪</label>
                     <div class="layui-input-inline">
                         <select name="salary">
@@ -160,11 +117,6 @@
                     </div>
                 </div>
             </form>
-        </div>
-        <!--筛选条件控制按钮-->
-        <div class="btn-slide-controll-wrapper">
-            <button id="btn-slide-controll" class="layui-btn layui-btn-small"><i class="layui-icon">&#xe61a;</i></button>
-        </div>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
             <legend>职位列表</legend>
         </fieldset>
@@ -179,12 +131,10 @@
                     <th>职位</th>
                     <th>工作地点</th>
                     <th>发布时间</th>
-                    <th>公司名称</th>
                     <th>薪资</th>
                     <th>工作经验</th>
                     <th>学历要求</th>
-                    <th>行业领域</th>
-                    <th>融资阶段</th>
+                    <th>所属公司</th>
                     <th>操作</th>
                 </tr>
                 </thead>

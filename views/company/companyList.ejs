@@ -26,6 +26,7 @@
         </fieldset>
         <!--筛选条件-->
         <form id="companyFilter" class="filter-wrapper layui-form">
+            <input type="hidden" name="pageNo" value="1"/>
             <div class="layui-form-item">
                 <label class="layui-form-label">企业名称</label>
                 <div class="layui-input-block">
@@ -82,7 +83,7 @@
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button type="button" lay-submit lay-filter="search" class="layui-btn" >搜索</button>
+                    <button type="button" id="search" class="layui-btn" >搜索</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>

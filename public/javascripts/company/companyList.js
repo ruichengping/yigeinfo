@@ -11,6 +11,10 @@ layui.use(['form','laydate','element','laypage'],function () {
             ,pages: Math.ceil(totalCount/10) //总页数
             ,groups: 5 //连续显示分页数
             ,skip:"true"
+            ,jump:function (obj) {
+                $('input[name=pageNo]').val(obj.curr);
+                $('#search').click();
+            }
         });
     });
     //删除按钮
@@ -101,7 +105,7 @@ layui.use(['form','laydate','element','laypage'],function () {
         });
     });
     //搜索功能
-    form.on('submit(search)',getCompanyListData);
+    $('#search').on('click',getCompanyListData);
     function getCompanyListData(callback) {
         $.ajax({
             type:'post',
@@ -121,6 +125,9 @@ layui.use(['form','laydate','element','laypage'],function () {
                         +"<td><a title='查看详情' target='_blank' href='/company/companyDetail.html?companyId="+companyItem.id+"'><i class='layui-icon'>&#xe63c;</i></a> <a title='删除' companyId='"+companyItem.id+"' class='delete' href='javascript:;'><i class='layui-icon'>&#xe640;</i></a></td>"
                         +'</tr>';
                 });
+                if(html===''){
+                    html="<tr><td colspan='7' style='text-align: center'>暂无数据</td></tr>"
+                }
                 $("#companyList tbody").html(html);
                 if( typeof callback ==='function'){
                     callback(data.totalCount);

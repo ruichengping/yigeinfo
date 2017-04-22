@@ -45,7 +45,7 @@ module.exports=(req,res,next) => {
     //返回对象
     let responseObj={};
     var task1=Company.findAll({
-        limit: 20,
+        limit: [(req.body.pageNo-1)*20,20],
         where:filter
     }).then((mysqlCompany)=>{
         logger.info("企业数据获取成功");
@@ -67,7 +67,9 @@ module.exports=(req,res,next) => {
         logger.error(error);
     });
 
-    var task2=Company.count().then((count)=>{
+    var task2=Company.count({
+        attributes:['id']
+    }).then((count)=>{
         logger.info("企业数据总数获取成功");
         responseObj.totalCount=count;
     }).catch((error)=>{

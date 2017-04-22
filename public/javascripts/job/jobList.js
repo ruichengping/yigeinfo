@@ -10,21 +10,6 @@ $(document).on("click",".delete",function () {
        layer.msg("删除成功！");
    });
 });
-//筛选条件控制显隐
-$("#btn-slide-controll").on("click",function () {
-    if($(".filter-wrapper-parent").hasClass("hide")){
-        $(".filter-wrapper-parent").removeClass("hide").addClass("show");
-        $(this).find("i").html("&#xe619;");
-        //过渡完成
-        $(".filter-wrapper-parent").on("transitionend",function () {
-            $(this).css("overflow","visible");
-        });
-    }else{
-        $(".filter-wrapper-parent").off("transitionend").css("overflow","hidden").removeClass("show").addClass("hide");
-        $(this).find("i").html("&#xe61a;");
-    }
-
-});
 //搜索按钮
 $("#btn-search").on("click",function () {
 });
