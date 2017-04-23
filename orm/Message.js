@@ -1,24 +1,21 @@
 /**
+ * Created by ruichengping on 2017/4/24.
+ */
+/**
  * Created by ruichengping on 2017/4/23.
  */
 const Sequelize=require('sequelize');
 const sequelize=require('../config/sequelize.config');
-const Complaint=sequelize.define('Complaint',{
+const Message=sequelize.define('Message',{
     id:{
         type:Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement:true
     },
-    complaintId:{
+    promulgatorId:{
         type:Sequelize.INTEGER
     },
-    complaintName:{
-        type:Sequelize.STRING
-    },
-    defendantId:{
-        type:Sequelize.INTEGER
-    },
-    defendantName:{
+    promulgatorName:{
         type:Sequelize.STRING
     },
     content:{
@@ -30,7 +27,7 @@ const Complaint=sequelize.define('Complaint',{
     createTime:{
         type:Sequelize.DATE
     },
-    handleResult:{
+    remark:{
         type:Sequelize.TEXT
     },
     handleTime:{
@@ -38,7 +35,7 @@ const Complaint=sequelize.define('Complaint',{
     }
 },{
     freezeTableName:true,
-    tableName:'yige_complaint',
+    tableName:'yige_message',
     timestamps: false
 });
-module.exports=Complaint;
+module.exports=Message;

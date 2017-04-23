@@ -36,6 +36,9 @@ module.exports=(req,res,next) => {
         let complaintList=[];
         if(mysqlComplaint.length>0){
             complaintList=mysqlComplaint.map(function (complaintItem) {
+                if(complaintItem.dataValues.handleTime){
+                    complaintItem.dataValues.handleTime=moment(complaintItem.dataValues.handleTime).format('YYYY-MM-DD HH:mm');
+                }
                 complaintItem.dataValues.createTime=moment(complaintItem.dataValues.createTime).format('YYYY-MM-DD HH:mm');
                 return complaintItem.dataValues;
             });

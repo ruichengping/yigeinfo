@@ -8,6 +8,7 @@ const jobNatureList=require('../../common/jobNatureList');
 module.exports=(req,res,next) => {
     res.render("job/jobList",{
         'activePage':"职位信息库",
+        'activeNavItem':1,
         'workExperienceList':workExperienceList,
         'educationList':educationList,
         'salaryLevelList':salaryLevelList,

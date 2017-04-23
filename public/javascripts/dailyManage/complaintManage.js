@@ -67,9 +67,13 @@ layui.use(['form','element','laypage','layer'], function(){
                             +'<td>'+complaintItem.defendantName+'</td>'
                             +'<td>'+complaintItem.content+'</td>'
                             +'<td>'+complaintItem.createTime+'</td>'
-                            +"<td style='text-align: center;'><button complaintId='"+complaintItem.id+"' type='button' class='layui-btn layui-btn-small layui-btn-normal complaintHandle'>完成处理</button></td>"
+                            +'<td>待处理</td>'
+                            +"<td style='text-align: center;'><button complaintId='"+complaintItem.id+"' type='button' class='layui-btn layui-btn-small layui-btn-normal complaintHandle'>处理</button></td>"
                             +'</tr>';
                     });
+                    if(html===''){
+                        html="<tr><td colspan='6' style='text-align: center'>暂无数据</td></tr>"
+                    }
                 }else{
                     data.complaintList.forEach(function (complaintItem) {
                         html+='<tr>'
@@ -79,12 +83,13 @@ layui.use(['form','element','laypage','layer'], function(){
                             +'<td>'+complaintItem.content+'</td>'
                             +'<td>'+complaintItem.createTime+'</td>'
                             +'<td>'+complaintItem.handleResult+'</td>'
+                            +'<td>'+complaintItem.handleTime+'</td>'
                             +"<td>已处理</td>"
                             +'</tr>';
                     });
-                }
-                if(html===''){
-                    html="<tr><td colspan='6' style='text-align: center'>暂无数据</td></tr>"
+                    if(html===''){
+                        html="<tr><td colspan='7' style='text-align: center'>暂无数据</td></tr>"
+                    }
                 }
                 $("#table-status-"+status+" tbody").html(html);
                 if( typeof callback ==='function'){

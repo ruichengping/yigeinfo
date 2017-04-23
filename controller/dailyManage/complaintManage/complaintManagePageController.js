@@ -4,5 +4,6 @@
 module.exports=(req,res,next) => {
     res.render("dailyManage/complaintManage",{
         'activePage':"投诉管理",
+        'activeNavItem':3
     });
 };

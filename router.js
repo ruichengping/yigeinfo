@@ -21,7 +21,7 @@ const countryController=require("./controller/common/countryController");
 /**
  * 职位控制器
  */
-const jobListController=require("./controller/job/jobListController");
+const jobListController=require("./controller/job/jobListPageController");
 const addJobPageController=require("./controller/job/addJobPageController");
 const addJobController=require("./controller/job/addJobController");
 const jobDetailController=require('./controller/job/jobDetailController');
@@ -49,6 +49,11 @@ const addResumePageController=require('./controller/resume/addResumePageControll
 const complaintManagePageController=require('./controller/dailyManage/complaintManage/complaintManagePageController');
 const getComplaintByFilterController=require('./controller/dailyManage/complaintManage/getComplaintByFilterController');
 const handleComplaintController=require('./controller/dailyManage/complaintManage/handleComplaintController');
+
+const messageManagePageController=require('./controller/dailyManage/messageManage/messageManagePageController');
+const getMessageByFilterController=require('./controller/dailyManage/messageManage/getMessageByFilterController');
+const handleMessageController=require('./controller/dailyManage/messageManage/handleMessageController');
+
 /*-----------------------------------------------------------------------------------*/
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
@@ -62,7 +67,8 @@ router.post("/yige/login.json",loginController);
 //首页
 router.get("/home.html",verify,function (req,res,next) {
     res.render("home/home",{
-        activePage:"首页"
+        'activePage':"首页",
+        'activeNavItem':0
     });
 });
 /**
@@ -96,6 +102,10 @@ router.get("/resume/addResume.html",verify,addResumePageController);
 router.get('/dailyManage/complaintManagePage.html',verify,complaintManagePageController);
 router.post('/dailyManage/getComplaint.json',getComplaintByFilterController);
 router.post('/dailyManage/handleComplaint.json',handleComplaintController);
+
+router.get('/dailyManage/messageManagePage.html',verify,messageManagePageController);
+router.post('/dailyManage/getMessage.json',getMessageByFilterController);
+router.post('/dailyManage/handleMessage.json',handleMessageController);
 /**
  * 常用接口
  */

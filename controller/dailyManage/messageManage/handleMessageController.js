@@ -1,27 +1,27 @@
 /**
- * Created by ruichengping on 2017/4/23.
+ * Created by ruichengping on 2017/4/24.
  */
-const Complaint=require('../../../orm/Complaint');
+const Message=require('../../../orm/Message');
 const logger=require("../../../config/log4js.config");
 const getCurrentTime=require('../../../tool/getCurrentTime');
 module.exports=(req,res,next) => {
     let result={};
-    Complaint.update({
-        handleResult:req.body.handleResult,
-        status:1,
+    Message.update({
+        remark:req.body.remark,
+        status:req.body.status,
         handleTime:getCurrentTime()
     },{
         where:{
             $and:[
                 {
-                   id:{
-                       $eq:req.body.complaintId
-                   }
+                    id:{
+                        $eq:req.body.messageId
+                    }
                 }
             ]
         }
     }).then((resulut)=>{
-        logger.info('编号'+req.body.complaintId+'投诉处理成功');
+        logger.info('编号'+req.body.messageId+'消息审核成功');
         result.success=true;
         res.send(result);
     }).catch((err)=>{
@@ -29,4 +29,4 @@ module.exports=(req,res,next) => {
         result.false=true;
         res.send(result);
     });
-}
+};

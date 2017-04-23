@@ -4,5 +4,6 @@
 module.exports=(req,res,next) => {
     res.render("job/addJob",{
         'activePage':"新增职位",
+        'activeNavItem':2
     });
 };
