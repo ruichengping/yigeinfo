@@ -14,39 +14,75 @@ const getCountryById=require('../../tool/getCountryById');
 const moment = require('moment');
 module.exports=(req,res,next) => {
     //筛选条件
-    let filter={
-        status:1
-    };
-    if(req.body.companyName!=''){
-        filter.companyName={
-            $like:"%"+req.body.companyName+"%"
+    let filterArray=[];
+    filterArray.push({
+        status:{
+            $eq:1
         }
+    });
+    if(req.body.companyName!=''){
+        filterArray.push({
+            companyName:{
+                $like:"%"+req.body.companyName+"%"
+            }
+        });
     }
     if(req.body.provinceId!=''){
-        filter.provinceId=req.body.provinceId;
+        filterArray.push({
+            provinceId:{
+                $eq:req.body.provinceId
+            }
+        });
     }
     if(req.body.cityId!=''){
-        filter.cityId=req.body.cityId;
+        filterArray.push({
+            cityId:{
+                $eq:req.body.cityId
+            }
+        });
     }
     if(req.body.countryId!=''){
-        filter.countryId=req.body.countryId;
+        filterArray.push({
+            countryId:{
+                $eq:req.body.countryId
+            }
+        });
     }
     if(req.body.financingStage!=''){
-        filter.financingStage=req.body.financingStage;
+        filterArray.push({
+            financingStage:{
+                $eq:req.body.financingStage
+            }
+        });
     }
     if(req.body.industryField){
-        filter.industryField=req.body.industryField;
+        filterArray.push({
+            industryField:{
+                $eq:req.body.industryField
+            }
+        });
     }
     if(req.body.startTime&&req.body.endTime){
-        filter.createTime={
-            $between: [req.body.startTime, req.body.endTime],
-        }
+        filterArray.push({
+            createTime:{
+                $between: [req.body.startTime, req.body.endTime],
+            }
+        });
+    }
+    if(req.body.isMember){
+        filterArray.push({
+            isMember:{
+                $eq:req.body.isMember
+            }
+        });
     }
     //返回对象
     let responseObj={};
     var task1=Company.findAll({
         limit: [(req.body.pageNo-1)*20,20],
-        where:filter
+        where:{
+            $and:filterArray
+        }
     }).then((mysqlCompany)=>{
         logger.info("企业数据获取成功");
         let companyList=[];

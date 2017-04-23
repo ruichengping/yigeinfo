@@ -54,6 +54,7 @@ const messageManagePageController=require('./controller/dailyManage/messageManag
 const getMessageByFilterController=require('./controller/dailyManage/messageManage/getMessageByFilterController');
 const handleMessageController=require('./controller/dailyManage/messageManage/handleMessageController');
 
+const memberManagePageController=require('./controller/dailyManage/memberManage/memberManagePageController');
 /*-----------------------------------------------------------------------------------*/
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
@@ -106,6 +107,8 @@ router.post('/dailyManage/handleComplaint.json',handleComplaintController);
 router.get('/dailyManage/messageManagePage.html',verify,messageManagePageController);
 router.post('/dailyManage/getMessage.json',getMessageByFilterController);
 router.post('/dailyManage/handleMessage.json',handleMessageController);
+
+router.get('/dailyManage/memberManagePage.html',verify,memberManagePageController);
 /**
  * 常用接口
  */
