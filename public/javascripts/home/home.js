@@ -2,6 +2,20 @@
  * Created by wuming on 2017/4/5.
  */
 layui.use(['element'],function () {
+    function getCurrentDate() {
+        function toTwo(num){
+            if(num<10){
+                return '0'+num;
+            }else{
+                return num;
+            }
+        }
+        let date=new Date;
+        let year=date.getFullYear();
+        let month=date.getMonth()+1;
+        let day=date.getDate();
+        return year+'年'+month+'月'+day+'日';
+    }
     //区域统计
     var eChart_rangeStatistic = echarts.init(document.getElementById('rangeStatistic'));
     function randomData() {
@@ -10,7 +24,7 @@ layui.use(['element'],function () {
     var option_rangeStatistic = {
         title: {
             text: '注册人数统计',
-            subtext: '时间：2017年04月08日',
+            subtext: '时间：'+getCurrentDate(),
             left: 'center'
         },
         tooltip: {
@@ -95,7 +109,7 @@ layui.use(['element'],function () {
     var option_functionUseAnalysis={
         title : {
             text: '功能使用情况分析',
-            subtext: '时间：2017年04月08日',
+            subtext: '时间：'+getCurrentDate(),
             x:'center'
         },
         tooltip : {
@@ -105,7 +119,7 @@ layui.use(['element'],function () {
         legend: {
             orient: 'vertical',
             left: 'left',
-            data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            data: ['在线面试','职位搜索','宣讲会','简历制作','在线测评']
         },
         series : [
             {
@@ -114,11 +128,11 @@ layui.use(['element'],function () {
                 radius : '55%',
                 center: ['50%', '60%'],
                 data:[
-                    {value:335, name:'直接访问'},
-                    {value:310, name:'邮件营销'},
-                    {value:234, name:'联盟广告'},
-                    {value:135, name:'视频广告'},
-                    {value:1548, name:'搜索引擎'}
+                    {value:335, name:'在线测评'},
+                    {value:310, name:'宣讲会'},
+                    {value:234, name:'简历制作'},
+                    {value:135, name:'在线面试'},
+                    {value:1548, name:'职位搜索'}
                 ],
                 itemStyle: {
                     emphasis: {

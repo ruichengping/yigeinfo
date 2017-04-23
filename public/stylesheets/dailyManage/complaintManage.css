@@ -1,0 +1,11 @@
+.breadcrumb-wrapper{
+    margin: 10px;
+}
+#complaint-filter{
+    margin-top: 30px;
+}
+#complaintManage-wrapper{
+    margin: 0 auto;
+    width: 98%;
+    border: 1px solid #efefef;
+}

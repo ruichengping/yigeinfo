@@ -47,6 +47,8 @@ const addResumePageController=require('./controller/resume/addResumePageControll
  * 日常管理
  */
 const complaintManagePageController=require('./controller/dailyManage/complaintManage/complaintManagePageController');
+const getComplaintByFilterController=require('./controller/dailyManage/complaintManage/getComplaintByFilterController');
+const handleComplaintController=require('./controller/dailyManage/complaintManage/handleComplaintController');
 /*-----------------------------------------------------------------------------------*/
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
@@ -91,7 +93,9 @@ router.get("/resume/addResume.html",verify,addResumePageController);
 /**
  * 日常管理
  */
-router.get('/dailyManage/complaintManagePage.html',complaintManagePageController);
+router.get('/dailyManage/complaintManagePage.html',verify,complaintManagePageController);
+router.post('/dailyManage/getComplaint.json',getComplaintByFilterController);
+router.post('/dailyManage/handleComplaint.json',handleComplaintController);
 /**
  * 常用接口
  */
