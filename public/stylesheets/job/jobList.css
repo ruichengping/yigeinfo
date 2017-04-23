@@ -11,9 +11,6 @@
 .jobTable-wrapper{
     overflow: auto;
 }
-#jobList{
-    min-width: 1600px;
-}
 .delete{
     margin-left: 6px;
 }

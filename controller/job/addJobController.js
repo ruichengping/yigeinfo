@@ -18,7 +18,7 @@ module.exports=(req,res,next) => {
         salary:req.body.salary,
         jobNature:req.body.jobNature,
         briefIntroduction:req.body.briefIntroduction,
-        description:req.body.description
+        description:req.body.description,
     }).then((mysqlJob)=>{
         res.send({
            success:true,

@@ -26,6 +26,8 @@ const addJobPageController=require("./controller/job/addJobPageController");
 const addJobController=require("./controller/job/addJobController");
 const jobDetailController=require('./controller/job/jobDetailController');
 const updateJobController=require('./controller/job/updateJobController');
+const getJobByFilterController=require('./controller/job/getJobByFilterController');
+const deleteJobController=require('./controller/job/deleteJobController');
 /**
  * 企业控制器
  */
@@ -41,6 +43,10 @@ const deleteCompanyController=require('./controller/company/deleteCompanyControl
  */
 const resumeListPageController=require('./controller/resume/resumeListPageController');
 const addResumePageController=require('./controller/resume/addResumePageController');
+/**
+ * 日常管理
+ */
+const complaintManagePageController=require('./controller/dailyManage/complaintManage/complaintManagePageController');
 /*-----------------------------------------------------------------------------------*/
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
@@ -65,6 +71,8 @@ router.get("/job/addJob.html",verify,addJobPageController);
 router.get("/job/jobDetail.html",verify,jobDetailController);
 router.post("/job/addJob.json",addJobController);
 router.post('/job/updateJob.json',updateJobController);
+router.post('/job/getJob.json',getJobByFilterController);
+router.post('/job/deleteJob.json',deleteJobController);
 /**
  * 企业
  */
@@ -80,6 +88,10 @@ router.post("/company/deleteCompany.json",deleteCompanyController);
  */
 router.get("/resume/resumeList.html",verify,resumeListPageController);
 router.get("/resume/addResume.html",verify,addResumePageController);
+/**
+ * 日常管理
+ */
+router.get('/dailyManage/complaintManagePage.html',complaintManagePageController);
 /**
  * 常用接口
  */

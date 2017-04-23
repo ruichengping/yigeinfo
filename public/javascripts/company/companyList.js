@@ -49,7 +49,6 @@ layui.use(['form','laydate','element','laypage'],function () {
             }).fail(function (err) {
                alert('err'+JSON.stringify(err));
             });
-            layer.msg("删除成功！");
         });
     });
     //获取省份数据
