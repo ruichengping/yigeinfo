@@ -20,42 +20,42 @@ module.exports=(req,res,next) => {
             $eq:1
         }
     });
-    if(req.body.companyName!=''){
+    if(req.body.companyName&&req.body.companyName!=''){
         filterArray.push({
             companyName:{
                 $like:"%"+req.body.companyName+"%"
             }
         });
     }
-    if(req.body.provinceId!=''){
+    if(req.body.provinceId&&req.body.provinceId!=''){
         filterArray.push({
             provinceId:{
                 $eq:req.body.provinceId
             }
         });
     }
-    if(req.body.cityId!=''){
+    if(req.body.cityId&&req.body.cityId!=''){
         filterArray.push({
             cityId:{
                 $eq:req.body.cityId
             }
         });
     }
-    if(req.body.countryId!=''){
+    if(req.body.countryId&&req.body.countryId!=''){
         filterArray.push({
             countryId:{
                 $eq:req.body.countryId
             }
         });
     }
-    if(req.body.financingStage!=''){
+    if(req.body.financingStage&&req.body.financingStage!=''){
         filterArray.push({
             financingStage:{
                 $eq:req.body.financingStage
             }
         });
     }
-    if(req.body.industryField){
+    if(req.body.industryField&&req.body.industryField){
         filterArray.push({
             industryField:{
                 $eq:req.body.industryField
@@ -69,7 +69,7 @@ module.exports=(req,res,next) => {
             }
         });
     }
-    if(req.body.isMember){
+    if(req.body.isMember&&req.body.isMember){
         filterArray.push({
             isMember:{
                 $eq:req.body.isMember
@@ -95,6 +95,10 @@ module.exports=(req,res,next) => {
                 companyItem.dataValues.financingStageName=getFinancingStageById(companyItem.financingStage).name;
                 companyItem.dataValues.industryFieldName=getIndustryFieldById(companyItem.industryField).name;
                 companyItem.dataValues.createTime=moment(companyItem.dataValues.createTime).format('YYYY-MM-DD HH:mm');
+                if(companyItem.dataValues.memberEndTime){
+                    companyItem.dataValues.memberEndTime=moment(companyItem.dataValues.memberEndTime).format('YYYY-MM-DD HH:mm');
+                }
+                companyItem.dataValues.recentTime=moment(companyItem.dataValues.recentTime).format('YYYY-MM-DD HH:mm');
                 return companyItem.dataValues;
             });
         }

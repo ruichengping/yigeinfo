@@ -3,36 +3,30 @@
  */
 const Sequelize=require('sequelize');
 const sequelize=require('../config/sequelize.config');
-const Message=sequelize.define('Message',{
+const PushRecord=sequelize.define('PushRecord',{
     id:{
         type:Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement:true
     },
-    promulgatorId:{
+    companyId:{
         type:Sequelize.INTEGER
     },
-    promulgatorName:{
+    companyName:{
         type:Sequelize.STRING
+    },
+    pushType:{
+        type:Sequelize.INTEGER
     },
     content:{
-        type:Sequelize.STRING
-    },
-    status:{
         type:Sequelize.INTEGER
     },
     createTime:{
         type:Sequelize.DATE
-    },
-    remark:{
-        type:Sequelize.TEXT
-    },
-    handleTime:{
-        type:Sequelize.DATE
     }
 },{
     freezeTableName:true,
-    tableName:'yige_message',
+    tableName:'yige_pushRecord',
     timestamps: false
 });
-module.exports=Message;
+module.exports=PushRecord;

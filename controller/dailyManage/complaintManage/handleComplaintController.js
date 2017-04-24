@@ -29,4 +29,4 @@ module.exports=(req,res,next) => {
         result.false=true;
         res.send(result);
     });
-}
+};

@@ -21,27 +21,28 @@
         <div class="breadcrumb-wrapper">
             <span class="layui-breadcrumb"><a href="javascript:void(0)"><cite>易格管理端</cite></a><a href="javascript:void(0)"><cite>消息管理</cite></a></span>
         </div>
-        <form id="message-filter" class="layui-form">
+        <input type="hidden" name="type" value="0"/>
+        <form id="member-filter" class="layui-form">
             <input type="hidden" name="pageNo" value="1"/>
-            <input type="hidden" name="type" value="1"/>
+            <input type="hidden" name="isMember" value="1"/>
             <div class="layui-form-item">
                 <label class="layui-form-label">企业名称</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="memberName" autocomplete="off" placeholder="请输入企业名称" class="layui-input"/>
+                    <input type="text" name="companyName" autocomplete="off" placeholder="请输入企业名称" class="layui-input"/>
                 </div>
                 <div class="layui-input-inline">
                     <button type="button" id="search" class="layui-btn">查询</button>
                 </div>
             </div>
         </form>
-        <div id="messageManage-wrapper" class="layui-tab layui-tab-brief" lay-filter="messageTab">
+        <div id="memberManage-wrapper" class="layui-tab layui-tab-brief" lay-filter="memberTab">
             <ul class="layui-tab-title">
                 <li class="layui-this">会员列表</li>
                 <li>推送记录</li>
             </ul>
             <div class="layui-tab-content" style="height: 600px;">
                 <div class="layui-tab-item layui-show">
-                    <table id="table-status-0" class="layui-table" lay-even="" lay-skin="row">
+                    <table id="member-table" class="layui-table" lay-even="" lay-skin="row">
                         <thead>
                         <tr>
                             <th>编号</th>
@@ -56,7 +57,7 @@
                     <div id="page-wrapper"></div>
                 </div>
                 <div class="layui-tab-item">
-                    <table id="table-status-1" class="layui-table" lay-even="" lay-skin="row">
+                    <table id="pushRecord-table" class="layui-table" lay-even="" lay-skin="row">
                         <thead>
                         <tr>
                             <th>编号</th>
@@ -73,25 +74,26 @@
             </div>
         </div>
         <!--处理按钮弹出层-->
-        <template id="messageHandleHtml">
-            <form class="layui-form" id="message-handle-form" style="width: 400px;margin: 20px auto;">
-                <input type="hidden" name="messageId" value=""/>
+        <template id="memberHandleHtml">
+            <form class="layui-form" id="member-handle-form" style="width: 400px;margin: 20px auto;">
+                <input type="hidden" name="companyId" value=""/>
+                <input type="hidden" name="companyName" value=""/>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">操作</label>
+                    <label class="layui-form-label">推送类型</label>
                     <div class="layui-input-block">
-                        <input type="radio" name="status" value="1" title="通过"/>
-                        <input type="radio" name="status" value="2" title="不通过"/>
+                        <input type="radio" name="pushType" value="1" title="简历推送"/>
+                        <input type="radio" name="pushType" value="2" title="消息推送"/>
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">备注</label>
+                    <label class="layui-form-label">推送内容</label>
                     <div class="layui-input-block">
-                        <textarea  name='remark' placeholder="请输入内容" class="layui-textarea" value=""></textarea>
+                        <textarea  name='content' placeholder="简历推送内容格式:简历编号+#+简历编号" class="layui-textarea" value=""></textarea>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button type="button" class="layui-btn btn-messageHandle-post" >提交</button>
+                        <button type="button" class="layui-btn btn-memberPush-post" >提交</button>
                     </div>
                 </div>
             </form>

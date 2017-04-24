@@ -5,12 +5,12 @@ layui.use(['form','element','laypage','layer'], function(){
     var form = layui.form();
     var layer=layui.layer;
     var element = layui.element();
-    element.on('tab(messageTab)', function(elem){
-        $('input[name=status]').val(elem.index);
-        getMessageListData();
+    element.on('tab(memberTab)', function(elem){
+        $('input[name=type]').val(elem.index);
+        $("#search").click();
     });
     //数据初始化
-    getMessageListData(function (totalCount) {
+    getMemberListData(function (totalCount) {
         //分页
         layui.laypage({
             cont: 'page-wrapper'
@@ -24,24 +24,25 @@ layui.use(['form','element','laypage','layer'], function(){
         });
     });
     //完成处理按钮
-    $(document).on('click','.messageHandle',function () {
-        var innerHtml=$("#messageHandleHtml").html();
+    $(document).on('click','.memberPush',function () {
+        var innerHtml=$("#memberHandleHtml").html();
         layer.open({
             type: 1,
             area: ['500px', '300px'],
             content: innerHtml //这里content是一个普通的String
         });
-        $("input[name=messageId]").val($(this).attr('messageId'));
+        $("input[name=companyId]").val($(this).attr('companyId'));
+        $("input[name=companyName]").val($(this).attr('companyName'));
         form.render();
     });
-    $(document).on('click','.btn-messageHandle-post',function () {
+    $(document).on('click','.btn-memberPush-post',function () {
         $.ajax({
             type:'post',
-            url:'/dailyManage/handleMessage.json',
-            data:$("#message-handle-form").serialize()
+            url:'/dailyManage/addPushRecord.json',
+            data:$("#member-handle-form").serialize()
         }).done(function (data) {
             if(data.success){
-                layer.alert('处理成功', {
+                layer.alert('推送成功', {
                     title:"信息",
                     icon:1,
                 }, function(){
@@ -51,47 +52,61 @@ layui.use(['form','element','laypage','layer'], function(){
         });
     });
     //查询按钮
-    $("#search").on('click',getMessageListData);
-    function getMessageListData(callback) {
+    $("#search").on('click',function () {
+        if($('input[name=type]').val()==0){
+            getMemberListData();
+        }else{
+            getMemberPushRecordList();
+        }
+    });
+    function getMemberListData(callback) {
         $.ajax({
             type:'post',
-            url:'/dailyManage/getMessage.json',
-            data:$("#message-filter").serialize()
+            url:'/company/getCompany.json',
+            data:$("#member-filter").serialize()
         }).done(function (data) {
             var html='';
             if(data.success){
-                var status=$("input[name=status]").val();
-                if(status==0){
-                    data.messageList.forEach(function (messageItem) {
-                        html+='<tr>'
-                            +'<td>'+messageItem.id+'</td>'
-                            +'<td>'+messageItem.promulgatorName+'</td>'
-                            +'<td>'+messageItem.content+'</td>'
-                            +'<td>'+messageItem.createTime+'</td>'
-                            +'<td>'+messageItem.statusName+'</td>'
-                            +"<td style='text-align: center;'><button messageId='"+messageItem.id+"' type='button' class='layui-btn layui-btn-small layui-btn-normal messageHandle'>审核</button></td>"
-                            +'</tr>';
-                    });
-                    if(html===''){
-                        html="<tr><td colspan='6' style='text-align: center'>暂无数据</td></tr>"
-                    }
-                }else{
-                    data.messageList.forEach(function (messageItem) {
-                        html+='<tr>'
-                            +'<td>'+messageItem.id+'</td>'
-                            +'<td>'+messageItem.promulgatorName+'</td>'
-                            +'<td>'+messageItem.content+'</td>'
-                            +'<td>'+messageItem.createTime+'</td>'
-                            +'<td>'+messageItem.remark+'</td>'
-                            +'<td>'+messageItem.handleTime+'</td>'
-                            +'<td>'+messageItem.statusName+'</td>'
-                            +'</tr>';
-                    });
-                    if(html===''){
-                        html="<tr><td colspan='7' style='text-align: center'>暂无数据</td></tr>"
-                    }
+                data.companyList.forEach(function (companyItem) {
+                    html+='<tr>'
+                        +'<td>'+companyItem.id+'</td>'
+                        +'<td>'+companyItem.companyName+'</td>'
+                        +'<td>'+companyItem.memberEndTime+'</td>'
+                        +'<td>'+companyItem.recentTime+'</td>'
+                        +"<td><button companyId='"+companyItem.id+"'companyName='"+companyItem.companyName+"' type='button' class='layui-btn layui-btn-small layui-btn-normal memberPush'>推送</button></td>"
+                        +'</tr>';
+                });
+                if(html===''){
+                    html="<tr><td colspan='5' style='text-align: center'>暂无数据</td></tr>"
                 }
-                $("#table-status-"+status+" tbody").html(html);
+                $("#member-table tbody").html(html);
+                if( typeof callback ==='function'){
+                    callback(data.totalCount);
+                }
+            }
+        });
+    }
+    function getMemberPushRecordList(callback) {
+        $.ajax({
+            type:'post',
+            url:'/dailyManage/getPushRecord.json',
+            data:$("#member-filter").serialize()
+        }).done(function (data) {
+            var html='';
+            if(data.success){
+                data.pushRecordList.forEach(function (pushRecordItem) {
+                    html+='<tr>'
+                        +'<td>'+pushRecordItem.id+'</td>'
+                        +'<td>'+pushRecordItem.companyName+'</td>'
+                        +'<td>'+pushRecordItem.createTime+'</td>'
+                        +'<td>'+pushRecordItem.typeName+'</td>'
+                        +'<td>'+pushRecordItem.content+'</td>'
+                        +'</tr>';
+                });
+                if(html===''){
+                    html="<tr><td colspan='5' style='text-align: center'>暂无数据</td></tr>"
+                }
+                $("#pushRecord-table tbody").html(html);
                 if( typeof callback ==='function'){
                     callback(data.totalCount);
                 }

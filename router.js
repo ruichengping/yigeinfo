@@ -55,6 +55,8 @@ const getMessageByFilterController=require('./controller/dailyManage/messageMana
 const handleMessageController=require('./controller/dailyManage/messageManage/handleMessageController');
 
 const memberManagePageController=require('./controller/dailyManage/memberManage/memberManagePageController');
+const getPushRecordController=require('./controller/dailyManage/memberManage/getPushRecordController');
+const addPushRecordController=require('./controller/dailyManage/memberManage/addPushRecordController');
 /*-----------------------------------------------------------------------------------*/
 router.get("/",verify,function (req,res,next) {
     res.redirect("/login.html")
@@ -109,6 +111,9 @@ router.post('/dailyManage/getMessage.json',getMessageByFilterController);
 router.post('/dailyManage/handleMessage.json',handleMessageController);
 
 router.get('/dailyManage/memberManagePage.html',verify,memberManagePageController);
+router.post('/dailyManage/getPushRecord.json',getPushRecordController);
+router.post('/dailyManage/addPushRecord.json',addPushRecordController);
+
 /**
  * 常用接口
  */
