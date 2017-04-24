@@ -25,9 +25,14 @@ module.exports=(req,res,next) => {
             }
         }).then((mysqlJob)=>{
             if(mysqlJob){
-                result.cityList=getCityListByProvinceId(mysqlJob.get("provinceId"));
-                result.countryList=getCountryListByCityId(mysqlJob.get("cityId"));
-                result.job=mysqlJob.dataValues;
+                res.result.provinceList=provinceList;
+                res.result.cityList=getCityListByProvinceId(mysqlJob.get("provinceId"));
+                res.result.countryList=getCountryListByCityId(mysqlJob.get("cityId"));
+                res.result.educationList=educationList;
+                res.result.workExperienceList=workExperienceList;
+                res.result.salaryLevelList=salaryLevelList;
+                res.result.jobNatureList=jobNatureList;
+                res.result.job=mysqlJob.dataValues;
                 Company.findOne({
                     where:{
                         id:mysqlJob.dataValues.companyId
