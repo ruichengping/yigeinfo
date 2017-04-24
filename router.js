@@ -8,6 +8,10 @@ const router=express.Router();
  */
 const verify=require("./middleware/verify");
 /**
+ * 首页
+ */
+const homePageController=require("./controller/home/homePageController");
+/**
  *常用控制器
  */
 //登录控制器
@@ -76,12 +80,7 @@ router.get("/login.html",function (req,res,next) {
 //登录验证接口
 router.post("/yige/login.json",loginController);
 //首页
-router.get("/home.html",verify,function (req,res,next) {
-    res.render("home/home",{
-        'activePage':"首页",
-        'activeNavItem':0
-    });
-});
+router.get("/home.html",verify,homePageController);
 /**
  * 职位
  */

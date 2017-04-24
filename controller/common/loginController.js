@@ -13,7 +13,10 @@ module.exports=(req,res,next) => {
     }).then((result) => {
         logger.info('用户账号密码查询成功');
             if(password==result.get('password')){
-                req.session.user=userName;
+                req.session.user={
+                    userId:result.get("userId"),
+                    userName:result.get("userName")
+                };
                 res.send({
                     success:true,
                     msg:"登录成功！"
