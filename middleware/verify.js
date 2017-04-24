@@ -7,6 +7,6 @@ module.exports=(req,res,next) => {
         res.result.user=req.session.user;
         next();
     }else{
-        res.redirect("/login.html");
+        res.redirect("/yige/login.html");
     }
 }

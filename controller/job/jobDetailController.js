@@ -33,8 +33,8 @@ module.exports=(req,res,next) => {
                         id:mysqlJob.dataValues.companyId
                     }
                 }).then((mysqlCompany)=>{
-                    result.company=mysqlCompany.dataValues;
-                    res.render("job/jobDetail",result);
+                    res.result.company=mysqlCompany.dataValues;
+                    res.render("job/jobDetail",res.result);
                 }).catch((err)=>{
                     res.send('系统异常');
                 });

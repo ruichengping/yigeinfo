@@ -3,7 +3,14 @@
         易格管理端
     </div>
     <div class="header-right">
-       <span id="userName"><%=user.userName%></span>
+        <ul class="layui-nav">
+            <li class="layui-nav-item">
+                <a href="javascript:;"><%=user.userName%></a>
+                <dl class="layui-nav-child">
+                    <dd><a id="btn-exit" href="javascript:;">退出登录</a></dd>
+                </dl>
+            </li>
+        </ul>
     </div>
 </header>
 

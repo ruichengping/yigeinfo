@@ -14,13 +14,16 @@ const homePageController=require("./controller/home/homePageController");
 /**
  *常用控制器
  */
-//登录控制器
+//登陆
+const loginPageController=require("./controller/common/loginPageController");
 const loginController=require("./controller/common/loginController");
-//获取省份控制器
+//登出
+const logoutController=require('./controller/common/logoutController');
+//获取省份
 const provinceController=require("./controller/common/provinceController");
-//获取城市控制器
+//获取城市
 const cityController=require("./controller/common/cityController");
-//获取县区控制器
+//获取县区
 const countryController=require("./controller/common/countryController");
 /**
  * 职位控制器
@@ -70,15 +73,15 @@ const memberManagePageController=require('./controller/dailyManage/memberManage/
 const getPushRecordController=require('./controller/dailyManage/memberManage/getPushRecordController');
 const addPushRecordController=require('./controller/dailyManage/memberManage/addPushRecordController');
 /*-----------------------------------------------------------------------------------*/
-router.get("/",verify,function (req,res,next) {
-    res.redirect("/login.html")
+router.get("/",verify, (req,res,next)=>{
+    res.redirect("/yige/login.html")
 });
 //登录
-router.get("/login.html",function (req,res,next) {
-    res.render("login",{});
-});
+router.get("/yige/login.html",loginPageController);
 //登录验证接口
 router.post("/yige/login.json",loginController);
+//登出接口
+router.get("/yige/logout.json",logoutController);
 //首页
 router.get("/home.html",verify,homePageController);
 /**

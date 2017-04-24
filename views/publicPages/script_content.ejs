@@ -5,12 +5,21 @@
 <!--layui-->
 <script src="/plugin/layui/layui.js"></script>
 <script>
-    var activePage=$(".activePage").val();
-    $(".nav-item").each(function () {
-        if($(this).html()==activePage){
-            $(this).addClass("layui-this");
-        }else{
-            $(this).removeClass("layui-this");
-        }
+    layui.use(['layer','element'],function () {
+        $("#btn-exit").on("click", function () {
+            layer.confirm('确定是否退出登录？', {
+                icon: 3,
+                title: '提示'
+            }, function () {
+                $.ajax({
+                    type: 'get',
+                    url: '/yige/logout.json'
+                }).done(function (data) {
+                    if(data.success){
+                        window.location.href="/yige/login.html";
+                    }
+                });
+            });
+        });
     });
 </script>
