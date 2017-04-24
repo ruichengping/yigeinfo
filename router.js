@@ -44,6 +44,14 @@ const deleteCompanyController=require('./controller/company/deleteCompanyControl
 const resumeListPageController=require('./controller/resume/resumeListPageController');
 const addResumePageController=require('./controller/resume/addResumePageController');
 /**
+ * 第三方
+ */
+const addThirdPartyPageController=require('./controller/thirdParty/addThirdPartyPageController');
+const addThirdPartyController=require('./controller/thirdParty/addThirdPartyController');
+const thirdPartyListPageController=require('./controller/thirdParty/thirdPartyListPageController');
+const getThirdPartyByFilterController=require('./controller/thirdParty/getThirdPartyByFilterController');
+const deleteThirdPartyController=require('./controller/thirdParty/deleteThirdPartyController');
+/**
  * 日常管理
  */
 const complaintManagePageController=require('./controller/dailyManage/complaintManage/complaintManagePageController');
@@ -99,6 +107,14 @@ router.post("/company/deleteCompany.json",deleteCompanyController);
  */
 router.get("/resume/resumeList.html",verify,resumeListPageController);
 router.get("/resume/addResume.html",verify,addResumePageController);
+/**
+ * 第三方
+ */
+router.get("/thirdParty/addthirdPartyPage.html",verify,addThirdPartyPageController);
+router.get("/thirdParty/thirdPartyList.html",verify,thirdPartyListPageController);
+router.post("/thirdParty/deleteThirdParty.json",deleteThirdPartyController);
+router.post("/thirdParty/addthirdParty.json",addThirdPartyController);
+router.post("/thirdParty/getThirdParty.json",getThirdPartyByFilterController);
 /**
  * 日常管理
  */
