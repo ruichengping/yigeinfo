@@ -32,17 +32,11 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">所属公司</label>
                         <div class="layui-input-block">
-                            <!--<select name="companyId" lay-search >-->
-                            <!--</select>-->
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">HR</label>
-                        <div class="layui-input-block">
-                            <select name="hrId" required lay-search>
-                                <option value="">请选择HR</option>
-                                <option value="1">邓紫棋</option>
-                                <option value="2">苍井空</option>
+                            <select name="companyId">
+                                <option value="">请选择所属公司</option>
+                                <%for(var i=0;i<companyList.length;i++){%>
+                                <option value="<%=companyList[i].id%>"><%=companyList[i].companyName%></option>
+                                <%}%>
                             </select>
                         </div>
                     </div>
