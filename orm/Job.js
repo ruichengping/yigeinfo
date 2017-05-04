@@ -3,6 +3,7 @@
  */
 const Sequelize=require('sequelize');
 const sequelize=require('../config/sequelize.config');
+const Company=require('../orm/Company');
 const Job=sequelize.define('job',{
     id:{
         type:Sequelize.INTEGER,
@@ -13,7 +14,7 @@ const Job=sequelize.define('job',{
         type:Sequelize.STRING
     },
     companyId:{
-        type:Sequelize.INTEGER
+        type:Sequelize.INTEGER,
     },
     hrId:{
         type:Sequelize.INTEGER
@@ -39,6 +40,9 @@ const Job=sequelize.define('job',{
     salary:{
         type:Sequelize.INTEGER
     },
+    education:{
+        type:Sequelize.INTEGER
+    },
     jobNature:{
         type:Sequelize.INTEGER
     },
@@ -48,6 +52,9 @@ const Job=sequelize.define('job',{
     description:{
         type:Sequelize.STRING
     },
+    status:{
+        type:Sequelize.INTEGER
+    }
 },{
     freezeTableName:true,
     tableName:'yige_job',

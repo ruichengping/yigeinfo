@@ -11,39 +11,78 @@ const getIndustryFieldById=require('../../tool/getIndustryFieldById');
 const getProvinceById=require('../../tool/getProvinceById');
 const getCityById=require('../../tool/getCityById');
 const getCountryById=require('../../tool/getCountryById');
+const moment = require('moment');
 module.exports=(req,res,next) => {
     //筛选条件
-    let filter={};
-    if(req.body.companyName!=''){
-        filter.companyName={
-            $like:"%"+req.body.companyName+"%"
+    let filterArray=[];
+    filterArray.push({
+        status:{
+            $eq:1
         }
+    });
+    if(req.body.companyName&&req.body.companyName!=''){
+        filterArray.push({
+            companyName:{
+                $like:"%"+req.body.companyName+"%"
+            }
+        });
     }
-    if(req.body.provinceId!=''){
-        filter.provinceId=req.body.provinceId;
+    if(req.body.provinceId&&req.body.provinceId!=''){
+        filterArray.push({
+            provinceId:{
+                $eq:req.body.provinceId
+            }
+        });
     }
-    if(req.body.cityId!=''){
-        filter.cityId=req.body.cityId;
+    if(req.body.cityId&&req.body.cityId!=''){
+        filterArray.push({
+            cityId:{
+                $eq:req.body.cityId
+            }
+        });
     }
-    if(req.body.countryId!=''){
-        filter.countryId=req.body.countryId;
+    if(req.body.countryId&&req.body.countryId!=''){
+        filterArray.push({
+            countryId:{
+                $eq:req.body.countryId
+            }
+        });
     }
-    if(req.body.financingStage!=''){
-        filter.financingStage=req.body.financingStage;
+    if(req.body.financingStage&&req.body.financingStage!=''){
+        filterArray.push({
+            financingStage:{
+                $eq:req.body.financingStage
+            }
+        });
     }
-    if(req.body.industryField){
-        filter.industryField=req.body.industryField;
+    if(req.body.industryField&&req.body.industryField){
+        filterArray.push({
+            industryField:{
+                $eq:req.body.industryField
+            }
+        });
     }
     if(req.body.startTime&&req.body.endTime){
-        filter.createTime={
-            $between: [req.body.startTime, req.body.endTime],
-        }
+        filterArray.push({
+            createTime:{
+                $between: [req.body.startTime, req.body.endTime],
+            }
+        });
+    }
+    if(req.body.isMember&&req.body.isMember){
+        filterArray.push({
+            isMember:{
+                $eq:req.body.isMember
+            }
+        });
     }
     //返回对象
     let responseObj={};
     var task1=Company.findAll({
-        limit: 20,
-        where:filter
+        limit: [(req.body.pageNo-1)*20,20],
+        where:{
+            $and:filterArray
+        }
     }).then((mysqlCompany)=>{
         logger.info("企业数据获取成功");
         let companyList=[];
@@ -55,6 +94,11 @@ module.exports=(req,res,next) => {
                 companyItem.dataValues.countryName=countryName;
                 companyItem.dataValues.financingStageName=getFinancingStageById(companyItem.financingStage).name;
                 companyItem.dataValues.industryFieldName=getIndustryFieldById(companyItem.industryField).name;
+                companyItem.dataValues.createTime=moment(companyItem.dataValues.createTime).format('YYYY-MM-DD HH:mm');
+                if(companyItem.dataValues.memberEndTime){
+                    companyItem.dataValues.memberEndTime=moment(companyItem.dataValues.memberEndTime).format('YYYY-MM-DD HH:mm');
+                }
+                companyItem.dataValues.recentTime=moment(companyItem.dataValues.recentTime).format('YYYY-MM-DD HH:mm');
                 return companyItem.dataValues;
             });
         }
@@ -63,7 +107,9 @@ module.exports=(req,res,next) => {
         logger.error(error);
     });
 
-    var task2=Company.count().then((count)=>{
+    var task2=Company.count({
+        attributes:['id']
+    }).then((count)=>{
         logger.info("企业数据总数获取成功");
         responseObj.totalCount=count;
     }).catch((error)=>{

@@ -3,38 +3,13 @@
     padding: 20px 0 0 10px;
 }
 /*筛选条件*/
-.filter-wrapper-parent{
-    height: 0;
-    transition:height 0.5s ease-out;
-    overflow: hidden;
-}
 .filter-wrapper{
     padding-right: 30px;
     transition:transform 0.5s ease-out;
 }
-/*控制筛选条件*/
-.btn-slide-controll-wrapper{
-    text-align: right;
-    padding-right: 20px;
-}
-.show{
-    height: 370px;
-}
-.hide{
-    height: 0;
-}
-.show .filter-wrapper{
-    transform:translateY(0);
-}
-.hide .filter-wrapper{
-    transform:translateY(-100%);
-}
 /*表格区域*/
 .jobTable-wrapper{
     overflow: auto;
-}
-#jobList{
-    min-width: 1600px;
 }
 .delete{
     margin-left: 6px;

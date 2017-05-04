@@ -1,0 +1,11 @@
+.breadcrumb-wrapper{
+    margin: 10px;
+}
+#message-filter{
+    margin-top: 30px;
+}
+#messageManage-wrapper{
+    margin: 0 auto;
+    width: 98%;
+    border: 1px solid #efefef;
+}

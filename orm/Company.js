@@ -44,7 +44,19 @@ var Company=sequelize.define("",{
     },
     modificateTime:{
         type:Sequelize.DATE
-    }
+    },
+    status:{
+        type:Sequelize.INTEGER
+    },
+    isMember:{
+        type:Sequelize.INTEGER
+    },
+    memberEndTime:{
+        type:Sequelize.DATE
+    },
+    recentTime:{
+        type:Sequelize.DATE
+    },
 },{
     freezeTableName:true,
     tableName:'yige_company',

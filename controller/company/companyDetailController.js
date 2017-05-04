@@ -21,10 +21,14 @@ module.exports=(req,res,next) => {
                 id:companyId
             }
         }).then(function (mysqlResult) {
-            result.company=mysqlResult.dataValues;
-            result.cityList=getCityListByProvinceId(mysqlResult.provinceId);
-            result.countryList=getCountryListByCityId(mysqlResult.cityId);
-            res.render('company/companyDetail',result);
+            res.result.company=mysqlResult.dataValues;
+            res.result.provinceList=provinceList;
+            res.result.cityList=getCityListByProvinceId(mysqlResult.provinceId);
+            res.result.countryList=getCountryListByCityId(mysqlResult.cityId);
+            res.result.financingStageList=financingStageList;
+            res.result.industryFieldList=industryFieldList;
+            res.result.employeeNumList=employeeNumList;
+            res.render('company/companyDetail',res.result);
         }).catch(function (err) {
             console.log(err);
             res.send('该企业不存在');

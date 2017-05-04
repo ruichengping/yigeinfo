@@ -3,8 +3,10 @@
  */
 module.exports=(req,res,next) => {
     if(req.session.user){
+        res.result={};
+        res.result.user=req.session.user;
         next();
     }else{
-        res.redirect("/login.html");
+        res.redirect("/yige/login.html");
     }
 }

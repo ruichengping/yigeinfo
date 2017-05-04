@@ -5,4 +5,4 @@ module.exports=(req,res,next) => {
     res.render("resume/addResume",{
         activePage:"新增简历"
     });
-}
+};

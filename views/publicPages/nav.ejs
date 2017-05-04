@@ -2,30 +2,30 @@
 <nav id="nav-wrapper">
     <ul class="layui-nav layui-nav-tree">
         <li class="layui-nav-item"><a href="/home.html" class="nav-item">首页</a></li>
-        <li class="layui-nav-item layui-nav-itemed">
+        <li class="layui-nav-item <%if(activeNavItem===1){%>layui-nav-itemed<%}%>">
             <a href="javascript:;">档案信息库</a>
             <dl class="layui-nav-child">
                 <dd><a class="nav-item <%if(activePage==='职位信息库'){%>layui-this<%}%>" href="/job/jobList.html">职位信息库</a></dd>
                 <dd><a class="nav-item <%if(activePage==='企业信息库'){%>layui-this<%}%>" href="/company/companyList.html">企业信息库</a></dd>
                 <dd><a class="nav-item <%if(activePage==='简历信息库'){%>layui-this<%}%>" href="/resume/resumeList.html">简历信息库</a></dd>
-                <dd><a class="nav-item <%if(activePage==='第三方信息库'){%>layui-this<%}%>" href="/thirdPartyList.html">第三方信息库</a></dd>
+                <dd><a class="nav-item <%if(activePage==='第三方信息库'){%>layui-this<%}%>" href="/thirdParty/thirdPartyList.html">第三方信息库</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item layui-nav-itemed">
+        <li class="layui-nav-item <%if(activeNavItem===2){%>layui-nav-itemed<%}%>">
             <a href="javascript:;">添加信息操作</a>
             <dl class="layui-nav-child">
                 <dd><a class="nav-item <%if(activePage==='新增职位'){%>layui-this<%}%>" href="/job/addJob.html">新增职位</a></dd>
                 <dd><a class="nav-item <%if(activePage==='新增企业'){%>layui-this<%}%>" href="/company/addCompany.html">新增企业</a></dd>
                 <dd><a class="nav-item <%if(activePage==='新增简历'){%>layui-this<%}%>" href="/resume/addResume.html">新增简历</a></dd>
-                <dd><a class="nav-item <%if(activePage==='新增第三方'){%>layui-this<%}%>" href="javascript:;">新增第三方</a></dd>
+                <dd><a class="nav-item <%if(activePage==='新增第三方'){%>layui-this<%}%>" href="/thirdParty/addthirdPartyPage.html">新增第三方</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item <%if(activeNavItem===3){%>layui-nav-itemed<%}%>">
             <a href="javascript:;">日常管理</a>
             <dl class="layui-nav-child">
-                <dd><a class="nav-item" href="javascript:;">消息管理</a></dd>
-                <dd><a class="nav-item" href="javascript:;">投诉管理</a></dd>
-                <dd><a class="nav-item" href="javascript:;">会员管理</a></dd>
+                <dd><a class="nav-item <%if(activePage==='消息管理'){%>layui-this<%}%>" href="/dailyManage/messageManagePage.html">消息管理</a></dd>
+                <dd><a class="nav-item <%if(activePage==='投诉管理'){%>layui-this<%}%>" href="/dailyManage/complaintManagePage.html">投诉管理</a></dd>
+                <dd><a class="nav-item <%if(activePage==='会员管理'){%>layui-this<%}%>" href="/dailyManage/memberManagePage.html">会员管理</a></dd>
             </dl>
         </li>
     </ul>

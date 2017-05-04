@@ -11,27 +11,45 @@ layui.use(['form','laydate','element','laypage'],function () {
             ,pages: Math.ceil(totalCount/10) //总页数
             ,groups: 5 //连续显示分页数
             ,skip:"true"
+            ,jump:function (obj) {
+                $('input[name=pageNo]').val(obj.curr);
+                $('#search').click();
+            }
         });
     });
     //删除按钮
     $(document).on("click",".delete",function () {
+        var companyId=$(this).attr("companyId");
         layer.confirm("是否确定删除该企业",{
             title:"提示",
             icon:"3"
         },function () {
-            layer.msg("删除成功！");
+            $.ajax({
+                type:'post',
+                url:'/company/deleteCompany.json',
+                data:{
+                    companyId:companyId
+                }
+            }).done(function (data) {
+                if(data.success){
+                    layer.alert('删除成功', {
+                        title:"信息",
+                        icon:1,
+                    }, function(){
+                        window.location.reload();
+                    });
+                }else{
+                    layer.alert('删除失败', {
+                        title:"信息",
+                        icon:1,
+                    }, function(index){
+                        layer.close(index);
+                    });
+                }
+            }).fail(function (err) {
+               alert('err'+JSON.stringify(err));
+            });
         });
-    });
-    //筛选条件控制显隐
-    $("#btn-slide-controll").on("click",function () {
-        if($(".filter-wrapper").hasClass("hide")){
-            $(".filter-wrapper").removeClass("hide").addClass("show");
-            $(this).find("i").html("&#xe619;");
-        }else{
-            $(".filter-wrapper").removeClass("show").addClass("hide");
-            $(this).find("i").html("&#xe61a;");
-        }
-
     });
     //获取省份数据
     $.ajax({
@@ -86,7 +104,7 @@ layui.use(['form','laydate','element','laypage'],function () {
         });
     });
     //搜索功能
-    form.on('submit(search)',getCompanyListData);
+    $('#search').on('click',getCompanyListData);
     function getCompanyListData(callback) {
         $.ajax({
             type:'post',
@@ -103,9 +121,12 @@ layui.use(['form','laydate','element','laypage'],function () {
                         +'<td>'+companyItem.createTime+'</td>'
                         +'<td>'+companyItem.industryFieldName+'</td>'
                         +'<td>'+companyItem.financingStageName+'</td>'
-                        +"<td><a title='查看详情' href='/company/companyDetail.html?companyId="+companyItem.id+"'><i class='layui-icon'>&#xe63c;</i></a> <a title='删除' class='delete' href='javascript:;'><i class='layui-icon'>&#xe640;</i></a></td>"
+                        +"<td><a title='查看详情' target='_blank' href='/company/companyDetail.html?companyId="+companyItem.id+"'><i class='layui-icon'>&#xe63c;</i></a> <a title='删除' companyId='"+companyItem.id+"' class='delete' href='javascript:;'><i class='layui-icon'>&#xe640;</i></a></td>"
                         +'</tr>';
                 });
+                if(html===''){
+                    html="<tr><td colspan='7' style='text-align: center'>暂无数据</td></tr>"
+                }
                 $("#companyList tbody").html(html);
                 if( typeof callback ==='function'){
                     callback(data.totalCount);

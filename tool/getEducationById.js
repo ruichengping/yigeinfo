@@ -9,5 +9,5 @@ module.exports=(educationId) => {
             education=educationItem;
         }
     });
-    return employeeNum;
+    return education;
 };
